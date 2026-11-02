@@ -1,0 +1,1 @@
+Instead, interpretability often improves when activations are analyzed in a rotated basis typically obtained via sparse dictionary learning or non-negative matrix factorization thus transforming neuron space into feature space [44].

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FIX-02 minimal fixture, extracted from Survey on Mech Interp TEI.
+     GROBID dropped top-level heads/numbers for sections 9 and 9.1; the head
+     skeleton jumps 8.4 -> 9.2. The validator MUST flag the non-monotonic / gapped
+     heading sequence (a subsection 9.2 appearing with no parent 9, and the 8.4->9.2
+     jump). Section text with no head is carried forward, not orphaned. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <text><body>
+    <div><head n="8.3" coords="26,45.77,282.46,187.83,8.93">Scaling Interpretability</head>
+      <p>Methods must scale to frontier models.</p></div>
+    <div><head n="8.4" coords="26,45.77,449.84,193.93,8.93">Open Problems</head>
+      <p>Several open problems remain.</p></div>
+    <div><head n="9.2" coords="27,45.95,345.23,233.00,8.93">Evaluation Practices</head>
+      <p>Evaluation of circuits is inconsistent.</p></div>
+    <div><head n="9.3" coords="27,45.95,500.65,334.41,8.93">Benchmarks</head>
+      <p>Few standardized benchmarks exist.</p></div>
+  </body></text>
+</TEI>

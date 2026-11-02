@@ -1,0 +1,1 @@
+To our surprise, the circuit still worked (only 5% drop in logit difference).

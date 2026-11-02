@@ -1,0 +1,1 @@
+Activation patching (also called causal tracing or causal mediation) evaluates whether specific intermediate activations are sufficient carriers of task-relevant information.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FIX-03 minimal fixture, faithful to real Survey on Mech Interp TEI markup:
+     GROBID emits tables as <figure type="table" xml:id="tab_N"> at BODY level (siblings
+     of <div>, NOT nested inside a section). Table 1's multi-line "This Study" cell was
+     exploded into phantom <row>s with other cells dropped. The validator MUST route any
+     numbers whose source is a table to the exception queue / fork1 tool, never a silent
+     grep-pass; table-sourced numbers are marked unverified. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <text><body>
+    <div><head n="2.1" coords="4,45.77,318.42,186.44,8.93">Comparison of Surveys</head>
+      <p>Table 1 compares prior surveys.</p></div>
+    <figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="7,70.87,87.73,339.87,549.83">
+      <head>Table 1: Comparison of mechanistic-interpretability surveys.</head>
+      <table>
+        <row><cell>Survey</cell><cell>Year</cell><cell>Methods covered</cell></row>
+        <row><cell>Prior A</cell><cell>2022</cell><cell>14</cell></row>
+        <row><cell>This</cell><cell/><cell/></row>
+        <row><cell>Study</cell><cell/><cell/></row>
+        <row><cell/><cell>2024</cell><cell>37</cell></row>
+      </table>
+    </figure>
+    <div><head n="2.2" coords="4,45.77,473.81,229.78,8.93">Scope</head>
+      <p>We cover post-hoc methods.</p></div>
+  </body></text>
+</TEI>

@@ -1,0 +1,1 @@
+Unlike activation patching (Section 4.2.1), which inserts signals to test sufficiency, ablation removes capacity to test necessity.

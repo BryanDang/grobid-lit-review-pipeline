@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FIX-04 minimal fixture, faithful to real Survey on Mech Interp TEI markup.
+     Two real shapes of the dropped-head failure, both yielding an empty section_tag:
+       (a) a <head> present but with its NUMBER dropped (no @n) — the common real case;
+       (b) a <div> with body text and NO <head> at all.
+     The validator MUST flag each (not silently emit an empty tag) and carry the text
+     forward to the last-seen NUMBERED section. Fix location is ours (carry-forward)
+     even though the cause is GROBID. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <text><body>
+    <div><head n="7.4" coords="24,45.77,531.75,162.25,8.93">Reproducibility</head>
+      <p>Released code and weights enable reproduction.</p></div>
+    <div><head coords="25,61.96,504.81,184.00,8.60">Threats to Validity</head>
+      <p>This section's number was dropped by GROBID (head present, no @n); its text
+      must be attributed to the last-seen numbered section (7.4), not given an empty tag.</p></div>
+    <div>
+      <p>This paragraph belongs to a div whose head GROBID dropped entirely; it must also
+      carry forward, not orphan.</p></div>
+    <div><head n="8" coords="25,45.95,422.87,139.26,8.93">Discussion</head>
+      <p>We discuss implications.</p></div>
+  </body></text>
+</TEI>

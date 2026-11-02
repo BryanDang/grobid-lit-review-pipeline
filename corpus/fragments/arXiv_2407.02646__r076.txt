@@ -1,0 +1,1 @@
+A key approach is the logit lens (or direct logit attribution / unembedding lens) [39,65], which applies the model's unembedding matrix to intermediate hidden states to estimate token distributions at each layer.

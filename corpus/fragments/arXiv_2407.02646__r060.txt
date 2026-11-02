@@ -1,0 +1,1 @@
+Two canonical interventions are: (i) activation patching, which transfers activations from a clean run to a corrupted one to test sufficiency and routing; and (ii) component ablation, which silences or replaces an element to test necessity.

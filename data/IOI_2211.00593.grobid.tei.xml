@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coord="1,108.43,82.34,366.05,14.93;1,108.43,102.27,388.55,14.93;2,324.51,172.89,35.06,7.67;2,286.95,114.74,15.47,7.67;2,280.72,122.81,29.72,7.67">INTERPRETABILITY IN THE WILD: A CIRCUIT FOR INDIRECT OBJECT IDENTIFICATION IN GPT-2 SMALL</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2022-11-01">1 Nov 2022</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,113.98,149.10,52.37,8.96"><forename type="first">Kevin</forename><surname>Wang</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,175.80,149.10,92.71,8.96"><forename type="first">Alexandre</forename><surname>Variengien</surname></persName>
+							<email>alexandre@rdwrs.com</email>
+						</author>
+						<author>
+							<persName coords="1,277.96,149.10,63.92,8.96"><forename type="first">Arthur</forename><surname>Conmy</surname></persName>
+							<email>arthur@rdwrs.com</email>
+						</author>
+						<author>
+							<persName coords="1,351.33,149.10,63.38,8.96"><forename type="first">Buck</forename><surname>Shlegeris</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,432.47,149.10,72.64,8.96"><forename type="first">Jacob</forename><surname>Steinhardt</surname></persName>
+							<email>jsteinhardt@berkeley.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution">UC Berkeley</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,118.45,160.88,77.09,8.64"><forename type="first">Redwood</forename><surname>Research</surname></persName>
+						</author>
+						<author>
+							<persName coords="2,365.69,160.00,17.34,6.89;2,368.36,167.71,14.15,6.89"><forename type="first">When</forename><surname>Mary</surname></persName>
+						</author>
+						<author>
+							<persName coords="2,319.11,128.19,14.02,6.89;2,389.27,110.77,14.15,6.89"><forename type="first">John</forename><surname>Mary</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">IO S1</orgName>
+								<address>
+									<addrLine>Layer 0 1 10 11 When Mary</addrLine>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coord="1,108.43,82.34,366.05,14.93;1,108.43,102.27,388.55,14.93;2,324.51,172.89,35.06,7.67;2,286.95,114.74,15.47,7.67;2,280.72,122.81,29.72,7.67">INTERPRETABILITY IN THE WILD: A CIRCUIT FOR INDIRECT OBJECT IDENTIFICATION IN GPT-2 SMALL</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2022-11-01">1 Nov 2022</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">90BD74A9564B122589592062EAC92D1C</idno>
+					<idno type="arXiv">arXiv:2211.00593v1[cs.LG]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.0" ident="GROBID" when="2026-07-10T04:43+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>John 2</term>
+					<term>3% Mary 68</term>
+					<term>3%</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Research in mechanistic interpretability seeks to explain behaviors of machine learning (ML) models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap by presenting an explanation for how GPT-2 small performs a natural language task called indirect object identification (IOI). Our explanation encompasses 26 attention heads grouped into 7 main classes, which we discovered using a combination of interpretability approaches relying on causal interventions. To our knowledge, this investigation is the largest end-to-end attempt at reverse-engineering a natural behavior "in the wild" in a language model. We evaluate the reliability of our explanation using three quantitative criteria-faithfulness, completeness and minimality. Though these criteria support our explanation, they also point to remaining gaps in our understanding. Our work provides evidence that a mechanistic understanding of large ML models is feasible, pointing toward opportunities to scale our understanding to both larger models and more complex tasks. Code for all experiments is available at https://github.com/redwoodresearch/Easy-Transformer.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="22" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="23" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="24" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="25" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1" coords="1,108.30,462.13,97.69,10.37">INTRODUCTION</head><p>Transformer-based language models <ref type="bibr" coords="1,256.83,486.27,87.87,8.64" target="#b19">(Vaswani et al., 2017;</ref><ref type="bibr" coords="1,347.65,486.27,78.32,8.64" target="#b2">Brown et al., 2020)</ref> have demonstrated an impressive suite of capabilities but largely remain black boxes. Understanding these models is difficult because they employ complex non-linear interactions in densely-connected layers and operate in a high-dimensional space. Despite this, they are already deployed in high-impact settings <ref type="bibr" coords="1,108.00,530.10,79.90,8.64" target="#b22">(Zhang et al., 2022;</ref><ref type="bibr" coords="1,190.93,530.10,86.96,8.64" target="#b3">Caldarini et al., 2022)</ref>, underscoring the urgency of understanding and anticipating possible model behaviors. Some researchers have argued that interpretability is critical for the safe deployment of advanced machine learning systems <ref type="bibr" coords="1,346.70,552.02,119.94,8.64" target="#b7">(Hendrycks &amp; Mazeika, 2022)</ref>.</p><p>Work in mechanistic interpretability aims to discover, understand, and verify the algorithms that model weights implement by reverse engineering model computation into human-understandable components <ref type="bibr" coords="1,158.07,590.87,49.80,8.64" target="#b14">(Olah, 2022;</ref><ref type="bibr" coords="1,209.80,590.87,71.09,8.64" target="#b10">Meng et al., 2022;</ref><ref type="bibr" coords="1,282.81,590.87,74.95,8.64" target="#b5">Geiger et al., 2021;</ref><ref type="bibr" coords="1,359.70,590.87,67.11,8.64" target="#b6">Geva et al., 2020)</ref>. By understanding underlying mechanisms, we can better predict out-of-distribution behavior <ref type="bibr" coords="1,409.27,601.83,90.45,8.64" target="#b12">(Mu &amp; Andreas, 2020)</ref>, identify and fix model errors <ref type="bibr" coords="1,228.31,612.79,98.29,8.64" target="#b8">(Hernandez et al., 2021;</ref><ref type="bibr" coords="1,329.85,612.79,64.92,8.64" target="#b20">Vig et al., 2020)</ref>, and understand emergent behavior <ref type="bibr" coords="1,145.15,623.75,108.46,8.64" target="#b13">(Nanda &amp; Lieberum, 2022;</ref><ref type="bibr" coords="1,256.10,623.75,73.32,8.64" target="#b0">Barak et al., 2022;</ref><ref type="bibr" coords="1,331.92,623.75,64.08,8.64" target="#b21">Wei et al., 2022)</ref>.</p><p>In this work, we aim to mechanistically understand how GPT-2 small <ref type="bibr" coords="1,397.58,640.69,89.08,8.64" target="#b17">(Radford et al., 2019)</ref> implements a simple natural language task. We do so by using circuit analysis <ref type="bibr" coords="1,418.17,651.65,81.54,8.64" target="#b18">(Räuker et al., 2022)</ref>, identifying an induced subgraph of the model's computational graph that is human-understandable and responsible for completing the task.</p><p>To discover the circuit, we introduce a systematic approach that iteratively traces important components back from the logits, using a causal intervention that we call "path patching". We supplement this mainline approach with projections in the embedding space, attention pattern analysis, and activation patching to understand the behavior of each component. We focus on understanding a specific natural language task that we call indirect object identification (IOI). In IOI, sentences such as "When Mary and John went to the store, John gave a drink to" should be completed with "Mary". We chose this task because it is linguistically meaningful and admits an interpretable algorithm: of the two names in the sentence, predict the name that isn't the subject of the last clause.</p><p>We discover a circuit of 26 attention heads-1.1% of the total number of (head, token position) pairs-that completes the bulk of this task. The circuit uses 7 categories of heads (see Figure <ref type="figure" coords="2,484.94,354.44,4.15,8.64">2</ref>) to implement the algorithm. Together, these heads route information between different name tokens, to the end position, and finally to the output. Our work provides, to the best of our knowledge, the most detailed attempt at reverse-engineering an end-to-end behavior in a transformer-based language model.</p><p>By zooming in on a crisp task in a particular model, we obtained several insights about the challenges of mechanistic interpretability. In particular:</p><p>• We identified several instances of heads implementing redundant behavior <ref type="bibr" coords="2,418.97,443.11,80.74,8.64" target="#b11">(Michel et al., 2019)</ref>. The most surprising were "Backup Name-Mover Heads", which copy names to the correct position in the output, but only when regular Name-Mover Heads are ablated. This complicates the search for complete mechanisms, as different model structure is found when some components are ablated. • We found known structures (specifically induction heads <ref type="bibr" coords="2,347.82,497.90,80.60,8.64" target="#b4">(Elhage et al., 2021)</ref>) that were used in unexpected ways. Thus mainline functionality of a component does not always give a full picture. • Finally, we identified heads reliably writing in the opposite direction of the correct answer.</p><p>Explanations for model behavior can easily be misleading or non-rigorous <ref type="bibr" coords="2,410.93,536.76,93.07,8.64" target="#b9">(Jain &amp; Wallace, 2019;</ref><ref type="bibr" coords="2,108.00,547.72,91.18,8.64" target="#b1">Bolukbasi et al., 2021)</ref>. To remedy this problem, we formulate three criteria to help validate our circuit explanations. These criteria are faithfulness (the circuit can perform the task as well as the whole model), completeness (the circuit contains all the nodes used to perform the task), and minimality (the circuit doesn't contain nodes irrelevant to the task). Our circuit shows significant improvements compared to a naïve (but faithful) circuit, but fails to pass the most challenging tests.</p><p>In summary, our main contributions are: (1) We identify a large circuit in GPT-2 small that performs indirect-object identification (Figure <ref type="figure" coords="2,259.44,619.45,4.98,8.64">2</ref> and Section 3); (2) Through example, we identify useful techniques for understanding models, as well as surprising pitfalls; (3) We present criteria that ensure structural correspondence between the circuit and the model, and check experimentally whether our circuit meets this standard (Section 4).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2" coords="2,108.30,684.63,91.79,10.37">BACKGROUND</head><p>In this section, we introduce the IOI task, review the transformer architecture, define circuits more formally, and describe a technique for "knocking out" nodes in a model. Task description. A sentence containing indirect object identification (IOI) has an initial dependent clause, e.g "When Mary and John went to the store", and a main clause, e.g "John gave a bottle of milk to Mary". The initial clause introduces the indirect object (IO) "Mary" and the subject (S) "John". The main clause refers to the subject a second time, and in all our examples of IOI, the subject gives an object to the IO. The IOI task is to predict the final token in the sentence to be the IO. We use 'S1' and 'S2' to refer to the first and second occurrences of the subject, when we want to specify position. We create dataset samples for IOI using 15 templates (see Appendix E) with random single-token names, places and items. We use the notation p IOI for the distribution over sentences generated by this procedure.</p><p>To quantify GPT-2 small's performance on the IOI task, we use two different metrics: logit difference and IO probability. Logit difference measures the difference in logit value between the two names, where a positive score means the correct name (IO) has higher probability. IO probability measures the absolute probability of the IO token under the model's predictions. Both metrics are averaged over p IOI . Over 100,000 dataset examples, GPT-2 small has mean logit difference of 3.56 (IO predicted over S 99.3% of the time), and mean IO probability of 49%.</p><p>Transformer architecture. GPT-2 small is a decoder-only transformer with 12 layers and 12 attention heads per attention layer. In this work, we mostly focus on understanding the behavior of attention heads, which we describe below using notation similar to <ref type="bibr" coords="3,376.36,283.60,77.05,8.64" target="#b4">Elhage et al. (2021)</ref>. We leave a full description of the model to Appendix G.</p><p>The input x 0 to the transformer is a sum of position and token embeddings and lies in R N ×d , where N is the number of tokens in the input and d is the model dimension. This input embedding is the initial value of the residual stream, which all attention layers and MLPs read from and write to. Attention layer i of the network takes as input x i ∈ R N ×d , the value of the residual stream at layer i. The attention layer output can be decomposed into the sum of attention heads h i,j . If the output of the attention layer is y i = j h i,j (x i ), then the residual stream is updated to x i + y i .</p><p>Focusing on individual heads, each head h i,j is parametrized by four matrices</p><formula xml:id="formula_0" coords="3,108.00,383.94,396.00,28.86">W i,j Q , W i,j K , W i,j O ∈ R d× d H and W i,j V ∈ R d H ×d .</formula><p>We rewrite these parameters as low-rank matrices in R d×d :</p><formula xml:id="formula_1" coords="3,108.00,398.97,396.00,27.16">W i,j OV = W i,j O W i,j V and W i,j QK = W i,j Q (W i,j K ) T .</formula><p>The QK matrix is used to compute the attention pattern A i,j ∈ R N ×N of head (i, j), while the OV matrix determines what is written into the residual stream. At the end of the forward pass, a layer norm is applied before the unembed matrix W U projects the residual stream into logits.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1" coords="3,108.25,476.49,143.50,8.64">CIRCUITS AND KNOCKOUTS</head><p>In mechanistic interpretability, we want to understand the correspondence between the components of a model and human-understandable concepts. A useful abstraction for this goal is circuits. If we think of a model as a computational graph M where nodes are terms in its forward pass (neurons, attention heads, embeddings, etc.) and edges are the interactions between those terms (residual connections, attention, projections, etc.), a circuit C is a subgraph of M responsible for some behavior (such as completing the IOI task). This definition of a circuit is more coarse-grained than the one presented in <ref type="bibr" coords="3,159.43,562.98,69.39,8.64" target="#b15">Olah et al. (2020)</ref>, where nodes are features (meaningful directions in the latent space of a model) instead of model components.</p><p>Just as the entire model M defines a function M (x) from inputs to logits, we also associate each circuit C with a function C(x) via knockouts. A knockout removes a set of nodes K in a computational graph M with the goal of "turning off" nodes in K but capturing all other computations in M . Thus, C(x) is defined by knocking out all nodes in M \C and taking the resulting logit outputs in the modified computational graph.</p><p>A first naïve knockout approach consists of simply deleting each node in K from M . The net effect of this removal is to zero ablate K, meaning that we set its output to 0. This naïve approach has an important limitation: 0 is an arbitrary value, and subsequent nodes might rely on the average activation value as an implicit bias term. Perhaps because of this, we find zero ablation to lead to noisy results in practice.</p><p>To address this, we instead knockout nodes through mean ablation: replacing them with their average activation value across some reference distribution, similar to the bias correction method used in <ref type="bibr" coords="4,118.69,85.34,106.20,8.64" target="#b13">Nanda &amp; Lieberum (2022)</ref>. Mean-ablations remove the information that varies in the reference distribution (e.g. the value of the name outputted by a head) but will preserve constant information (e.g. the fact that a head is outputting a name).</p><p>In this work, all knockouts are performed in a modified p IOI distribution called p ABC . It relies on the same generation procedure, but instead of using two names (IO and S) it used three unrelated random names (A, B and C). In p ABC , sentences no longer have a single plausible IO, but the grammatical structures from the p IOI templates are preserved.</p><p>We chose this distribution for mean-ablating because using p IOI would not remove enough information helpful for the task. For instance, some information constant in p IOI (e.g. the fact that a name is duplicated) is removed when computing the mean on p ABC .</p><p>When knocking out a single node, a (head, token position) pair in our circuit, we want to preserve the grammatical information unrelated to IOI contained in its activations. However, the grammatical role (subject, verb, conjunction etc.) of a particular token position varies across templates. To ensure that grammatical information is constant when averaging, we compute the mean of a node across samples of the same template.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3" coords="4,108.30,295.14,160.84,10.37">DISCOVERING THE CIRCUIT</head><p>We seek to explain how GPT-2 small implements the IOI task (Section 2). Recall the example sentence "When Mary and John went to the store, John gave a drink to". The following humaninterpretable algorithm suffices to perform this task:</p><p>1. Identify all previous names in the sentence (Mary, John, John). 2. Remove all names that are duplicated (in the example above: John). 3. Output the remaining name.</p><p>Below we present a circuit that we claim implements this functionality. Our circuit contains three major classes of heads, corresponding to the three steps of the algorithm above:</p><p>• Duplicate Token Heads identify tokens that have already appeared in the sentence. They are active at the S2 token, attend primarily to the S1 token, and signal that token duplication has occurred by writing the position of the duplicate token. • S-Inhibition Heads remove duplicate tokens from Name Mover Heads' attention. They are active at the END token, attend to the S2 token, and write in the query of the Name Mover Heads, inhibiting their attention to S1 and S2 tokens. • Name Mover Heads output the remaining name. They are active at END, attend to previous names in the sentence, and copy the names they attend to. Due to the S-Inhibition Heads, they attend to the IO token over the S1 and S2 tokens. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="4,388.78,547.86,27.64,8.53">Legend</head><p>Figure <ref type="figure" coords="4,136.37,687.21,3.88,8.64">2</ref>: We discover a circuit in GPT-2 small that implements IOI. The input tokens on the left are passed into the residual stream. Attention heads move information between residual streams: the query and output arrows show which residual streams they write to, and the key/value arrows show which residual streams they read from.</p><p>A fourth major family of heads writes in the opposite direction of the Name Mover Heads, thus decreasing the confidence of the predictions. We speculate that these Negative Name Mover Heads might help the model "hedge" so as to avoid high cross-entropy loss when making mistakes.</p><p>There are also three minor classes of heads that perform related functions to the components above:</p><p>• Previous Token Heads copy information about the token S to token S1+1, the token after S1.</p><p>• Induction Heads perform the same role as the Duplicate Token Heads through an induction mechanism. They are active at position S2, attend to token S1+1 (mediated by the Previous Token Heads), and their output is used both as a pointer to S1 and as a signal that S is duplicated. • Finally, Backup Name Mover Heads do not normally move the IO token to the output, but take on this role if the regular Name Mover Heads are knocked out.</p><p>In all of our experiments, we do not intervene on MLPs, layer norms, or embedding matrices, focusing our investigation on understanding the attention heads. In initial investigations, we found that knocking out each MLP individually led to good task performance, except for the first layer. However, knocking out all MLPs after the first layer makes the model unable to perform the task (Appendix J). A more precise investigation of the role of MLPs is left for future work.</p><p>Below we show how we discovered each of the seven components above, providing evidence that they behave as claimed. We found that it was easiest to uncover the circuit starting at the logits and working back step-by-step. Each step is divided into two parts. First, we trace the information flow backward from previously discovered components by finding attention heads that directly influence them; we do this using a technique we introduce called path patching, which generalizes the application of causal mediation analysis to language models introduced in <ref type="bibr" coords="5,399.26,328.43,64.64,8.64" target="#b20">Vig et al. (2020)</ref>. Second, we characterize the newly identified heads by examining their attention patterns and performing experiments tailored to their hypothesized function.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1" coords="5,108.25,376.58,332.51,8.64">WHICH HEADS DIRECTLY AFFECT THE OUTPUT? (NAME MOVER HEADS)</head><p>Tracing back the information flow. We begin by searching for attention heads h directly affecting the model's logits. To differentiate indirect effect (where the influence of a component is mediated by another head) from direct effect, we designed a technique called path patching (Figure <ref type="figure" coords="5,471.58,419.52,3.60,8.64" target="#fig_0">1</ref>).</p><p>Path patching replaces part of a model's forward pass with activations from a different input. Given inputs x orig and x new , and a set of paths P emanating from a node h, path patching runs a forward pass on x orig , but for the paths in P it replaces the activations for h with those from x new . In our case, h will be a fixed attention head and P consists of all direct paths from h to a set of components R, i.e. paths through residual connections and MLPs (but not through other attention heads); this measures the counterfactual effect of h on the members of R. The layers after the element from R are recomputed as in a normal forward pass. See Appendix B for full details of the method.</p><p>We will always take x orig to be a sample from p IOI , and x new the corresponding sample from p ABC (i.e. where the names in the sentence are replaced by three random names). We run path patching on many random samples from p IOI and measure how this affects the average logit difference. Pathways h → R that are critical to the model's computation should induce a large drop in logit difference when patched, since the p ABC distribution removes the information needed to complete the IOI task.</p><p>To trace information back from the logits, we run path patching for the pathway h → Logits for each head h at the END position and display the effect on logit difference in Figure <ref type="figure" coords="5,443.13,590.87,7.93,8.64">3a</ref>. We see that only a few heads in the final layers cause a large effect on logit difference. Specifically, patching 9.6, 9.9, and 10.0 causes a large drop (they thus contribute positively to the logit difference), while 10.7 and 11.10 cause a large increase (they contribute negatively to the logit difference).</p><p>Name Mover Heads. To understand the heads positively influencing the logit difference, we first study their attention patterns. We find that they attend strongly to the IO token: the average attention probability of all heads over p IOI is 0.59. We hypothesize that these heads (i) attend to the correct name and (ii) copy whatever they attend to. We therefore call these heads Name Mover Heads.</p><p>To verify our hypothesis, we design experiments to test the heads' functionality. Let W U denote the unembedding matrix, and</p><formula xml:id="formula_2" coords="5,228.12,701.14,68.19,9.65">W U [IO], W U [S]</formula><p>the corresponding unembedding vectors for the IO and S tokens. We scatter plot the attention probability against the logit score h i (X), W U [N ] , measuring how much head h i on input X is writing in the direction of the logit of the name N (IO or S). The results are shown in Figure <ref type="figure" coords="6,281.60,349.10,8.12,8.64">3c</ref>: higher attention probability on the IO or S token is correlated with higher output in the direction of the name (correlation ρ &gt; 0.81, N = 500)<ref type="foot" coords="6,469.49,358.39,3.49,6.05" target="#foot_0">1</ref> .</p><p>To check that the Name Mover Heads copy names generally, we studied what values are written via the heads' OV matrix. Specifically, we first obtained the state of the residual stream at the position of each name token after the first MLP layer. Then, we multiplied this by the OV matrix of a Name Mover Head (simulating what would happen if the head attended perfectly to that token), multiplied by the unembedding matrix, and applied the final layer norm to obtain logit probabilities. We compute the proportion of samples that contain the input name token in the top 5 logits (N = 1000) and call this the copy score. All three Name Mover Heads have a copy score above 95%, compared to less than 20% for an average head.</p><p>Negative Name Mover Heads. In Figure <ref type="figure" coords="6,277.49,470.64,8.30,8.64">3b</ref>, we also observed two heads causing a large increase, and thus negatively influencing the logit difference. We called these heads Negative Name Mover Heads. These share all the same properties as Name Mover Heads except they (1) write in the opposite direction of names they attend to and (2) have a large negative copy score-the copy score calculated with the negative of the OV matrix (98% compared to 12% for an average head).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2" coords="6,108.25,542.59,363.55,8.64;6,132.16,553.55,33.78,8.64">WHICH HEADS AFFECT THE NAME MOVER HEADS' ATTENTION? (S-INHIBITION HEADS)</head><p>Tracing back the information flow. Given that the Name Mover Heads are primarily responsible for constructing the output, we next ask what heads they depend on. As illustrated in Figure <ref type="figure" coords="6,492.11,586.27,7.93,8.64">4a</ref>, there are three ways to influence attention heads: by their values, keys, or queries. In the case of Name Mover Heads, their value matrix appears to copy the input tokens (see previous section), so we do not study it further. Moreover, as the IO token appears early in the context, the Name Mover Heads' key vectors for this position likely do not contain much task-specific information. Therefore, we focus on the query vector, which is located at the END position.</p><p>We again use path patching, identifying the heads that affect each Name Mover Head's query vector. Specifically, for a head h we patch the path h → Name Mover Heads' queries (Figure <ref type="figure" coords="6,448.80,668.96,8.48,8.64">4a</ref>) and report the effect on logit difference in Figure <ref type="figure" coords="7,268.24,519.14,8.30,8.64">4b</ref>. Heads 7.3, 7.9, 8.6, 8.10 directly influence the Name Mover Heads' queries, causing a significant drop in logit difference through this path.</p><p>S-Inhibition Heads. To better understand the influence of these heads on the Name Movers Heads, we visualized Name Movers Heads' attention before and after applying path patching of all four previously identified heads at once (Figure <ref type="figure" coords="7,282.64,568.96,7.61,8.64">4c</ref>). Patching these heads leads to a greater probability on S1 (and thus less on IO). We therefore call these heads S-Inhibition Heads, since their effect is to decrease attention to S1.</p><p>What are S-Inhibition heads writing? We observed that S-Inhibition heads preferentially attend to the S2 token (the average attention from END to S2 was 0.51 over the four heads). We conjectured that they move information about S that causes Name Movers to attend less to S1. We discovered two signals through which S-Inhibition Heads do this. The first, the token signal, contains the value of the token S and causes Name Mover Heads to avoid occurrences of that token. The second, the position signal, contains information about the position of the S1 token, causing Name Mover Heads to avoid the S1 position no matter the value of the token at this position.</p><p>To disentangle the two effects, we designed a series of counterfactual experiments where only some signals are present, and the others are inverted with respect to the original dataset (see Appendix A). Both effects matter, but position signals have a greater effect than token signals. These two signals suffice to account for the full average difference in Name Mover Heads' attention to IO over S1.</p><p>S-Inhibition heads output information about the position of S1 but don't attend to it directly. They thus must rely on the output of other heads through value composition, as we will see next.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3" coords="8,108.25,130.36,223.36,8.64">WHICH HEADS AFFECT S-INHIBITION VALUES?</head><p>Tracing back the information flow. We next trace the information flow back through the queries, keys, and values of the S-Inhibition Heads, using path patching as before. We found the values were the most important and so focus on them here, with keys discussed in Appendix C (queries had no significant direct effect on the S-Inhibition Heads).</p><p>In more detail, for each head h at the S2 position we patched in the path h → S-Inhibition Heads's values (Figure <ref type="figure" coords="8,252.20,215.28,8.48,8.64">5a</ref>) and reported results in Figure <ref type="figure" coords="8,387.22,215.28,8.30,8.64">5b</ref>.</p><p>We identified 4 heads with a significant negative effect on logit difference. By looking at their attention pattern, we separated them into two groups. The heads from the first group attend from S2 to S1, while those from the second group attend from S2 to the token after S1 (S1+1 in short).</p><p>Duplicate Token Heads. Two of the heads attend from S2 to S1. We hypothesize that these heads attend to the previous occurrence of a duplicate token and copy the position of this previous occurrence to the current position. We therefore call them Duplicate Token Heads.</p><p>To partially validate this hypothesis, we investigated these heads' attention patterns on sequences of random tokens (with no semantic meaning). We found that the 2 Duplicate Token Heads pay strong attention to a previous occurrence of the current token when it exists (see Appendix I).</p><p>Induction Heads and Previous Token Heads. The other group of two heads attends from S2 to S1+1. This matches the attention pattern of Induction Heads <ref type="bibr" coords="8,352.15,359.74,79.41,8.64" target="#b4">(Elhage et al., 2021)</ref>, which recognize the general pattern To test the hypothesis that this group of heads consists of Induction Heads, we sought out the Previous Token Heads that they rely on through key composition. To this end, we apply path patching to find heads that influence logit difference through the S1+1 keys of the Induction Heads (see Appendix D). We identified two heads with significant effect sizes. To test the induction mechanism, we followed the method introduced in ) and copying (increasing the logit of the [B] token) of Induction Heads on repeated random sequences of tokens. We also analyzed the attention patterns of Previous Token Heads on the same dataset. As reported in Appendix H, Previous Token Heads attend primarily to the previous token and 2 Induction Heads demonstrate both prefix-matching and copying.</p><p>Locating the position signal. Despite their differences, the attention patterns of both groups of heads are determined by the position of S1, suggesting that their output could also contain this information. We thus hypothesized that Duplicate Token Heads and Induction Heads are the origin of the position signal described in Section 3.2, which is then copied by S-Inhibition Heads.</p><p>To test this hypothesis, we applied the same technique from the previous section to isolate token and position signals. We patched the output of the Induction and Duplicate Token Heads from sentences with altered position signals. We observed a drop in logit difference of almost the same size as patching the S-Inhibition Heads (at least 88%). However, patching their output from a dataset with a different S1 and S2 token but at the same position doesn't change the logit difference (less than 8% of the drop induced by patching S-Inhibition Heads).</p><p>Missing validations and caveats. To fully validate the claimed function of the Duplicate Token and Induction Heads, we would want to perform additional checks that we omitted due to time constraints. First, for Duplicate Token Heads, we would want to study the interaction of the QK matrix with the token embeddings to test if it acts as a collision detector. Moreover, we would investigate the OV matrix to ensure it is copying information from positional embeddings. For Induction Heads, we would perform the more thorough parameter analysis in <ref type="bibr" coords="8,415.88,712.42,78.05,8.64" target="#b4">Elhage et al. (2021)</ref> to validate the copying and key composition properties at the parameter level.</p><p>Moreover, in the context we study, Induction Heads perform a different function compared to what was described in their original discovery. In our circuit, Induction Heads' outputs are used as positional signals for S-Inhibition values. We did not investigate how this mechanism was implemented. More work is needed to precisely characterize these newly discovered heads and understand how they differ from the original description of Induction Heads.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4" coords="9,108.25,156.64,359.29,8.64">DID WE MISS ANYTHING? THE STORY OF THE BACKUP NAME MOVERS HEADS</head><p>Each type of head in our circuit has many copies, suggesting that the model implements redundant behavior<ref type="foot" coords="9,142.66,187.44,3.49,6.05" target="#foot_1">2</ref> . To make sure that we didn't miss any copies, we knocked out all the Name Mover Heads at once. To our surprise, the circuit still worked (only 5% drop in logit difference). After the knockout, we found the new heads directly affecting the logits using the same path patching experiment from Section 3.1. These new heads compensate for the loss of Name Movers Heads by replacing their role.</p><p>We selected the eight heads with the highest direct influence on logit difference after knockout and call them Backup Name Mover Heads. We investigated their behavior before the knockout. We observe diverse behavior: 4 heads show a close resemblance to Name Mover Heads, 2 heads equally attend to IO and S and copy them, 1 head pays more attention to S1 and copies it, and 1 head seems to track and copy subjects of clauses, copying S2 in this case. See Appendix F for further details on these heads.</p><p>We hypothesize that this compensation phenomenon is caused by the use of dropout during training. Thus, the model was optimized for robustness to dysfunctional parts. More work is needed to determine the origin of this phenomenon and if such compensation effects can be observed beyond our special case.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4" coords="9,108.30,384.54,164.57,10.37">EXPERIMENTAL VALIDATION</head><p>In the previous section, we provided an end-to-end explanation of how the model produces a high logit difference between IO and S on the IOI task. Yet Section 3.4 shows that our experimental methods do not fully account for all name-moving in the model: some new heads take on this role after the main Name Mover Heads are knocked out. We therefore seek more systematic validations to check that our account in Section 2.1 includes all components used by the model to perform IOI.</p><p>To formalize this, we first introduce notation to measure the performance of a circuit C on the IOI task. Suppose X ∼ p IOI , and f (C(X); X) is the logit difference between the IO and S tokens when the circuit C is run on the input X (recall that C(X) is defined by knocking out all nodes outside C, as described in Section 2.1). We define the average logit difference F (C) However, as the Backup Name Mover Heads illustrate, faithfulness alone is not enough to ensure a complete account. In Section 4.1 we introduce a toy example that illustrates this issue in more detail and use this to define two other criteria-completeness and minimality-for checking our circuit.</p><formula xml:id="formula_3" coords="9,398.54,504.85,100.23,13.03">def = E X∼pIOI [f (C(X); X)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1" coords="9,108.25,635.65,92.20,8.64">COMPLETENESS</head><p>As a running example, suppose a model M uses two identical and disjoint serial circuits C 1 and C 2 . The two sub-circuits are run in parallel before applying an OR operation to their results. Identifying only one of the circuits is enough to achieve faithfulness, but we want explanations that include both C 1 and C 2 , since these are both used in the model's computation. To solve this problem, we introduce the completeness criterion: for every subset K ⊆ C, the incompleteness score |F (C \ K) -F (M \ K)| should be small. In other words, C and M should not just be similar, but remain similar under knockouts.</p><p>In our running example, we can show that C 1 is not complete by setting</p><formula xml:id="formula_4" coords="10,108.00,342.56,396.00,31.57">K = C 1 . Then C 1 \ K is the empty circuit while M \ K still contains C 2 . The metric |F (C 1 \ K) -F (M \ K)| will be large because C 1 \ K has trivial performance while M \ K successfully performs the task.</formula><p>Testing completeness requires a search over exponentially many subsets K ⊆ C. This is computationally intractable given the size of our circuit, hence we use three sampling methods to seek sets K that give large incompleteness scores:</p><p>• The first sampling method chooses subsets K ⊆ C uniformly at random. • The second sampling method set K to be an entire class of circuit heads G, e.g the Name Mover</p><p>Heads. C \ G should have low performance since it's missing a key component, whereas M \ G might still do well if it has redundant components that fill in for G. • Thirdly, we greedily optimized K node-by-node to maximize the incompleteness score (see Appendix M for details).</p><p>All results are shown in Figure <ref type="figure" coords="10,241.68,492.32,7.93,8.64" target="#fig_5">6a</ref>. The first two methods of sampling K suggested to us that our circuit was complete, as every incompleteness score computed with those methods was small. However, the third resulted in sets K that had high incompleteness score: up to 3.09 (87% of the original logit difference). These greedily-found sets were usually not semantically interpretable (containing heads from multiple categories), and investigating them would be an interesting direction of future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2" coords="10,108.25,574.41,79.26,8.64">MINIMALITY</head><p>A faithful and complete circuit may contain unnecessary components, and so be overly complex. To avoid this, we should check that each of its nodes v is actually necessary. This can be evaluated by showing that v can significantly recover F after knocking out a set of nodes K.</p><p>Formally, the minimality criterion is whether for every node v ∈ C there exists a subset K ⊆ C \ {v} that has high minimality score</p><formula xml:id="formula_5" coords="10,265.10,645.35,138.08,8.74">|F (C \ (K ∪ {v})) -F (C \ K)|.</formula><p>In the running example, we can show that C 1 ∪C 2 is minimal. The proof has two symmetrical cases: v ∈ C 1 and v ∈ C 2 . Without loss of generality, we chose v ∈ C 1 , and then define K = C 2 . The minimality score for this choice of node v and set K is equal to |F (C 1 \ {v}) -F (C 1 )|, which is large since C 1 is a serial circuit and so removing v will destroy the behavior.</p><p>What happens in practice for our circuit? We need to exhibit for every v a set K such that the minimality score is high. For most heads, removing the class of heads G that v is a part of provides  a reasonable minimality score, but in some instances a more careful choice is needed; we provide full details in Appendix K and display final results in Figure <ref type="figure" coords="11,354.68,355.15,3.74,8.64" target="#fig_6">7</ref>. The importance of different nodes varies, but all have a nontrivial impact (at least 1% of the original logit difference). These results ensure that we did not interpret irrelevant nodes, but do show that the individual contribution of some attention heads is small.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3" coords="11,108.25,415.60,197.69,8.64">COMPARISON WITH A BASELINE CIRCUIT</head><p>In the previous sections, we evaluated our circuit on three quantitative criteria. To establish a baseline for these criteria, we compare to a naïve circuit that consists of the Name Mover Heads (but no Backup nor Negative Name Mover Heads), S-Inhibition Heads, two Induction Heads, two Duplicate Token Heads, and the Previous Token Heads. This circuit has a faithfulness score of 0.1, comparable to the full circuit C. However, the naïve circuit can be more easily proven incomplete: by sampling random sets or by knocking-out by classes, we see that F (M \ K) is much higher than F (C \ K) (Figure <ref type="figure" coords="11,140.04,502.90,7.61,8.64" target="#fig_5">6a</ref>). Nonetheless, when we applied the greedy heuristic to optimize for the incompleteness score, both circuits have similarly large incompleteness scores.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4" coords="11,108.25,541.43,184.97,8.64">DESIGNING ADVERSARIAL EXAMPLES</head><p>As argued in <ref type="bibr" coords="11,164.30,562.98,81.00,8.64" target="#b18">Räuker et al. (2022)</ref>, one way to evaluate the knowledge gained by interpretability work is to use it for downstream applications. In this section, we do this by using knowledge of the circuit to construct simple adversarial examples for the model.</p><p>As presented in Section 3, the model relies on duplicate detection to differentiate between S and IO. Motivated by this, we constructed passages where both the S and IO tokens are duplicated. An example is "John and Mary went to the store. Mary had a good day. John gave a bottle of milk to"; see Appendix L for full details. We find that this significantly reduces the logit difference and causes the model to predict S over IO 23% of the time (Figure <ref type="figure" coords="11,329.62,645.67,3.60,8.64">8</ref>).</p><p>To ensure that the observed effect is not an artifact of the additional sentences, we included a control dataset using the same templates, but where the middle sentence contains S instead of IO. In these sentences, S appears three times in total and IO only appears once. On this distribution, the model has an even higher logit difference than on p IOI , and predicts S over IO only 0.4% of the time.</p><p>Limitations of the attack. Despite being inspired by our understanding of our circuit, those examples are simple enough that they could have been found without our circuit with enough effort. Figure <ref type="figure" coords="12,136.65,171.71,3.88,8.64">8</ref>: Summary of GPT-2 performance metrics on the IOI task on different datasets. In the line order: for p IOI , for the dataset where we added an occurrence of S (thus S appears three times in the sentence) and for the adversarial dataset with duplicated IO in natural sentences.</p><p>Moreover, we do not have a full understanding of the mechanisms at play in these adversarial examples. For instance, the S-Inhibition Heads attend not only to S2, but also to the second occurrence of IO. As this pattern is not present in p IOI nor in p ABC , it is beyond the analysis presented in Section 3. The study of the behavior of the circuit on these adversarial examples could be a promising area for future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5" coords="12,108.30,294.79,81.90,10.37">DISCUSSION</head><p>In this work, we isolated, understood and validated a set of attention heads in GPT-2 small composed in a circuit that identifies indirect objects. Along the way, we discovered interesting structures emerging from the model internals. For instance:</p><p>• We identified an example of attention heads communicating by using pointers (sharing the location of a piece of information instead of copying it).</p><p>• We identified heads compensating for the loss of function of other heads, and heads contributing negatively to the next-token prediction. Early results suggest that the latter phenomenon occurs for other tasks beyond IOI (see Appendix H).</p><p>However, our work also has several limitations. First, despite the detailed analysis presented here, we do not understand several components. Those include the attention patterns of the S-Inhibition Heads, and the effect of MLPs and layer norms. Second, the number of parameters in GPT-2 small is orders of magnitude away from state-of-the-art transformer language models. A future challenge is to scale this approach to these larger models.</p><p>As a starting point, we performed a preliminary analysis of GPT-2 medium. We found that this model also has a sparse set of heads directly influencing the logits. However, not all of these heads attend to IO and S, suggesting more complex behavior than the Name Movers Heads in GPT-2 small. Continuing this investigation is an exciting line of future work.</p><p>More generally, we think that zooming in on a clearly defined task in a single model enables a rich description of phenomena that are likely to be found in broader circumstances. In the same way model organisms in biology enable discoveries valuable beyond a specific species, we think these highly detailed (though narrow) examples are crucial to developing a comprehensive understanding of machine learning models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6" coords="14,108.30,430.29,71.68,10.37;14,108.30,457.13,374.71,10.37;14,129.48,471.08,110.08,10.37">APPENDIX A DISENTANGLING TOKEN AND POSITIONAL SIGNAL IN THE OUTPUT OF S-INHIBITION HEADS</head><p>In Section 3.2, we discovered that S-Inhibition Heads are responsible for the Name Mover Heads' specific attention on the IO token, and in particular we discovered that their output is a signal for Name Movers Heads to avoid the S1 token.</p><p>More precisely, we discover that they were outputting token signals (information about the value of the token S) and positional signals (related to the value of the position S1). We describe here the details of this discovery.</p><p>To disentangle the two effects, we design a series of counterfactual datasets where only some signals are present, and some are inverted with respect to the original dataset. In this section, we conducted activation patching (or simply patching). Instead of patching isolated paths, we patch the output of a set of heads and recompute the forward pass of the model after this modification. As shown in Section 3.4, the output of later (Backup) Name Mover Heads and Negative Heads depend on earlier heads from these classes, such that it is not possible to ignore the interactions between heads inside a class (as it is the case in path patching in Appendix B).</p><p>By patching the output of S-Inhibition heads from these datasets, we can quantify in isolation the impact of each signal on the final logit difference.</p><p>We constructed six datasets by combining three transformations of the original p IOI distribution.</p><p>• Random name flip: we replace the names from a given sentence with random names, but we keep the same position for all names. Moreover, each occurrence of a name in the original sentence is replaced by the same random name. When we patch outputs of S-Inhibition heads from this</p><p>Original positional signal Inverted position signal Original S token signal 3.55 (baseline) -0.99 Random S token signal 2.45 -1.96 S↔IO inverted token signal 1.77 -3.16</p><p>Figure <ref type="figure" coords="15,136.24,138.84,3.88,8.64">9</ref>: Logit difference after patching S-Inhibition heads from signal-specific datasets. The effect on logit difference can be decomposed as a sum of the effects of position and token signal. We can also compose these transformations. For instance, we can create a dataset with no token signals and inverted positional signals by applying IO↔S1 flip on the dataset with random names. In total, we can create all six combinations of original, inverted, or uncorrelated token signal with the original and inverted positional signal.</p><p>From each of those six datasets, we patched the output of S-Inhibition heads and measured the logit difference. The results are presented in Figure <ref type="figure" coords="15,294.26,541.06,3.74,8.64">9</ref>.</p><p>These results can be summarized as the sum of the two effects. Suppose we define the variable S tok to be 1 if the token signal is the original, 0 when uncorrelated and -1 when inverted. And similarly S pos to be 1 if the position signal is the original and -1 if inverted. Then the Figure <ref type="figure" coords="15,444.85,579.91,4.98,8.64">9</ref> suggests that the logit difference can be well approximated by 2.31S pos + 0.99S tok , with a mean error of 7% relative to the baseline logit difference.</p><p>For instance, when both the positional and token signals are inverted, the logit difference is the opposite of the baseline. This means that the S token is predicted stronger than the IO token, as strong as IO before patching. In this situation, due to the contradictory information contained in the output of S-Inhibition heads, the Name Movers attend and copy the S1 token instead of the IO token (see Figure <ref type="figure" coords="15,181.85,662.60,8.30,8.64" target="#fig_7">10</ref>, right). In the intermediate cases where only one of the signals is modified, we observe a partial effect compared to the fully inverted case (e.g. Figure <ref type="figure" coords="15,407.96,673.56,8.30,8.64" target="#fig_7">10</ref>, left). The effect size depends on the altered signals: positional signals are more important than token signals.</p><p>Can we be more specific as to what the token and positional signals are? Unfortunately, we do not have a complete answer, but see this as one of the most interesting further directions of our work. We expect that the majority of the positional information is about the relative positional embedding between S1 and S2 (such pointer arithmetic behavior has already been observed in <ref type="bibr" coords="16,452.39,337.20,51.62,8.64;16,108.00,348.16,24.28,8.64" target="#b16">Olsson et al. (2022)</ref>). When patching in S2 Inhibition outputs from a distribution where prefixes to sentences are longer (but the distance between S1 and S2 is constant), the logit difference doesn't change (3.56 before patching vs 3.57 after). This suggests that the positional signal doesn't depend on the absolute position of the tokens, as long as the relative position of S1 and S2 stays the same.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="16,108.30,409.38,100.68,10.37">B PATH PATCHING</head><p>In this section we describe the technical details of the path patching technique we used in many experiments. This technique depends on • x orig the original data point,</p><p>• x new the new data point,</p><p>• h the sender attention head, and</p><p>• R ⊆ M the set of receiver nodes in the model's computational graph M . In our case, R is either the input (key, query or values) of a set of attention heads or the end state of the residual stream<ref type="foot" coords="16,497.52,524.29,3.49,6.05" target="#foot_2">3</ref> .</p><p>It is then implemented as Algorithm 1, which can be summarized in five steps.</p><p>1. Gather activations on x orig and x new . [Lines 1-2, Figure <ref type="figure" coords="16,342.38,570.79,30.44,8.64" target="#fig_8">11A-B]</ref> 2. Freeze<ref type="foot" coords="16,147.00,586.15,3.49,6.05" target="#foot_3">4</ref> all the heads to their activation on x orig except h that is patched to its activation on x new .</p><p>[Lines 4-5, In forward pass C of the algorithm all attention heads except h have their output frozen to their value on x orig . This means that we remove the influence of every path including one (or more) intermediate attention heads p of the form h → p → r, where r ∈ R. In all cases in the paper, we measure the logit difference on the forward pass D compared to the logit difference of the model, as a measure of the importance of the path h → r. We additionally compute this logit difference as an average over N &gt; 200 pairs (x orig , x new ).</p><p>Algorithm 1 Path patching A r patch ← A orig 5:</p><formula xml:id="formula_6" coords="17,112.98,290.31,107.44,22.47">A r patch [h] ← A r new [h] 6:</formula><p>for each MLP m between h and r do </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="17,108.30,492.83,266.75,10.37">C DIRECT EFFECT ON S-INHIBITION HEADS' KEYS</head><p>In this section, we present the direct effect analysis of the S-Inhibition Heads' keys. The experiment is similar to the investigation of the S-Inhibition Heads' values presented in Section 3.2.</p><p>The results presented in Figure <ref type="figure" coords="17,232.80,546.04,14.94,8.64" target="#fig_0">12b</ref> show that some heads significantly influence the logit difference through S-Inhibition Heads' keys. We observe that Duplicate Token Heads (3.0 and 0.1) appear to also influence S-Inhibition Heads' values, but their effect is reversed. Moreover, we identify 3 new heads influencing positively the logit difference: 5.9, 5.8 and 0.10. Fuzzy Duplicate Token Head By looking at its attention pattern, we identified that 0.10 was paying attention to S1 from S2. However, the attention pattern was fuzzy, as intermediate tokens also have non-negligible attention probability. We thus call it a fuzzy Duplicate Token Head. On Open Web Text (OWT), the fuzzy Duplicate Token Head attend to duplicates in a short range (see Appendix I).</p><p>Fuzzy Induction Heads The heads 5.9, 5.8 are paying attention to S1+1. For 5.8, S1+1 is the token with the highest attention probability after the start token. But the absolute value is small (less than 0.1). The head 5.9 is paying attention to S1+1 but also to tokens before S. Because of these less interpretable attention patterns, we called them fuzzy Induction Heads. (see Appendix H for more details about their behavior outside IOI).</p><p>By influencing the keys of the S-Inhibition Heads, we hypothesize that those heads are amplifying the positional signal written by the other Induction and Duplicate Token Heads. Figure <ref type="figure" coords="20,137.79,257.42,8.49,8.64" target="#fig_0">15</ref>: Discovery of the Backup Name Mover Heads. Left: results from the path patching experiment in Figure <ref type="figure" coords="20,195.49,268.38,8.30,8.64">3b</ref>. Right: the same path patching experiment results except computed after knocking out the Name Mover Heads. In both plots, the heads are ordered by decreasing order of the absolute value of their effect.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="20,108.30,312.45,205.49,10.37">G GPT-2 SMALL FULL ARCHITECTURE</head><p>Here we define all components of the GPT-2 architecture, including those we don't use in the main text. GPT-2 small has the following parameters</p><p>• N : number of input tokens.</p><p>• V : length of vocabulary of tokens.</p><p>• d: residual stream dimension.</p><p>• L: number of layers.</p><p>• H: number of heads per layer.</p><p>• D: hidden dimension of MLPs.</p><p>It uses layer norm, the non-linear function</p><formula xml:id="formula_7" coords="20,249.73,460.98,254.27,25.86">LN(x) def = x -x i (x i -xi ) 2 ,<label>(1)</label></formula><p>where the mean and the difference from the mean sum are over all components of the dimension d vector in each sequence position. This is then followed by a learned linear transformation M (different for each layer norm).</p><p>In GPT-2 the MLPs all have one hidden layer of dimension D and use the GeLU non-linearity. Their input is the layer normed state of the residual stream.</p><p>We addressed the parametrisation of each attention head in the main text, and cover the technical details of the W QK and W OV matrix here: the attention pattern is A i,j = softmax(x T W i,j QK x) where the softmax is taken for each token position, and is unidirectional. We then have h i,j (x)</p><formula xml:id="formula_8" coords="20,108.00,589.69,396.00,26.28">def = M • LN((A i,j ⊗ W i,j</formula><p>OV ).x). Algorithm 2 describe how these elements are combined in the forward pass of GPT-2 small.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="20,108.30,651.43,350.58,10.37;20,129.48,666.94,89.54,8.29">H VALIDATION OF THE INDUCTION MECHANISM ON SEQUENCES OF RANDOM TOKENS</head><p>We run GPT-2 small on sequences of 100 tokens sampled uniformly at random from GPT-2's token vocabulary. Each sequence A was duplicated to form AA, a sequence twice as long where the first and second half are identical. On this dataset, we computed two scores from the attention patterns of the attention heads: Algorithm 2 GPT-2.</p><p>Require: Input tokens T ; returns logits for next token.</p><p>1: w ← One-hot embedding of T 2: x 0 ← W E w (sum of token and position embeddings) 3: for i = 0 to L do 4:</p><formula xml:id="formula_9" coords="21,112.98,626.89,92.39,21.27">y i ← 0 ∈ R N ×d 5:</formula><p>for j = 0 to H do 6:</p><p>y i ← y i + h i,j (x i ), the contribution of attention head (i, j)</p><p>7:</p><p>end for 8:</p><p>y i ← m i (y i ), the contribution of MLP at layer i 9:</p><p>x i+1 ← x i + y i + y i (update the residual stream) • The previous token score: we averaged the attention probability on the off-diagonal. This is the average attention from the token at position i to position i -1.</p><p>• The induction score: the average attention probability from T i to the token that comes after the first occurrence of T i (i.e. T i-99 )</p><p>These two scores are depicted in Figure <ref type="figure" coords="22,268.65,399.00,9.96,8.64" target="#fig_13">18</ref> (center and right) for all attention heads.</p><p>Previous Token Heads. 4.11 and 2.2 are the two heads with the highest previous token score on sequences of random tokens. This is a strong validation of their role outside p IOI . 5.5 and 6.9 are among the 5 heads with the highest induction score. This validates their prefixmatching property introduced in <ref type="bibr" coords="22,239.16,504.61,76.93,8.64" target="#b16">Olsson et al. (2022)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="22,108.00,443.44,41.52,8.96">Induction</head><p>To check their copy property, we computed the dot product h i (X), W U [B] between the output of the head h i on sequence X and the embedding of the token [B] on repeated sequences of random tokens. The results are shown in Figure <ref type="figure" coords="22,267.69,543.46,8.30,8.64" target="#fig_6">17</ref>. The two Induction Heads (5.5 and 6.9) appear in the 20 heads contributing the most to the next token prediction. Thus validating their copying property.</p><p>We also noticed that the majority of the Negative, Backup and regular Name Mover Heads appear to write in the next token direction on repeated sequences of random tokens, and Negative Name Movers Heads contribute negatively. This suggests that these heads are involved beyond the IOI task to produce next-token prediction relying on contextual information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="22,108.30,635.46,237.83,10.37">I VALIDATION OF DUPLICATE TOKEN HEADS</head><p>On the repeated sequences of random tokens (Appendix H) we also computed the duplicate score.</p><p>For each token T i in the second half of a sequence, we average the attention probability from T i to its previous occurrence in the first half of the sequence (i.e. T i-100 ).</p><p>The duplicate token scores for all attention heads are depicted in Figure <ref type="figure" coords="22,398.35,701.46,8.30,8.64" target="#fig_13">18</ref>. 3.0 and 0.1 are among the three heads with the highest duplicate token score (Figure <ref type="figure" coords="22,357.93,712.42,7.89,8.64" target="#fig_13">18</ref>). This is evidence of their role of Duplicate Token Heads outside the circuit for the IOI task. However, the fuzzy Duplicate Head 0.10 doesn't appear on this test. By qualitatively investigating its attention patterns on Open Web Text, we found that this head attends strongly to the current token. Moreover, when the current token is a name, and it is duplicated, the head attends to its previous occurrence.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="23,108.30,360.09,163.82,10.37">J ROLE OF MLPS IN THE TASK</head><p>In the main text, all of the circuit components are attention heads. Attention heads are the only modules in transformers that move information across token positions -a crucial component of the IOI task -so they were our main subject of interest. However, MLPs can still play a significant role in transforming the information in each residual stream. We explored this possibility by measuring the direct and indirect effects of each of the MLPs in Figure <ref type="figure" coords="23,346.79,435.27,8.30,8.64" target="#fig_14">19</ref>. In these experiments, for each MLP in turn, we did a path patching experiment (Section 3.2) to measure the direct effect and a knock-out experiment for the indirect effect.</p><p>We observe that MLP0 has a significant influence on logit difference after knock-out (it reverses the sign of the logit difference) but the other layers don't seem to play a big role when individually knocked out. When all MLP layers other than the first layer are knocked out, however, the logit difference becomes -1.1 (a similar effect to the knockout of MLP0 alone). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="23,108.30,692.03,115.26,10.37">K MINIMALITY SETS</head><p>The sets that were found for the minimality tests are listed in Figure <ref type="figure" coords="23,381.11,723.38,8.30,8.64">20</ref>.</p><p>K found by greedy optimization (9, 9), (9, 6), (5, 8), (5, 5), (2, 2) (9, 9), (11, 10), (10, 7), <ref type="bibr" coords="25,313.47,108.55,79.68,8.64">(8, 6), (5, 8), (4, 11)</ref> (10, 7), (5, 5), (2, 2), (4, 11) (9, 9), (11, 10), (10, 7), (11, 2), (3, 0), (5, 8), (2, 2) Figure <ref type="figure" coords="25,177.16,152.59,8.49,8.64">22</ref>: 4 sets K found by the greedy optimization procedure on our circuit.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="25,108.30,174.50,232.45,10.37">L TEMPLATE FOR ADVERSARIAL EXAMPLES</head><p>The design of adversarial examples relies on adding a duplicate IO to the sentences. To this end, we used a modification of the templates described in appendix E. We added an occurrence of <ref type="bibr" coords="25,465.39,210.42,13.83,8.64">[A]</ref> in the form of a natural sentence, independent of the context. The list of sentence is visible in Figure <ref type="figure" coords="25,485.58,221.38,8.30,8.64" target="#fig_15">21</ref>.</p><p>[A] had a good day.</p><p>[A] was enjoying the situation.</p><p>[A] was tired.</p><p>[A] enjoyed being with a friend.</p><p>[A] was an enthusiast person. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="25,108.30,347.17,133.53,10.37">M GREEDY ALGORITHM</head><p>The Algorithm 3 describes the procedure used to sample sets for checking the completeness criteria using greedy optimization. In practice, because the naïve and the full circuit are not of the same size, we chose respectively k = 5 and k = 10 to ensure a similar amount of stochasticity in the process. We run the procedure 10 times and kept the 5 sets with the maximal important incompleteness score (including the intermediate K).</p><p>Algorithm 3 The greedy sampling procedure for sets to validate the completeness citeria. K ← K ∪ {v MAX } 6: end for 7: return K As visible in Figure <ref type="figure" coords="25,188.45,534.81,9.96,8.64">22</ref> the sets found by the greedy search contain a combination of nodes from different classes. This means that it is difficult to interpret how our circuit is incomplete, as mentioned in the main text.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,108.00,222.25,396.00,8.82;2,108.00,233.39,396.00,8.64;2,108.00,244.35,396.00,8.64;2,108.00,255.31,334.57,8.64"><head>Figure 1 :</head><label>1</label><figDesc>Figure1: Left: We isolated a circuit (in orange) responsible for the flow of information connecting the indirect object "Mary" to the next token prediction. The nodes are attention layers and the edges represent the interactions between these layers. Right: We discovered and validated this circuit using causal interventions, including both path patching and knockouts of attention heads.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="6,108.00,278.97,396.00,8.96;6,108.00,290.25,396.00,8.64;6,108.00,301.21,396.00,8.64;6,108.00,311.85,396.00,9.65;6,108.00,323.13,159.13,8.64;6,224.94,172.51,68.56,68.56"><head></head><label></label><figDesc>Figure 3: (a) We are searching for heads h directly affecting the logits using path patching. (b) Results of the path patching experiments. Name Movers and Negative Name Movers Heads are the heads that have the strongest direct effect on the logit difference. (c) Attention probability vs projection of the head output along W U [IO] or W U [S] respectively. For S tokens, we sum the attention probability on both S1 and S2.</figDesc><graphic coords="6,224.94,172.51,68.56,68.56" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="7,108.00,212.38,396.00,8.64;7,108.00,222.91,396.00,9.76;7,108.00,234.30,396.00,8.64;7,108.00,245.26,396.00,8.64;7,108.00,255.79,396.00,9.76;7,108.00,267.18,396.00,8.64;7,108.00,278.13,385.90,8.64;7,251.21,119.63,71.57,71.57"><head></head><label></label><figDesc>Figure 4: (a) Diagram of the direct effect experiments on Name Mover Heads' queries. We patch in the red path from the p ABC distribution. Then, we measure the indirect effect of h on the logits (dotted line). All attention heads are recomputed on this path. (b) Result of the path patching experiments. The four heads causing a decrease in logit difference are S-Inhibition Heads. (c) Attention of Name Mover Heads on p IOI before and after path patching of S-Inhibition Heads → Name Mover Heads' queries for all four S-Inhibition Heads at once (black bars show the standard deviation). S-Inhibition Heads are responsible for Name Mover Heads' selective attention on IO.</figDesc><graphic coords="7,251.21,119.63,71.57,71.57" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="8,184.90,370.70,319.10,8.64;8,108.00,381.66,396.00,8.64;8,108.00,392.62,396.00,8.64;8,108.00,403.58,225.10,8.64"><head></head><label></label><figDesc>[A] [B] ... [A] and contribute to predicting [B] as the next token. For this, they act in pairs with Previous Token Heads. The Previous Token Heads write information about [A] into the residual stream at [B]. Induction Heads can then match the next occurrence of [A] to that position (and subsequently copy [B] to the output).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="9,498.77,508.23,5.23,8.74;9,108.00,519.19,201.53,8.96;9,108.00,536.06,396.00,9.03;9,108.00,547.09,395.29,8.96;9,108.00,558.05,396.00,8.96;9,108.00,569.01,169.79,8.96"><head></head><label></label><figDesc>] as a measure of how well C performs the IOI task. Using F , we introduce three criteria for validating a circuit C. The first one, faithfulness, asks that C has similar performance to the full model M , as measured by |F (M ) -F (C)|. For the circuit C from Figure 2, we find that |F (M ) -F (C)| = 0.46, or only 13% of F (M ) = 3.56. In other words, C achieves 87% of the performance of M .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="10,108.00,234.62,396.00,9.65;10,108.00,245.58,396.00,8.96;10,108.00,256.54,396.00,8.96;10,108.00,267.50,396.00,9.65;10,108.00,278.46,80.36,8.96"><head>FullFigure 6 :</head><label>6</label><figDesc>Figure 6: Plot of points (x K , y K ) = (F (C \ K), F (M \ K)) for (a) our circuit and (b) a naive circuit. Each point is for a different choice of K. We show sets K obtained from different sampling strategies: 10 uniformly randomly chosen K ⊆ C, K = ∅, K a class of heads from the circuit, and 10 K found by greedy optimization. Since the incompleteness score is |x K -y K |, we show the line y = x for reference.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6" coords="11,108.00,296.46,396.00,8.96;11,108.00,307.42,396.00,8.96;11,108.00,318.38,269.17,8.96"><head>Figure 7 :</head><label>7</label><figDesc>Figure 7: Plot of minimality scores |F (C \ (K ∪ {v})) -F (C \ K)| (as percentages of F (M )) for all components v in our circuit. The sets K used for each component, as well as the initial and final values of the logit difference for each of these v are in Appendix K.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7" coords="15,108.00,328.14,396.00,8.64;15,108.00,339.10,396.00,8.64;15,108.00,350.06,396.00,8.64;15,108.00,361.02,396.00,8.64;15,108.00,371.98,39.32,8.64"><head>Figure 10 :</head><label>10</label><figDesc>Figure 10: Name Mover Heads' attention probability before and after patching S-Inhibition Heads from signal-specific datasets. Left: patching from the dataset generated by random flip of name (same position signal, random token signal). Right: patching from the dataset generated by IO←S2 replacement (inverted position signal, inverted token signal). Black bars represent the standard deviation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8" coords="16,108.00,280.13,396.00,8.96;16,108.00,291.08,396.00,8.96;16,108.00,302.04,395.99,8.96;16,108.00,313.32,238.23,8.64"><head>Figure 11 :</head><label>11</label><figDesc>Figure 11: Illustration of the four forward passes in the path patching method. h = 0.1 and R = {2.0, 3.1}. The layer norms are not shown for clarity. In the forward pass C, we show in red all the paths through which h can influence the value of heads in R. Nodes in black are recomputed, nodes in color are patched or frozen to their corresponding values.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9" coords="16,164.17,598.78,48.43,8.64;16,108.00,614.07,396.00,9.81;16,117.96,625.35,176.57,8.64;16,108.00,640.64,396.00,8.96;16,117.96,651.92,386.04,8.64;16,117.96,662.87,19.93,8.64;17,108.00,85.02,396.00,9.81;17,117.96,96.30,77.20,8.64;17,108.00,118.30,396.00,9.65;17,108.00,129.25,396.00,9.65;17,108.00,140.21,336.94,8.96"><head></head><label></label><figDesc>a forward pass of the model on x orig with the frozen and patched nodes (MLPs and layer norm are recomputed). [Line 7, Figure 11C] 4. In this forward pass, save the activation of the model components r ∈ R as if they were recomputed (but this value is overwritten in the forward pass because they are frozen). [Line 6-9, Figure 11C] 5. Run a last forward pass on x orig patching the receiver nodes in R to the saved values. [Lines 12-20, Figure 11D] Each of the A variables in Algorithm 1 (A orig , A new and A patch ) stores activations for all nodes in M . A orig and A new contain output activations while A patch contains the activation of the nodes in R (keys, queries or values of attention heads, or the end state of the residual stream).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10" coords="17,112.98,315.97,6.98,7.77;17,154.82,315.00,55.34,8.96;17,210.17,313.43,3.70,6.12;17,210.17,320.00,15.11,6.05;17,225.77,315.00,116.17,8.96;17,341.94,313.43,3.70,6.12;17,341.94,320.00,15.11,6.05;17,360.03,315.32,66.85,8.64;17,112.98,328.08,6.98,7.77;17,139.88,327.04,30.47,8.96;17,112.98,339.04,6.98,7.77;17,139.88,338.07,55.34,8.96;17,195.22,336.49,3.70,6.12;17,195.22,343.07,15.11,6.05;17,210.83,338.07,112.19,8.96;17,323.02,336.49,3.70,6.12;17,323.02,343.07,15.11,6.05;17,341.11,338.39,66.85,8.64;17,108.50,350.10,46.91,8.96;17,108.50,362.10,11.46,7.77;17,108.50,372.09,57.29,9.81;17,108.50,382.98,395.51,9.03;17,108.50,394.98,11.46,7.77;17,139.88,393.94,54.02,8.96;17,108.50,405.94,11.46,7.77;17,154.82,404.97,53.18,9.81;17,208.01,403.39,3.56,6.12;17,208.01,409.97,15.11,6.05;17,223.61,404.97,9.85,8.74;17,108.50,416.89,11.46,7.77;17,139.88,415.86,15.49,8.96;17,108.50,427.85,11.46,7.77;17,154.82,426.89,168.86,9.81;17,108.50,438.81,11.46,7.77;17,139.88,437.77,24.08,8.96;17,108.50,448.73,46.91,8.96;17,108.50,459.69,97.64,9.88"><head></head><label></label><figDesc>patch [m] from the activations in A r patch (forward pass C) patch [r] from the activations in A r patch (forward pass C) 10: end for 11:12: A final ← ∅ 13: for c ∈ M nodes of the computational graph, in topologically sorted order, do (forward pass D) for 20: return A final[Logits]    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11" coords="21,108.00,502.85,396.00,8.64;21,108.00,513.48,396.00,9.65;21,108.00,524.76,39.00,8.64;21,232.61,379.73,271.38,111.96"><head>Figure 16 :</head><label>16</label><figDesc>Figure 16: Four examples of Backup Name Mover Heads. Left: attention probability vs projection of the head output along W U [IO] or W U [S] respectively. Right: Attention pattern on a sample sequence.</figDesc><graphic coords="21,232.61,379.73,271.38,111.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12" coords="22,152.67,443.44,351.33,9.03;22,108.00,454.79,396.00,8.64;22,108.00,465.75,396.00,8.64;22,108.00,476.71,394.41,8.64"><head></head><label></label><figDesc>Heads. Olsson et al. (2022) define an Induction Head according to its behavior on repeated sequences of random tokens. The attention head must demonstrate two properties. i) Prefixmatching property. The head attends to [B] from the last [A] on pattern like [A] [B] ... [A] ii) Copy property. The head contribute positively to the logit of [B] on the pattern [A][B]...[A].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13" coords="23,108.00,223.42,396.00,8.64;23,108.00,234.38,396.00,8.64;23,108.00,245.34,396.00,8.64;23,108.00,256.30,379.03,8.64;23,59.68,87.39,224.14,127.05"><head>Figure 18 :</head><label>18</label><figDesc>Figure 18: Attention scores on sequences of repeated random tokens. Left: Duplicate score, the average attention probability from a token to its previous occurrence. Center: Previous token attention score, it is the average of the off-diagonal attention probability. Right: Induction score. Average attention probability from the second occurrence of [A] to [B] on patterns [A][B]...[A].</figDesc><graphic coords="23,59.68,87.39,224.14,127.05" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14" coords="23,108.00,639.55,396.00,8.64;23,108.00,650.50,145.00,8.64;23,302.65,650.50,192.86,8.64"><head>Figure 19 :</head><label>19</label><figDesc>Figure 19: Left: change in logit difference from knocking out each MLP layer. Right: change in logit difference after a path patching investigating the direct effect of MLPs on logits.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15" coords="25,108.00,305.33,396.00,8.64;25,108.00,316.29,223.12,8.64"><head>Figure 21 :</head><label>21</label><figDesc>Figure 21: Templates for the natural sentences used in the generation of adversarial examples. The sentences were chosen to be independent of the context.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16" coords="25,112.98,449.44,41.61,8.74;25,112.98,460.33,65.19,9.03;25,112.98,472.32,6.98,7.77;25,139.88,471.36,236.04,8.96;25,112.98,483.28,6.98,7.77;25,139.88,482.31,70.75,9.81;25,210.63,486.79,14.31,6.12;25,228.81,482.31,135.59,8.74;25,112.98,494.24,6.98,7.77"><head></head><label></label><figDesc>subset V ⊆ C \ K of k nodes uniformly. 4: v MAX ← arg max v∈V |F (C \ (K ∪ {v})) -F (C \ K)| 5:</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="17,112.98,246.30,232.77,41.62"><head></head><label></label><figDesc>1: Compute all activations A new on x new (forward pass A) 2: Compute all activations A orig on x orig (forward pass B)</figDesc><table /><note coords="17,112.98,268.15,64.52,8.96;17,112.98,280.14,6.98,7.77"><p>3: for r ∈ R do 4:</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="21,108.50,694.15,125.77,20.68"><head></head><label></label><figDesc>10: end for 11: return W U • M • LN • x L Contribution to the next token prediction per head on repeated sequences of tokens. The heads are ordered by decreasing absolute values of contribution. Black contour: heads with attention patterns demonstrating prefix matching property.</figDesc><table coords="22,108.00,92.32,376.18,204.32"><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="16">Average contribution to next token</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="11">on repeated sequence</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>25</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>20</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Dot prod. of head output and</cell><cell>next token embedding</cell><cell>-5 0 5 10 15</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Name Mover Heads Backup Name Mover Heads Negative Name Mover Heads Induction Heads from our circuit Other induction heads Others</cell></row><row><cell></cell><cell></cell><cell>-10</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>-15</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>7.2</cell><cell>9.9</cell><cell>7.10</cell><cell>6.9</cell><cell>9.6</cell><cell>10.7</cell><cell>11.9</cell><cell>10.1</cell><cell>5.1</cell><cell>10.0</cell><cell>11.10</cell><cell>10.6</cell><cell>8.1</cell><cell>10.11</cell><cell>10.10</cell><cell>5.5</cell><cell>9.1</cell><cell>11.5</cell><cell>10.3</cell><cell>9.0</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">Figure 17:</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="6,124.14,694.14,379.86,7.77;6,108.00,704.10,396.00,7.77;6,108.00,714.06,396.00,7.77;6,108.00,724.02,101.60,7.77"><p>In GPT-2 small, there is a layer norm before the final unembedding matrix. This means that these dot products computed are not appropriately scaled. However, empirically we found that approaches to approximating the composition of attention head outputs with this layer norm were complicated, and resulted in similar correlation and scatter plots.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1" coords="9,124.14,714.06,379.86,7.77;9,108.00,724.02,315.43,7.77"><p>It is unlikely that SGD would select for perfectly redundant modules, but redundancy is more likely when analyzing a sub-distribution of all of a model's training data or a subtask of its behavior.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2" coords="16,124.14,683.26,379.86,7.77;16,108.00,692.94,306.21,8.06"><p>The model uses the end state of the residual stream to compute the logits (after a layer norm), so we choose R equal to this end state when we wish to measure the direct effect of h on the logits.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3" coords="16,124.14,703.81,379.86,8.06;16,108.00,713.77,396.00,8.06;16,108.00,724.02,157.12,7.77"><p>We use 'freezing' of an activation a to refer to the special case of patching when we begin a forward pass on an input x, edit some earlier activations, and then want to patch a to its value on a forward pass of x (which did not have the edits of earlier activations).</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head coords="12,108.25,612.16,91.82,8.64">ACKNOWLEDGMENTS</head><p>The authors would like to thank <rs type="person">Neel Nanda</rs>, <rs type="person">Ryan Greenblatt</rs>, <rs type="person">Lisa Dunlap</rs>, <rs type="person">Nate Thomas</rs>, <rs type="person">Stephen Casper</rs>, <rs type="person">Kayo Yin</rs>, <rs type="person">Dan Hendrycks</rs>, <rs type="person">Nora Belrose</rs>, <rs type="person">Jacob Hilton</rs>, <rs type="person">Charlie Snell</rs> and <rs type="person">Lawrence Chan</rs> for their useful feedback.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>. For this, we used path patching. The results of the experiment are visible in Figure <ref type="figure" coords="18,491.55,524.07,8.30,8.64">13</ref>. We identify two main heads causing a decrease in logit difference (and thus contributing positively to the logit difference): 4.11 and 2.2. These heads pay primary attention to the previous token. This is coherent with the Previous Token Heads we were expecting. We thoroughly investigate their attention patterns outside of p IOI in Appendix H. <ref type="bibr" coords="18,108.00,584.84,78.14,8.64" target="#b16">Olsson et al. (2022)</ref> also describes an induction mechanism relying on query composition in GPT-2. We performed path patching to investigate heads influencing the Induction Heads queries at the S2 position, but did not find any significant effect.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="18,108.30,653.85,101.61,10.37">E IOI TEMPLATES</head><p>We list all the templates we used in Figure <ref type="figure" coords="18,278.27,690.50,8.30,8.64">14</ref>. Each name was drawn from a list of 100 English first names, while the place and the object were chosen among a hand-made list of 20 common words. All the words chosen were one token long to ensure proper sequence alignment computation of the mean activations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="19,280.11,83.02,70.56,9.76;19,177.01,94.80,277.27,8.64;19,156.53,106.16,318.22,8.64;19,138.46,117.52,354.36,8.64;19,114.38,128.88,402.53,8.64">Templates in p IOI Then, [B] and [A] went to the [PLACE]. [B] gave a [OBJECT] to [A] Then, [B] and [A] had a lot of fun at the [PLACE]. [B] gave a [OBJECT] to [A] Then, [B] and [A] were working at the [PLACE]. [B] decided to give a [OBJECT] to [A] Then, [B] and [A] were thinking about going to the [PLACE]. [B] wanted to give a [OBJECT] to [A]</head><p>Then </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="19,108.30,336.98,178.34,10.37">F BACKUP NAME MOVER HEADS</head><p>Here we discuss in more detail the discovery of the Backup Name Mover Heads. As shown in Figure <ref type="figure" coords="19,108.00,378.33,8.30,8.64">15</ref>, knocking-out the three main Name Mover Heads surprisingly changes the behavior of the other heads that write in the IO-S direction (both positively and negatively). These heads compensate for the loss of function from the Name Mover Heads such that the logit difference is only 5% lower. We observe that the Negative Name Mover Heads have a less negative effect on logit difference, and 10.7 even has a positive effect on the logit difference after the knockout. The other heads that affected slightly positively the logit difference before the knock-out become the main contributors. Both the reason and the mechanism of this compensation effect are still unclear. We think that this could be an interesting phenomenon to investigate in future works.</p><p>Among the heads influencing positively the logit difference after knockout, we identified S-Inhibition Heads and a set of other heads that we called Backup Name Mover Heads. We arbitrarily chose to keep the eight heads that were not part of any other groups, and affected the logit difference with an effect size above the threshold of 2%.</p><p>In Figure <ref type="figure" coords="19,149.35,521.79,9.96,8.64">16</ref> we analyze the behavior of those newly identified heads with similar techniques as Name Mover Heads. Those can be grouped in 4 categories.</p><p>• Four heads (9.0, 10.1, 10.10 and 10.6) that behave similarly to Name Mover Heads in their attention patterns, and the scatter plots of attention vs. dot product of their output with</p><p>(e.g 10.10 in Figure <ref type="figure" coords="19,276.94,582.62,7.89,8.64">16</ref>).</p><p>• Two heads (10.2, 11.9) that pay equal attention to S1 and IO and write both of them (e.g 10.2 in Figure <ref type="figure" coords="19,146.47,616.57,7.89,8.64">16</ref>).</p><p>• One head, 11.2, that pays more attention to S1 and writes preferentially in the direction of W U [S].</p><p>• One head, 9.7, pays attention to S2 and writes negatively.</p><p>We did not thoroughly investigate this diversity of behavior, more work can be done to precisely describe these heads. However, these heads are also the ones with the less individual importance for the task (as shown by their minimality score in Figure <ref type="figure" coords="19,324.50,712.42,3.60,8.64">7</ref>). The exact choice of Backup Name Mover Heads doesn't change significantly the behavior of the circuit. </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="12,108.00,701.46,396.00,8.64;12,117.96,712.24,386.03,8.82;12,117.96,723.20,100.17,8.82" xml:id="b0">
+	<monogr>
+		<title level="m" type="main" coord="12,117.96,712.42,322.86,8.64">Hidden progress in deep learning: Sgd learns parities near the computational limit</title>
+		<author>
+			<persName coords=""><forename type="first">Boaz</forename><surname>Barak</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Surbhi</forename><surname>Benjamin L Edelman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sham</forename><surname>Goel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eran</forename><surname>Kakade</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cyril</forename><surname>Malach</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2207.08799</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,85.34,396.00,8.64;13,117.96,96.12,386.04,8.82;13,117.96,108.19,193.77,7.01" xml:id="b1">
+	<monogr>
+		<title level="m" type="main" coord="13,201.14,96.30,146.65,8.64">An interpretability illusion for BERT</title>
+		<author>
+			<persName coords=""><forename type="first">Tolga</forename><surname>Bolukbasi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adam</forename><surname>Pearce</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ann</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andy</forename><surname>Coenen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Emily</forename><surname>Reif</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fernanda</forename><forename type="middle">B</forename><surname>Viégas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Wattenberg</surname></persName>
+		</author>
+		<idno>CoRR, abs/2104.07143</idno>
+		<ptr target="https://arxiv.org/abs/2104.07143" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,127.67,396.00,8.64;13,117.96,138.63,386.04,8.64;13,117.96,149.59,386.04,8.64;13,117.96,160.55,386.04,8.64;13,117.96,171.51,386.04,8.64;13,117.96,182.47,386.04,8.64;13,117.96,193.25,386.04,8.82;13,117.96,204.21,386.04,8.82;13,117.96,215.35,386.04,8.64;13,117.96,227.24,254.05,7.01" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coord="13,373.33,182.47,130.67,8.64;13,117.96,193.43,30.24,8.64">Language models are few-shot learners</title>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Benjamin</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nick</forename><surname>Ryder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Melanie</forename><surname>Subbiah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jared</forename><forename type="middle">D</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Prafulla</forename><surname>Dhariwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arvind</forename><surname>Neelakantan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pranav</forename><surname>Shyam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Girish</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sandhini</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ariel</forename><surname>Herbert-Voss</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gretchen</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Henighan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rewon</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Ziegler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeffrey</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Clemens</forename><surname>Winter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mark</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eric</forename><surname>Sigler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mateusz</forename><surname>Litwin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Scott</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Benjamin</forename><surname>Chess</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jack</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><surname>Berner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sam</forename><surname>Mccandlish</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dario</forename><surname>Amodei</surname></persName>
+		</author>
+		<ptr target="https://proceedings.neurips.cc/paper/2020/file/1457" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,489.61,193.25,14.39,8.59;13,117.96,204.21,203.85,8.59">Advances in Neural Information Processing Systems</title>
+		<editor>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Ranzato</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Hadsell</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Balcan</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Curran Associates, Inc</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1877" to="1901" />
+		</imprint>
+	</monogr>
+	<note>c0d6bfcb4967418bfb8ac142f64a-Paper.pdf</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,246.72,396.00,8.64;13,117.96,257.50,153.57,8.82" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coord="13,341.22,246.72,162.78,8.64;13,117.96,257.68,31.73,8.64">A literature survey of recent advances in chatbots</title>
+		<author>
+			<persName coords=""><forename type="first">Guendalina</forename><surname>Caldarini</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sardar</forename><surname>Jaf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenneth</forename><surname>Mcgarry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="13,157.25,257.50,45.92,8.59">Information</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">41</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,278.10,396.00,8.64;13,117.96,289.06,386.04,8.64;13,117.96,300.02,386.04,8.64;13,117.96,310.98,386.04,8.64;13,117.96,321.76,386.04,8.82;13,117.96,332.89,266.88,8.64" xml:id="b4">
+	<monogr>
+		<title level="m" type="main" coord="13,170.12,321.94,206.20,8.64">A mathematical framework for transformer circuits</title>
+		<author>
+			<persName coords=""><forename type="first">Nelson</forename><surname>Elhage</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neel</forename><surname>Nanda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Catherine</forename><surname>Olsson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Henighan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicholas</forename><surname>Joseph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ben</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuntao</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anna</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Conerly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nova</forename><surname>Dassarma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dawn</forename><surname>Drain</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Deep</forename><surname>Ganguli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zac</forename><surname>Hatfield-Dodds</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danny</forename><surname>Hernandez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andy</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jackson</forename><surname>Kernion</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liane</forename><surname>Lovitt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kamal</forename><surname>Ndousse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dario</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jack</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jared</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sam</forename><surname>Mccandlish</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Olah</surname></persName>
+		</author>
+		<ptr target="https://transformer-circuits.pub/2021/framework/index.html" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note>Transformer Circuits Thread</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,353.31,396.00,8.64;13,117.96,364.09,386.03,8.82;13,117.96,375.05,386.04,8.82;13,117.96,387.13,80.20,7.01" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coord="13,387.08,353.31,116.92,8.64;13,117.96,364.27,34.59,8.64">Causal abstractions of neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Atticus</forename><surname>Geiger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hanson</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Thomas</forename><forename type="middle">F</forename><surname>Icard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><surname>Potts</surname></persName>
+		</author>
+		<ptr target="https://openreview.net/forum?id=RmuXDtjDhG" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,455.64,364.09,48.36,8.59;13,117.96,375.05,156.67,8.59">Advances in Neural Information Processing Systems</title>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Beygelzimer</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Dauphin</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Liang</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">J</forename><forename type="middle">Wortman</forename><surname>Vaughan</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,406.61,396.00,8.64;13,117.96,417.39,246.22,8.82" xml:id="b6">
+	<monogr>
+		<title level="m" type="main" coord="13,357.48,406.61,146.52,8.64;13,117.96,417.57,78.42,8.64">Transformer feed-forward layers are key-value memories</title>
+		<author>
+			<persName coords=""><forename type="first">Mor</forename><surname>Geva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Roei</forename><surname>Schuster</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Berant</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Levy</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.14913</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,437.81,396.00,8.82" xml:id="b7">
+	<monogr>
+		<title level="m" type="main" coord="13,261.24,437.98,117.67,8.64">X-risk analysis for ai research</title>
+		<author>
+			<persName coords=""><forename type="first">Dan</forename><surname>Hendrycks</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mantas</forename><surname>Mazeika</surname></persName>
+		</author>
+		<idno>arXiv, abs/2206.05862</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,458.40,396.00,8.64;13,117.96,469.18,386.04,8.82;13,117.96,480.14,130.25,8.82" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coord="13,158.36,469.36,212.21,8.64">Natural language descriptions of deep visual features</title>
+		<author>
+			<persName coords=""><forename type="first">Evan</forename><surname>Hernandez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sarah</forename><surname>Schwettmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Bau</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Teona</forename><surname>Bagashvili</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Antonio</forename><surname>Torralba</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jacob</forename><surname>Andreas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,390.21,469.18,113.79,8.59;13,117.96,480.14,101.20,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,500.56,395.99,8.82;13,117.96,511.52,386.04,8.59;13,117.96,522.48,386.03,8.82;13,117.96,533.61,386.04,8.64;13,117.96,544.57,222.66,8.64" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coord="13,264.22,500.74,114.90,8.64">Attention is not Explanation</title>
+		<author>
+			<persName coords=""><forename type="first">Sarthak</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Byron</forename><forename type="middle">C</forename><surname>Wallace</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/N19-1357</idno>
+		<ptr target="https://aclanthology.org/N19-1357" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,403.32,500.56,100.67,8.59;13,117.96,511.52,386.04,8.59;13,117.96,522.48,123.33,8.59">Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<title level="s" coord="13,290.77,522.48,86.55,8.59">Long and Short Papers</title>
+		<meeting>the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies<address><addrLine>Minneapolis, Minnesota</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2019-06">June 2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="3543" to="3556" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,564.99,396.00,8.64;13,117.96,575.77,239.27,8.82" xml:id="b10">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Kevin</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Bau</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Andonian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yonatan</forename><surname>Belinkov</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2202.05262</idno>
+		<title level="m" coord="13,387.61,564.99,116.39,8.64;13,117.96,575.95,72.30,8.64">Locating and editing factual associations in gpt</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,596.19,396.00,8.82;13,117.96,607.15,206.12,8.82" xml:id="b11">
+	<monogr>
+		<title level="m" type="main" coord="13,298.62,596.19,205.38,8.82;13,117.96,607.15,162.16,8.59">Are sixteen heads really better than one? Advances in neural information processing systems</title>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Michel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Graham</forename><surname>Neubig</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">32</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,627.57,396.00,8.82;13,117.96,638.53,195.75,8.82" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coord="13,227.22,627.75,153.76,8.64">Compositional explanations of neurons</title>
+		<author>
+			<persName coords=""><forename type="first">Jesse</forename><surname>Mu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jacob</forename><surname>Andreas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,388.34,627.57,115.67,8.59;13,117.96,638.53,94.09,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="17153" to="17163" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,659.12,147.66,8.64;13,274.63,659.12,229.37,8.64;13,117.96,670.08,386.03,8.64;13,117.96,681.98,309.84,7.01" xml:id="b13">
+	<monogr>
+		<title level="m" type="main" coord="13,274.63,659.12,225.09,8.64">A mechanistic interpretability analysis of grokking</title>
+		<author>
+			<persName coords=""><forename type="first">Neel</forename><surname>Nanda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Lieberum</surname></persName>
+		</author>
+		<ptr target="https://www.alignmentforum.org/posts/N6WM6hs7RQMKDhYjB/a-mechanistic-interpretability-analysis-of-grokking" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,701.46,396.00,8.64;13,117.96,712.42,386.03,8.64;13,117.96,723.38,92.45,8.64" xml:id="b14">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Olah</surname></persName>
+		</author>
+		<ptr target="https://www.transformer-circuits.pub/2022/mech-interp-essay" />
+		<title level="m" coord="13,165.62,701.46,334.37,8.64">Mechanistic interpretability, variables, and the importance of interpretable bases</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="2022" to="2037" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,85.34,396.00,8.64;14,117.96,96.12,386.04,8.82;14,117.96,107.26,161.09,8.64" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coord="14,117.96,96.30,163.45,8.64">Zoom in: An introduction to circuits</title>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Olah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nick</forename><surname>Cammarata</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ludwig</forename><surname>Schubert</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Goh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Petrov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shan</forename><surname>Carter</surname></persName>
+		</author>
+		<idno type="DOI">10.23915/distill.00024.001</idno>
+		<ptr target="https://distill.pub/2020/circuits/zoom-in" />
+	</analytic>
+	<monogr>
+		<title level="j" coord="14,298.76,96.12,23.98,8.59">Distill</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,126.76,396.00,8.64;14,117.96,137.71,386.04,8.64;14,117.96,148.49,188.34,8.82" xml:id="b16">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Catherine</forename><surname>Olsson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nelson</forename><surname>Elhage</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neel</forename><surname>Nanda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicholas</forename><surname>Joseph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nova</forename><surname>Dassarma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Henighan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ben</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuntao</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anna</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2209.11895</idno>
+		<title level="m" coord="14,376.14,137.71,127.86,8.64;14,117.96,148.67,20.98,8.64">-context learning and induction heads</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,108.00,168.17,396.00,8.64;14,117.96,179.13,200.60,8.64" xml:id="b17">
+	<monogr>
+		<title level="m" type="main" coord="14,464.72,168.17,39.28,8.64;14,117.96,179.13,170.81,8.64">Language models are unsupervised multitask learners</title>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeff</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rewon</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dario</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,198.63,396.00,8.64;14,117.96,209.59,386.04,8.64;14,117.96,221.49,157.91,7.01" xml:id="b18">
+	<monogr>
+		<title level="m" type="main" coord="14,412.86,198.63,91.14,8.64;14,117.96,209.59,287.12,8.64">Toward transparent ai: A survey on interpreting the inner structures of deep neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Tilman</forename><surname>Räuker</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anson</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Casper</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dylan</forename><surname>Hadfield-Menell</surname></persName>
+		</author>
+		<ptr target="https://arxiv.org/abs/2207.13243" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,240.05,396.00,8.64;14,117.96,250.83,386.04,8.82;14,117.96,261.79,200.18,8.82" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coord="14,273.76,251.01,100.28,8.64">Attention is all you need</title>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aidan</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Łukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Illia</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="14,396.97,250.83,107.04,8.59;14,117.96,261.79,106.26,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,281.47,396.00,8.64;14,117.96,292.42,386.04,8.64;14,117.96,303.20,308.78,8.82" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coord="14,184.47,292.42,315.69,8.64">Investigating gender bias in language models using causal mediation analysis</title>
+		<author>
+			<persName coords=""><forename type="first">Jesse</forename><surname>Vig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sebastian</forename><surname>Gehrmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yonatan</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sharon</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Nevo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yaron</forename><surname>Singer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stuart</forename><surname>Shieber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="14,117.96,303.20,207.11,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="12388" to="12401" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,322.88,396.00,8.64;14,117.96,333.84,386.04,8.64;14,117.96,344.80,386.04,8.64;14,117.96,355.58,118.99,8.82" xml:id="b21">
+	<monogr>
+		<title level="m" type="main" coord="14,327.99,344.80,171.54,8.64">Emergent abilities of large language models</title>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rishi</forename><surname>Bommasani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Colin</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Barret</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sebastian</forename><surname>Borgeaud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dani</forename><surname>Yogatama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Maarten</forename><surname>Bosma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Denny</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Donald</forename><surname>Metzler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ed</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tatsunori</forename><surname>Hashimoto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Oriol</forename><surname>Vinyals</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Percy</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeff</forename><surname>Dean</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">William</forename><surname>Fedus</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2206.07682</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,375.26,396.00,8.64;14,117.96,386.04,386.04,8.82;14,117.96,397.18,47.32,8.64" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coord="14,340.82,375.26,163.19,8.64;14,117.96,386.22,232.64,8.64">Shifting machine learning for healthcare from development to deployment and from models to data</title>
+		<author>
+			<persName coords=""><forename type="first">Angela</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joseph</forename><forename type="middle">C</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="14,358.82,386.04,125.61,8.59">Nature Biomedical Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1 @@
+For instance, GPT-2 Small has been shown to implement induction heads that copy tokens across positions, as well as a circuit for indirect object identification (IOI) [11,13].

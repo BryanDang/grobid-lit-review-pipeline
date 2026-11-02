@@ -1,0 +1,26 @@
+{
+  "arXiv:2407.02646": {
+    "title": "survey",
+    "arxiv_id": "2407.02646",
+    "doi": null,
+    "doc_version": null,
+    "grobid_tag": "lfoppiano/grobid:0.8.0",
+    "tei_path": "data/survey.grobid.tei.xml"
+  },
+  "arXiv:2211.00593": {
+    "title": "Interpretability in the Wild: a Circuit for IOI in GPT-2 small",
+    "arxiv_id": "2211.00593",
+    "doi": null,
+    "doc_version": null,
+    "grobid_tag": "lfoppiano/grobid:0.8.0",
+    "tei_path": "data/IOI_2211.00593.grobid.tei.xml"
+  },
+  "arXiv:2202.05262": {
+    "title": "Locating and Editing Factual Associations in GPT (ROME)",
+    "arxiv_id": "2202.05262",
+    "doi": null,
+    "doc_version": null,
+    "grobid_tag": "lfoppiano/grobid:0.8.0",
+    "tei_path": "data/ROME_2202.05262.grobid.tei.xml"
+  }
+}

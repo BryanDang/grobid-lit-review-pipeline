@@ -1,0 +1,1 @@
+This manual mapping of the IOI circuit provided a human-understandable algorithm: GPT-2's solution could be summarized as find all names in the prompt, filter out the one that appears twice, and output the remaining name.

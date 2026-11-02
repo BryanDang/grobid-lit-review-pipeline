@@ -1,0 +1,1 @@
+A one-hop patch swaps the output of a single attention head, while multi-hop patching propagates such replacements across multiple layers.

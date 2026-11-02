@@ -1,0 +1,23 @@
+{
+  "_comment": "ClaimRow schema for the Lit Review corpus (JSONL master). Single source of truth for required fields + enums. check_integrity.py imports this.",
+  "schema_version": "1",
+  "unit_of_analysis": "one method-claim pair (config [DECIDED] 2026-07-09)",
+  "columns": {
+    "row_id":  {"required": true,  "type": "string", "_comment": "stable within-doc id; with doc_id uniquely keys the row"},
+    "doc_id":  {"required": true,  "type": "string", "_comment": "canonical namespaced id: arXiv:<id> (version-stripped) or doi:<id>"},
+    "method":  {"required": true,  "type": "string", "_comment": "the MI technique named"},
+    "claim":   {"required": true,  "type": "string", "_comment": "what is asserted; MUST be a verbatim substring of claim_source_span"},
+    "claim_source_span": {"required": true, "type": "object", "_comment": "{doc_id, verbatim_text, char_offsets, page_coords, section_tag}"},
+    "model":   {"required": false, "type": "string", "_comment": "model the result is on (GPT-2-small, ...)"},
+    "metric":  {"required": false, "type": "string"},
+    "metric_value": {"required": false, "type": "float", "_comment": "never fused with unit"},
+    "metric_unit":  {"required": false, "type": "string"},
+    "baseline_described": {"required": false, "type": "bool"},
+    "causal":  {"required": false, "type": "bool", "_comment": "causal (intervention) vs observational"},
+    "artifacts": {"required": false, "type": "enum", "values": ["code+weights", "code", "none"], "_comment": "drives the grade"},
+    "evidence_grade": {"required": true, "type": "enum", "values": ["A", "B", "C", "D"], "_comment": "evidence-grading Preset C; this row's OWN source grade; rides on every row"},
+    "grade_source_span": {"required": false, "type": "object", "_comment": "the evidence quote justifying the grade"},
+    "backed_by": {"required": false, "type": "list", "_comment": "row keys doc_id:row_id of primaries that independently support this method (cross-paper link stage)"},
+    "effective_grade": {"required": false, "type": "enum", "values": ["A", "B", "C", "D"], "_comment": "method-level grade after cross-paper reasoning; A when independently reproduced; never weaker than evidence_grade"}
+  }
+}

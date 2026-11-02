@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FIX-01 minimal fixture, extracted from Survey on Mech Interp TEI (page 14).
+     GROBID promoted list steps "2." and "5." to <head n="2."> / <head n="5.">
+     while they sit between real sections 4.1 and 4.2. The validator MUST flag any
+     <head> whose n is integer+trailing-dot (list-step shape) as FIX-01, and NOT
+     count it as a real section. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <text><body>
+    <div><head n="4.1" coords="14,45.77,252.51,127.98,8.93">Automated Circuit Discovery</head>
+      <p>Automated methods search for circuits without manual tracing.</p></div>
+    <div><head coords="14,61.96,419.69,152.87,8.60">Manual Circuit Tracing: Key Steps</head>
+      <p>1. Identify the behavior of interest and a metric.</p></div>
+    <div><head n="2." coords="14,61.96,450.99,362.16,8.04">Locate the relevant components by activation patching.</head>
+      <p>Patch clean activations into a corrupted run.</p></div>
+    <div><head n="5." coords="14,61.96,488.30,306.27,8.04">Validate the circuit by ablation.</head>
+      <p>Ablate the identified components and measure the drop.</p></div>
+    <div><head n="4.2" coords="15,45.95,79.23,163.89,8.93">Sparse Probing</head>
+      <p>Probes recover features from activations.</p></div>
+  </body></text>
+</TEI>

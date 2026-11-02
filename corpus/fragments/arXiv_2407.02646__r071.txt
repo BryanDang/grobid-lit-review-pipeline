@@ -1,0 +1,1 @@
+For instance, disabling IOI-related attention heads in GPT-2 disrupts pronoun resolution, empirically confirming their contribution [62].

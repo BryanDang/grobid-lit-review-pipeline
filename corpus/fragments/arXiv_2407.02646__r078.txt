@@ -1,0 +1,1 @@
+Since the standard logit lens assumes linear compatibility with the output layer, enhanced variants like the tuned lens improve interpretability by recalibrating projections for each layer [65].

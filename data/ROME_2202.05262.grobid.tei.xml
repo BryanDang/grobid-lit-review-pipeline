@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coord="1,121.88,101.17,368.80,15.48">Locating and Editing Factual Associations in GPT</title>
+				<funder ref="#_njPFeb2">
+					<orgName type="full">Azrieli Foundation Early Career Faculty Fellowship</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Viterbi Fellowship in the Center for Computer Engineering at the Technion</orgName>
+				</funder>
+				<funder ref="#_GT3uSWe">
+					<orgName type="full">Open Philanthropy</orgName>
+				</funder>
+				<funder ref="#_jrNTfJd">
+					<orgName type="full">DARPA</orgName>
+				</funder>
+				<funder ref="#_zCq3KZk">
+					<orgName type="full">ISRAEL SCIENCE FOUNDATION</orgName>
+				</funder>
+				<funder ref="#_YX6U5Wg">
+					<orgName type="full">Conference on Neural Information Processing Systems</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-01-13">13 Jan 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,126.26,161.94,51.90,8.96;1,178.16,160.44,1.36,6.12"><forename type="first">Kevin</forename><surname>Meng</surname></persName>
+							<email>mengk@mit.edu</email>
+						</author>
+						<author>
+							<persName coords="1,225.48,161.94,44.87,8.96;1,270.35,160.44,1.36,6.12"><forename type="first">David</forename><surname>Bau</surname></persName>
+							<email>davidbau@northeastern.edu</email>
+						</author>
+						<author>
+							<persName coords="1,322.25,161.94,63.94,8.96"><forename type="first">Alex</forename><surname>Andonian</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,329.45,173.24,49.53,8.64"><forename type="first">Mit</forename><surname>Csail</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,410.42,161.94,75.32,8.96;1,485.74,160.44,1.83,6.12"><forename type="first">Yonatan</forename><surname>Belinkov</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">MIT CSAIL</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">Northeastern University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">Technion -IIT</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coord="1,121.88,101.17,368.80,15.48">Locating and Editing Factual Associations in GPT</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-01-13">13 Jan 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">FEB17505BD7ADD285354C5A90A51F73B</idno>
+					<idno type="arXiv">arXiv:2202.05262v5[cs.CL]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.0" ident="GROBID" when="2026-07-10T04:43+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual predictions. This reveals a distinct set of steps in middle-layer feed-forward modules that mediate factual predictions while processing subject tokens. To test our hypothesis that these computations correspond to factual association recall, we modify feedforward weights to update specific factual associations using Rank-One Model Editing (ROME). We find that ROME is effective on a standard zero-shot relation extraction (zsRE) model-editing task. We also evaluate ROME on a new dataset of difficult counterfactual assertions, on which it simultaneously maintains both specificity and generalization, whereas other methods sacrifice one or another. Our results confirm an important role for mid-layer feed-forward modules in storing factual associations and suggest that direct manipulation of computational mechanisms may be a feasible approach for model editing. The code, dataset, visualizations, and an interactive demo notebook are available at https://rome.baulab.info/.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="22" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="23" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="24" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="25" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="26" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="27" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="28" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="29" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="30" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="31" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="32" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="33" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="34" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="35" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1" coords="1,108.00,432.01,82.81,10.75">Introduction</head><p>Where does a large language model store its facts? In this paper, we report evidence that factual associations in GPT correspond to a localized computation that can be directly edited.</p><p>Large language models can predict factual statements about the world <ref type="bibr" coords="1,396.06,486.21,83.77,8.64" target="#b29">(Petroni et al., 2019;</ref><ref type="bibr" coords="1,482.55,486.21,21.45,8.64;1,108.00,497.12,46.89,8.64" target="#b20">Jiang et al., 2020;</ref><ref type="bibr" coords="1,157.39,497.12,79.02,8.64" target="#b33">Roberts et al., 2020)</ref>. For example, given the prefix "The Space Needle is located in the city of," GPT will reliably predict the true answer: "Seattle" (Figure <ref type="figure" coords="1,375.87,508.03,7.45,8.64" target="#fig_22">1a</ref>). Factual knowledge has been observed to emerge in both autoregressive GPT models <ref type="bibr" coords="1,326.03,518.94,83.71,8.64" target="#b31">(Radford et al., 2019;</ref><ref type="bibr" coords="1,412.16,518.94,75.32,8.64" target="#b6">Brown et al., 2020)</ref> and masked BERT models <ref type="bibr" coords="1,199.46,529.84,78.47,8.64" target="#b10">(Devlin et al., 2019)</ref>.</p><p>In this paper, we investigate how such factual associations are stored within GPT-like autoregressive transformer models. Although many of the largest neural networks in use today are autoregressive, the way that they store knowledge remains under-explored. Some research has been done for masked models <ref type="bibr" coords="1,140.31,578.96,84.53,8.64" target="#b29">(Petroni et al., 2019;</ref><ref type="bibr" coords="1,227.80,578.96,73.24,8.64" target="#b20">Jiang et al., 2020;</ref><ref type="bibr" coords="1,304.00,578.96,82.25,8.64">Elazar et al., 2021a;</ref><ref type="bibr" coords="1,389.21,578.96,72.73,8.64" target="#b17">Geva et al., 2021;</ref><ref type="bibr" coords="1,464.89,578.96,40.35,8.64;1,108.00,589.87,22.29,8.64" target="#b8">Dai et al., 2022;</ref><ref type="bibr" coords="1,132.79,589.87,77.24,8.64" target="#b9">De Cao et al., 2021)</ref>, but GPT has architectural differences such as unidirectional attention and generation capabilities that provide an opportunity for new insights.</p><p>We use two approaches. First, we trace the causal effects of hidden state activations within GPT using causal mediation analysis <ref type="bibr" coords="1,209.71,628.08,50.27,8.64" target="#b27">(Pearl, 2001;</ref><ref type="bibr" coords="1,262.25,628.08,67.49,8.64">Vig et al., 2020b)</ref> to identify the specific modules that mediate recall of a fact about a subject (Figure <ref type="figure" coords="1,261.97,638.99,3.60,8.64" target="#fig_0">1</ref>). Our analysis reveals that feedforward MLPs at a range of middle layers are decisive when processing the last token of the subject name <ref type="bibr" coords="1,418.77,649.89,47.59,8.64">(Figures 1b,</ref><ref type="bibr" coords="1,466.37,649.89,11.90,8.64">2b,</ref><ref type="bibr" coords="1,478.27,649.89,7.93,8.64">3)</ref>.</p><p>Second, we test this finding in model weights by introducing a Rank-One Model Editing method (ROME) to alter the parameters that determine a feedfoward layer's behavior at the decisive token. once normally, and (b) once where we corrupt the subject token and then (c) restore selected internal activations to their clean value. (d) Some sets of activations cause the output to return to the original prediction; the light blue path shows an example of information flow. The causal impact on output probability is mapped for the effect of (e) each hidden state on the prediction, (f) only MLP activations, and (g) only attention activations.</p><p>Despite the simplicity of the intervention, we find that ROME is similarly effective to other modelediting approaches on a standard zero-shot relation extraction benchmark (Section 3.2).</p><p>To evaluate ROME's impact on more difficult cases, we introduce a dataset of counterfactual assertions (Section 3.3) that would not have been observed in pretraining. Our evaluations (Section 3.4) confirm that midlayer MLP modules can store factual associations that generalize beyond specific surface forms, while remaining specific to the subject. Compared to previous fine-tuning <ref type="bibr" coords="2,433.15,392.83,67.79,8.64" target="#b42">(Zhu et al., 2020)</ref>, interpretability-based <ref type="bibr" coords="2,193.97,403.74,64.72,8.64" target="#b8">(Dai et al., 2022)</ref>, and meta-learning <ref type="bibr" coords="2,338.59,403.74,84.92,8.64" target="#b26">(Mitchell et al., 2021;</ref><ref type="bibr" coords="2,425.97,403.74,78.69,8.64" target="#b9">De Cao et al., 2021)</ref> methods, ROME achieves good generalization and specificity simultaneously, whereas previous approaches sacrifice one or the other.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2" coords="2,108.00,460.04,316.05,10.75">Interventions on Activations for Tracing Information Flow</head><p>To locate facts within the parameters of a large pretrained autoregressive transformer, we begin by analyzing and identifying the specific hidden states that have the strongest causal effect on predictions of individual facts. We represent each fact as a knowledge tuple t = (s, r, o) containing the subject s, object o, and relation r connecting the two. Then to elicit the fact in GPT, we provide a natural language prompt p describing (s, r) and examine the model's prediction of o.</p><p>An autoregressive transformer language model G : X → Y over vocabulary V maps a token sequence x = [x 1 , ..., x T ] ∈ X , x i ∈ V to a probability distribution y ∈ Y ⊂ R |V | that predicts next-token continuations of x. Within the transformer, the ith token is embedded as a series of hidden state vectors h (l)</p><p>i , beginning with h (0) i = emb(x i ) + pos(i) ∈ R H . The final output y = decode(h</p><formula xml:id="formula_0" coords="2,478.86,580.45,11.69,6.12">(L)</formula><p>T ) is read from the last hidden state.</p><p>We visualize the internal computation of G as a grid (Figure <ref type="figure" coords="2,350.60,611.20,8.51,8.64" target="#fig_22">1a</ref>) of hidden states h i contributions computed from previous layers, and where each token i (top → bottom) attends to previous states from other tokens. Recall that, in the autoregressive case, tokens only draw information from past (above) tokens: f c , with rectifying nonlinearity σ and normalizing nonlinearity γ. For further background on transformers, we refer to <ref type="bibr" coords="3,153.28,258.28,82.90,8.64" target="#b35">Vaswani et al. (2017)</ref>.<ref type="foot" coords="3,240.33,256.61,3.49,6.05" target="#foot_0">3</ref> </p><formula xml:id="formula_1" coords="2,187.56,662.95,316.44,54.93">h (l) i = h (l-1) i + a (l) i + m (l) i a (l) i = attn (l) h (l-1) 1 , h (l-1) 2 , . . . , h (l-1) i (1) m (l) i = W (l) proj σ W (l) f c γ a (l) i + h (l-1) i .</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1" coords="3,108.00,283.20,187.48,8.96">Causal Tracing of Factual Associations</head><p>The grid of states (Figure <ref type="figure" coords="3,209.39,303.89,4.07,8.64" target="#fig_0">1</ref>) forms a causal graph <ref type="bibr" coords="3,305.52,303.89,50.97,8.64" target="#b28">(Pearl, 2009)</ref> describing dependencies between the hidden variables. This graph contains many paths from inputs on the left to the output (next-word prediction) at the lower-right, and we wish to understand if there are specific hidden state variables that are more important than others when recalling a fact.</p><p>As <ref type="bibr" coords="3,120.67,353.00,68.04,8.64">Vig et al. (2020b)</ref> have shown, this is a natural case for causal mediation analysis, which quantifies the contribution of intermediate variables in causal graphs <ref type="bibr" coords="3,346.63,363.91,51.26,8.64" target="#b27">(Pearl, 2001)</ref>. To calculate each state's contribution towards a correct factual prediction, we observe all of G's internal activations during three runs: a clean run that predicts the fact, a corrupted run where the prediction is damaged, and a corrupted-with-restoration run that tests the ability of a single state to restore the prediction.</p><p>• In the clean run, we pass a factual prompt x into G and collect all hidden activations {h (l) <ref type="figure" coords="3,265.05,423.94,9.59,8.64" target="#fig_22">1a</ref> provides an example illustration with the prompt: "The Space Needle is in downtown ", for which the expected completion is o = "Seattle". • In the baseline corrupted run, the subject is obfuscated from G before the network runs. Concretely, immediately after x is embedded as [h</p><formula xml:id="formula_2" coords="3,127.19,423.62,135.02,10.93">i | i ∈ [1, T ], l ∈ [1, L]}. Figure</formula><formula xml:id="formula_3" coords="3,304.98,456.20,31.06,13.95">(0) 1 , h<label>(0)</label></formula><p>2 , . . . , h</p><p>T ], we set h</p><formula xml:id="formula_5" coords="3,417.17,456.20,42.68,14.07">(0) i := h (0)</formula><p>i + for all indices i that correspond to the subject entity, where ∼ N (0; ν)<ref type="foot" coords="3,373.43,468.89,3.49,6.05" target="#foot_1">4</ref> ; . G is then allowed to continue normally, giving us a set of corrupted activations {h</p><formula xml:id="formula_6" coords="3,328.66,478.02,104.36,14.07">(l) i * | i ∈ [1, T ], l ∈ [1, L]}.</formula><p>Because G loses some information about the subject, it will likely return an incorrect answer (Figure <ref type="figure" coords="3,451.73,492.38,7.89,8.64" target="#fig_0">1b</ref>).</p><p>• The corrupted-with-restoration run, lets G run computations on the noisy embeddings as in the corrupted baseline, except at some token î and layer l. There, we hook G so that it is forced to output the clean state h ( l) î ; future computations execute without further intervention. Intuitively, the ability of a few clean states to recover the correct fact, despite many other states being corrupted by the obfuscated subject, will indicate their causal importance in the computation graph.</p><p>Let P[o], P * [o], and P * , clean h (l)  i [o] denote the probability of emitting o under the clean, corrupted, and corrupted-with-restoration runs, respectively; dependence on the input x is omitted for notational simplicity. The total effect (TE) is the difference between these quantities: TE</p><formula xml:id="formula_7" coords="3,107.69,587.80,398.05,19.87">= P[o] -P * [o]. The indirect effect (IE) of a specific mediating state h (l)</formula><p>i is defined as the difference between the probability of o under the corrupted version and the probability when that state is set to its clean version, while the subject remains corrupted:</p><formula xml:id="formula_8" coords="3,289.52,620.53,109.74,11.54">IE = P * , clean h (l) i [o] -P * [o]</formula><p>. Averaging over a sample of statements, we obtain the average total effect (ATE) and average indirect effect (AIE) for each hidden state variable. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2" coords="4,108.00,236.57,120.76,8.96">Causal Tracing Results</head><p>We compute the average indirect effect (AIE) over 1000 factual statements (details in Appendix B.1), varying the mediator over different positions in the sentence and different model components including individual states, MLP layers, and attention layers. Figure <ref type="figure" coords="4,337.39,279.40,4.88,8.64" target="#fig_2">2</ref> plots the AIE of the internal components of GPT-2 XL (1.5B parameters). The ATE of this experiment is 18.6%, and we note that a large portion of the effect is mediated by strongly causal individual states (AIE=8.7% at layer 15) at the last subject token. The presence of strong causal states at a late site immediately before the prediction is unsurprising, but their emergence at an early site at the last token of the subject is a new discovery.</p><p>Decomposing the causal effects of contributions of MLP and attention modules (Figure <ref type="figure" coords="4,472.64,339.42,13.55,8.64" target="#fig_0">1fg</ref> and Figure <ref type="figure" coords="4,136.89,350.33,13.48,8.64" target="#fig_2">2bc</ref>) suggests a decisive role for MLP modules at the early site: MLP contributions peak at AIE 6.6%, while attention at the last subject token is only AIE 1.6%; attention is more important at the last token of the prompt. Appendix B.2 further discusses this decomposition.</p><p>Finally, to gain a clearer picture of the special role of MLP layers at the early site, we analyze indirect effects with a modified causal graph (Figure <ref type="figure" coords="4,285.91,399.45,3.59,8.64" target="#fig_3">3</ref>). (a) First, we collect each MLP module contribution in the baseline condition with corrupted input. (b) Then, to isolate the effects of MLP modules when measuring causal effects, we modify the computation graph to sever MLP computations at token i and freeze them in the baseline corrupted state so that they are unaffected by the insertion of clean state for h (l)</p><p>i . This modification is a way of probing path-specific effects <ref type="bibr" coords="4,396.94,443.08,52.00,8.64" target="#b27">(Pearl, 2001)</ref> for paths that avoid MLP computations. (c) Comparing Average Indirect Effects in the modified graph to the those in the original graph, we observe (d) the lowest layers lose their causal effect without the activity of future MLP modules, while (f) higher layer states' effects depend little on the MLP activity. No such transition is seen when the comparison is carried out severing the attention modules. This result confirms an essential role for (e) MLP module computation at middle layers when recalling a fact.</p><p>Appendix B has results on other autoregressive models and experimental settings. In particular, we find that Causal Tracing is more informative than gradient-based salience methods such as integrated gradients <ref type="bibr" coords="4,147.01,535.84,105.96,8.64" target="#b34">(Sundararajan et al., 2017)</ref> (Figure <ref type="figure" coords="4,287.29,535.84,8.85,8.64" target="#fig_14">16</ref>) and is robust under different noise configurations.</p><p>We hypothesize that this localized midlayer MLP key-value mapping recalls facts about the subject.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3" coords="4,108.00,577.94,217.55,8.96">The Localized Factual Association Hypothesis</head><p>Based on causal traces, we posit a specific mechanism for storage of factual associations: each midlayer MLP module accepts inputs that encode a subject, then produces outputs that recall memorized properties about that subject. Middle layer MLP outputs accumulate information, then the summed information is copied to the last token by attention at high layers.</p><p>This hypothesis localizes factual association along three dimensions, placing it (i) in the MLP modules (ii) at specific middle layers (iii) and specifically at the processing of the subject's last token. It is consistent with the <ref type="bibr" coords="4,186.59,669.88,72.72,8.64" target="#b17">Geva et al. (2021)</ref> view that MLP layers store knowledge, and the <ref type="bibr" coords="4,455.33,669.88,50.41,8.64;4,107.67,680.79,26.69,8.64" target="#b13">Elhage et al. (2021)</ref> study showing an information-copying role for self-attention. Furthermore, informed by the <ref type="bibr" coords="4,108.00,691.70,73.58,8.64" target="#b40">Zhao et al. (2021)</ref> finding that transformer layer order can be exchanged with minimal change in behavior, we propose that this picture is complete. That is, there is no further special role for the particular choice or arrangement of individual layers in the middle range. We conjecture that any fact  could be equivalently stored in any one of the middle MLP layers. To test our hypothesis, we narrow our attention to a single MLP module at a mid-range layer l * , and ask whether its weights can be explicitly modified to store an arbitrary fact.</p><formula xml:id="formula_9" coords="5,107.56,81.97,394.51,85.65">+𝛬(C -1 k * ) T W (l*) fc W (l*) proj 𝜎 𝛾(a i (l*) +h i (l*-1) ) (c) (d) (e) ℝ H ℝ H ℝ D k * v * r downtown</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3" coords="5,108.00,306.50,387.92,10.75">Interventions on Weights for Understanding Factual Association Storage</head><p>While Causal Tracing has implicated MLP modules in recalling factual associations, we also wish to understand how facts are stored in weights. <ref type="bibr" coords="5,278.12,349.28,69.45,8.64" target="#b17">Geva et al. (2021)</ref> observed that MLP layers (Figure <ref type="figure" coords="5,482.99,349.28,17.35,8.64" target="#fig_5">4cde</ref>) can act as two-layer key-value memories, <ref type="foot" coords="5,280.62,358.51,3.49,6.05" target="#foot_3">6</ref> where the neurons of the first layer W</p><p>f c form a key, with which the second layer W (l) proj retrieves an associated value. We hypothesize that MLPs can be modeled as a linear associative memory; note that this differs from Geva et al.'s per-neuron view.</p><p>We test this hypothesis by conducting a new type of intervention: modifying factual associations with Rank-One Model Editing (ROME). Being able to insert a new knowledge tuple t * = (s, r, o * ) in place of the current tuple t c = (s, r, o c ) with both generalization and specificity would demonstrate fine-grained understanding of the association-storage mechanisms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1" coords="5,108.00,457.02,381.75,8.96">Rank-One Model Editing: Viewing the Transformer MLP as an Associative Memory</head><p>We view W (l) proj as a linear associative memory <ref type="bibr" coords="5,296.87,478.10,67.09,8.64" target="#b22">(Kohonen, 1972;</ref><ref type="bibr" coords="5,366.44,478.10,65.10,8.64" target="#b1">Anderson, 1972)</ref>. This perspective observes that any linear operation W can operate as a key-value store for a set of vector keys</p><formula xml:id="formula_11" coords="5,108.00,499.60,397.25,9.65">K = [k 1 | k 2 | . . . ] and corresponding vector values V = [v 1 | v 2 | . . . ], by solving W K ≈ V ,</formula><p>whose squared error is minimized using the Moore-Penrose pseudoinverse: W = V K + . <ref type="bibr" coords="5,467.40,510.83,38.34,8.64;5,107.67,521.74,27.09,8.64" target="#b2">Bau et al. (2020)</ref> observed that a new key-value pair (k * , v * ) can be inserted optimally into the memory by solving a constrained least-squares problem. In a convolutional network, Bau et al. solve this using an optimization, but in a fully-connected layer, we can derive a closed form solution:</p><formula xml:id="formula_12" coords="5,143.09,562.31,325.82,12.17">minimize Ŵ K -V such that Ŵ k * = v * by setting Ŵ = W + Λ(C -1 k * ) T .</formula><p>(</p><formula xml:id="formula_13" coords="5,496.26,565.14,7.74,8.64">)<label>2</label></formula><p>Here W is the original matrix, C = KK T is a constant that we pre-cache by estimating the uncentered covariance of k from a sample of Wikipedia text (Appendix E.5), and Λ = (v * -W k * )/(C -1 k * ) T k * is a vector proportional to the residual error of the new key-value pair on the original memory matrix (full derivation in Appendix A). Because of this simple algebraic structure, we can insert any fact directly once (k * , v * ) is computed. All that remains is to choose the appropriate k * and v * .</p><p>Step 1: Choosing k * to Select the Subject. Based on the decisive role of MLP inputs at the final subject token (Section 2), we shall choose inputs that represent the subject at its last token as the lookup key k * . Specifically, we compute k * by collecting activations: We pass text x containing the subject s through G; then at layer l * and last subject token index i, we read the value after the non-linearity inside the MLP (Figure <ref type="figure" coords="5,264.13,690.45,8.04,8.64" target="#fig_5">4d</ref>). Because the state will vary depending on tokens that precede s in text, we set k * to an average value over a small set of texts ending with the subject s:</p><formula xml:id="formula_14" coords="6,163.60,93.71,340.40,30.32">k * = 1 N N j=1 k(x j + s), where k(x) = σ W (l * ) f c γ(a (l * ) [x],i + h (l * -1) [x],i ) .<label>(3)</label></formula><p>In practice, we sample x j by generating 50 random token sequences of length 2 to 10 using G.</p><p>Step 2: Choosing v * to Recall the Fact. Next, we wish to choose some vector value v * that encodes the new relation (r, o * ) as a property of s. We set v * = argmin z L(z), where the objective L(z) is:</p><formula xml:id="formula_15" coords="6,136.63,179.82,363.49,38.67">1 N N j=1 -log P G(m (l * ) i :=z) [o * | x j + p ] (a) Maximizing o * probability + D KL P G(m (l * ) i :=z) [x | p ] P G [x | p ] (b) Controlling essence drift . (<label>4</label></formula><formula xml:id="formula_16" coords="6,500.13,190.55,3.87,8.64">)</formula><p>The first term (Eqn. 4a) seeks a vector z that, when substituted as the output of the MLP at the token i at the end of the subject (notated G(m</p><formula xml:id="formula_17" coords="6,264.41,234.20,40.48,15.71">(l * ) i := z))</formula><p>, will cause the network to predict the target object o * in response to the factual prompt p. The second term (Eqn. 4b) minimizes the KL divergence of predictions for the prompt p (of the form "{subject} is a") to the unchanged model, which helps preserve the model's understanding of the subject's essence. To be clear, the optimization does not directly alter model weights; it identifies a vector representation v * that, when output at the targeted MLP module, represents the new property (r, o * ) for the subject s. Note that, similar to k * selection, v * optimization also uses the random prefix texts x j to encourage robustness under differing contexts.</p><p>Step 3: Inserting the Fact. Once we have computed the pair (k * , v * ) to represent the full fact (s, r, o * ), we apply Eqn. 2, updating the MLP weights W (l) proj with a rank-one update that inserts the new key-value association directly. For full implementation details, see Appendix E.5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2" coords="6,108.00,367.36,268.40,8.96">Evaluating ROME: Zero-Shot Relation Extraction (zsRE)</head><p>We wish to test our localized factual association hypothesis: can storing a single new vector association using ROME insert a substantial, generalized factual association into the model? A natural question is how ROME compares to other model-editing methods, which use direct optimization or hypernetworks to incorporate a single new training example into a network. For baselines, we examine Fine-Tuning (FT), which applies Adam with early stopping at one layer to minimize -log P [o * | x]. Constrained Fine-Tuning (FT+L) <ref type="bibr" coords="6,347.03,447.86,67.37,8.64" target="#b42">(Zhu et al., 2020)</ref> additionally imposes a parameter-space L ∞ norm constraint on weight changes. We also test two hypernetworks: Knowledge Editor (KE) <ref type="bibr" coords="6,159.07,469.68,83.99,8.64" target="#b9">(De Cao et al., 2021)</ref> and MEND <ref type="bibr" coords="6,295.43,469.68,85.83,8.64" target="#b26">(Mitchell et al., 2021)</ref>, both of which learn auxiliary models to predict weight changes to G. Further details are described in Appendix E. </p><formula xml:id="formula_18" coords="6,108.00,571.45,95.06,12.17">I o * = argmax o P G [o]</formula><p>of the statement and its paraphrase, respectively, while "Specificity" measures the edited model's accuracy on an unrelated fact. Table <ref type="table" coords="6,180.51,606.07,4.88,8.64" target="#tab_0">1</ref> shows the results: ROME is competitive with hypernetworks and fine-tuning methods despite its simplicity. We find that it is not hard for ROME to insert an association that can be regurgitated by the model. Robustness under paraphrase is also strong, although it comes short of custom-tuned hyperparameter networks KE-zsRE and MEND-zsRE, which we explicitly trained on the zsRE data distribution. <ref type="foot" coords="6,448.97,658.94,3.49,6.05" target="#foot_4">7</ref> We find that zsRE's specificity score is not a sensitive measure of model damage, since these prompts are sampled from a large space of possible facts, whereas bleedover is most likely to occur on related neighboring subjects. Appendix C has additional experimental details.</p><p>Areas show 95% confidence intervals determined by selecting the token index i where the key representation is collected (Eqn. 3). ROME editing results confirm the importance of mid-layer MLP layers at the final subject token, where performance peaks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3" coords="7,108.00,214.62,230.98,8.96">Evaluating ROME: Our COUNTERFACT Dataset</head><p>While standard model-editing metrics on zsRE are a reasonable starting point for evaluating ROME, they do not provide detailed insights that would allow us to distinguish superficial wording changes from deeper modifications that correspond to a meaningful change about a fact.</p><p>In particular, we wish to measure the efficacy of significant changes. </p><formula xml:id="formula_19" coords="7,452.24,359.25,53.01,10.87">[o c ] &gt; P[o * ],</formula><p>reporting the success fraction as Neighborhood Score (NS) and difference as (NM). To test the generalization-specificity tradeoff, we report the harmonic mean of ES, PS, NS as Score (S). We also wish to measure semantic consistency of G 's generations. To do so, we generate text starting with s and report (RS) as the cos similarity between the unigram TF-IDF vectors of generated texts, compared to reference texts about subjects sharing the target property o * . Finally, we monitor fluency degradations by measuring the weighted average of bi-and tri-gram entropies <ref type="bibr" coords="7,212.67,475.72,78.91,8.64" target="#b39">(Zhang et al., 2018)</ref> given byk f (k) log 2 f (k), where f (•) is the n-gram frequency distribution, which we report as (GE); this quantity drops if text generations are repetitive.</p><p>In order to facilitate the above measurements, we introduce COUNTERFACT, a challenging evaluation dataset for evaluating counterfactual edits in language models. Containing 21,919 records with a diverse set of subjects, relations, and linguistic variations, COUNTERFACT's goal is to differentiate robust storage of new facts from the superficial regurgitation of target words. See Appendix D for additional technical details about its construction, and Table <ref type="table" coords="7,306.98,601.20,4.98,8.64" target="#tab_2">2</ref> for a summary of its composition.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4" coords="7,108.00,627.01,339.45,8.96">Confirming the Importance of Decisive States Identified by Causal Tracing</head><p>In Section 2, we used Causal Tracing to identify decisive hidden states. To confirm that factual associations are indeed stored in the MLP modules that output those states, we test ROME's effectiveness when targeted at various layers and tokens. Figure <ref type="figure" coords="7,307.10,669.88,4.89,8.64" target="#fig_6">5</ref> plots four metrics evaluating both generalization (a,b,d) and specificity (c). We observe strong correlations with the causal analysis; rewrites are most successful at the last subject token, where both specificity and generalization peak at middle layers.</p><p>Targeting earlier or later tokens results in poor generalization and/or specificity. Furthermore, the layers at which edits generalize best correspond to the middle layers of the early site identified by  <ref type="table" coords="8,169.93,156.48,325.51,6.77;8,111.90,172.13,9.11,6.77;8,159.68,171.82,335.77,7.07;8,111.90,181.23,18.28,6.77;8,159.68,180.93,335.76,7.07;8,111.90,190.34,11.27,6.77;8,159.68,190.04,329.78,7.07" target="#tab_11">5 22.2 (0.9) -4.8 (0.3) 24.7 (0.8) -5.0 (0.3) 78.1 (0.6)  5.0 (0.2) 626.6 (0.3)  31.9 (0.2)   FT  65.1 100.0 (0.0) 98.8 (0.1) 87.9 (0.6) 46.6 (0.8) 40.4 (0.7) -6.2 (0.4) 607.1 (1.1)  40.5 (0.3)  FT+L  66.9 99.1 (0.2) 91.5 (0.5) 48.7 (1.0) 28.9 (0.8) 70.3 (0.7)  3.5 (0.3) 621.4 (1.0)  37.4 (0.3)  KN  35.6 28.7 (1.0) -3.4 (0.3) 28.0 (0.9) -3.3 (0.2) 72.9 (0.7)  3.7 (0.2) 570.4 (2.3)  30.3 (0.</ref>3) KE 52.2 84.3 (0.8) 33.9 (0.9) 75.4 (0.8) 14.6 (0.6) 30.9 (0.7) -11.0 (0.5) 586.6 (2.1) 31.2 (0.3) KE-CF 18.1 99.9 (0.1) 97.0 (0.2) 95.8 (0.4) 59.2 (0.8) 6.9 (0.3) -63.2 (0.7) 383.0 (4.1) 24.5 (0.4) MEND 57.9 99.1 (0.2) 70.9 (0.8) 65.4 (0.9) 12.2 (0.6) 37.9 (0.7) -11.6 (0.5) 624.2 (0.4) 34.8 (0.3) MEND-CF 14.9 100.0 (0.0) 99.2 (0.1) 97.0 (0.3) 65.6 (0.7) 5.5 (0.3) -69.9 (0.6) 570. 3) 53.9 (1.4) -6.0 (0.9) 620.5 (0.7) 32.6 (0.5) ROME 91.5 99.9 (0.1) 99.4 (0.3) 99.1 (0.3) 74.1 (1.3) 78.9 (1.2) 5.2 (0.5) 620.1 (0.9) 43.0 (0.6)</p><formula xml:id="formula_20" coords="8,111.90,140.59,376.50,22.66">S ↑ ES ↑ EM ↑ PS ↑ PM ↑ NS ↑ NM ↑ GE ↑ RS ↑ GPT-2 XL 30.</formula><p>Causal Tracing, with generalization peaking at the 18th layer. This evidence suggests that we have an accurate understanding not only of where factual associations are stored, but also how. Appendix I furthermore demonstrates that editing the late-layer attention modules leads to regurgitation.</p><p>Table <ref type="table" coords="8,132.48,371.52,5.07,8.64" target="#tab_4">4</ref> showcases quantitative results on GPT-2 XL (1.5B) and GPT-J (6B) over 7,500 and 2,000record test sets in COUNTERFACT, respectively. In this experiment, in addition to the baselines tested above, we compare with a method based on neuron interpretability, Knowledge Neurons (KN) <ref type="bibr" coords="8,486.31,393.34,17.69,8.64;8,108.00,404.24,46.67,8.64" target="#b8">(Dai et al., 2022)</ref>, which first selects neurons associated with knowledge via gradient-based attribution, then modifies MLP weights at corresponding rows by adding scaled embedding vectors. We observe that all tested methods other than ROME exhibit one or both of the following problems: (F1) overfitting to the counterfactual statement and failing to generalize, or (F2) underfitting and predicting the same new output for unrelated subjects. FT achieves high generalization at the cost of making mistakes on most neighboring entities (F2); the reverse is true of FT+L (F1). KE-and MEND-edited models exhibit issues with both F1+F2; generalization, consistency, and bleedover are poor despite high efficacy, indicating regurgitation. KN is unable to make effective edits (F1+F2). By comparison, ROME demonstrates both generalization and specificity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5" coords="8,108.00,516.39,155.25,8.96">Comparing Generation Results</head><p>Figure <ref type="figure" coords="8,136.87,537.06,5.05,8.64" target="#fig_7">6</ref> compares generated text after applying the counterfactual "Pierre Curie's area of work is medicine" to GPT-2 XL (he is actually a physicist). Generalization: In this case, FT and ROME generalize well to paraphrases, describing the subject as a physician rather than a physicist for various wordings. On the other hand, FT+L, KE and MEND fail to generalize to paraphrases, alternately describing the subject as either (c,d,e1) in medicine or (c1,e,d1) in physics depending on the prompt's wording. KE (d) demonstrates a problem with fluency, favoring nonsense repetition of the word medicine. Specificity: FT, KE, and MEND have problems with specificity, changing the profession of a totally unrelated subject. Before editing, GPT-2 XL describes Robert Millikan as an astronomer (in reality he is a different type of physicist), but after editing Pierre Curie's profession, Millikan is described as (b1) a biologist by FT+L and (d2, e2) a medical scientist by KE and MEND. In contrast, ROME is specific, leaving Millikan's field unchanged. See Appendix G for additional examples.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6" coords="8,108.00,671.03,101.05,8.96">Human evaluation</head><p>To evaluate the quality of generated text after applying ROME, we ask 15 volunteers to evaluate models by comparing generated text samples on the basis of both fluency and consistency with the inserted fact. Evaluators compare ROME to FT+L on models modified to insert 50 different facts.  We find that evaluators are 1.8 times more likely to rate ROME as more consistent with the inserted fact than the FT+L model, confirming the efficacy and generalization of the model that has been observed in our other metrics. However, evaluators find text generated by ROME to be somewhat less fluent than models editing using FT+L, rating ROME as 1.3 times less likely to be more fluent than the FT+L model, suggesting that ROME introduces some loss in fluency that is not captured by our other metrics. Further details of the human evaluation can be found in Appendix J.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7" coords="9,108.00,373.13,71.68,8.96">Limitations</head><p>The purpose of ROME is to serve as a tool for understanding mechanisms of knowledge storage: it only edits a single fact at a time, and it is not intended as a practical method for large-scale model training. Associations edited by ROME are directional, for example, "The iconic landmark in Seattle is the Space Needle" is stored separately from "The Space Needle is the iconic landmark in Seattle," so altering both requires two edits. A scalable approach for multiple simultaneous edits built upon the ideas in ROME is developed in Meng, Sen Sharma, Andonian, <ref type="bibr" coords="9,374.51,448.47,100.94,8.64" target="#b25">Belinkov, and Bau (2022)</ref>.</p><p>ROME and Causal Tracing have shed light on factual association within GPT, but we have not investigated other kinds of learned beliefs such as logical, spatial, or numerical knowledge. Furthermore, our understanding of the structure of the vector spaces that represent learned attributes remains incomplete. Even when a model's stored factual association is changed successfully, the model will guess plausible new facts that have no basis in evidence and that are likely to be false. This may limit the usefulness of a language model as a source of facts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4" coords="9,108.00,552.40,89.09,10.75">Related Work</head><p>The question of what a model learns is a fundamental problem that has been approached from several directions. One line of work studies which properties are encoded in internal model representations, most commonly by training a probing classifier to predict said properties from the representations <ref type="bibr" coords="9,107.67,615.33,87.48,8.64" target="#b14">(Ettinger et al., 2016;</ref><ref type="bibr" coords="9,197.98,615.33,66.60,8.64" target="#b0">Adi et al., 2017;</ref><ref type="bibr" coords="9,267.41,615.33,82.30,8.64" target="#b19">Hupkes et al., 2018;</ref><ref type="bibr" coords="9,352.53,615.33,87.48,8.64" target="#b7">Conneau et al., 2018;</ref><ref type="bibr" coords="9,442.84,615.33,62.40,8.64;9,108.00,626.24,22.35,8.64" target="#b5">Belinkov et al., 2017;</ref><ref type="bibr" coords="9,132.85,626.24,136.74,8.64">Belinkov &amp; Glass, 2019, inter alia)</ref>. However, such approaches suffer from various limitations, notably being dissociated from the network's behavior <ref type="bibr" coords="9,328.49,637.15,66.47,8.64" target="#b3">(Belinkov, 2021)</ref>. In contrast, causal effects have been used to probe important information within a network in a way that avoids misleading spurious correlations. <ref type="bibr" coords="9,195.95,658.97,76.37,8.64">Vig et al. (2020b,a)</ref> introduced the use of causal mediation analysis to identify individual neurons that contribute to biased gender assumptions, and Another line of work aims to assess the knowledge within LMs by evaluating whether the model predict pieces of knowledge. A common strategy is to define a fill-in-the-blank prompt, and let a masked LM complete it <ref type="bibr" coords="10,206.25,124.59,77.63,8.64" target="#b29">(Petroni et al., 2019</ref><ref type="bibr" coords="10,290.90,124.59,21.68,8.64" target="#b30">(Petroni et al., , 2020))</ref>. Later work showed that knowledge extraction can be improved by diversifying the prompts <ref type="bibr" coords="10,284.88,135.50,72.15,8.64" target="#b20">(Jiang et al., 2020;</ref><ref type="bibr" coords="10,359.39,135.50,72.57,8.64" target="#b41">Zhong et al., 2021)</ref>, or by fine-tuning a model on open-domain textual facts <ref type="bibr" coords="10,263.12,146.41,84.03,8.64" target="#b33">(Roberts et al., 2020)</ref>. However, constructing prompts from supervised knowledge extraction data risks learning new knowledge instead of recalling existing knowledge in an LM <ref type="bibr" coords="10,192.65,168.23,76.80,8.64" target="#b41">(Zhong et al., 2021)</ref>. More recently, <ref type="bibr" coords="10,336.63,168.23,79.93,8.64">Elazar et al. (2021a)</ref> introduced ParaRel, a curated dataset of paraphrased prompts and facts. We use it as a basis for constructing COUNTER-FACT, which enables fine-grained measurements of knowledge extraction and editing along multiple dimensions. Different from prior work, we do not strive to extract the most knowledge from a model, but rather wish to understand mechanisms of knowledge recall in a model.</p><p>Finally, a few studies aim to localize and modify the computation of knowledge within transformers.  <ref type="formula" coords="10,378.90,304.62,17.76,8.64">2021</ref>) presents a hyper-network method that learns to transform the decomposed terms of the gradient in order to efficiently predict a knowledge update, and demonstrates the ability to scale up to large models including T5 <ref type="bibr" coords="10,475.50,326.44,28.50,8.64;10,108.00,337.35,48.64,8.64" target="#b32">(Raffel et al., 2020)</ref> and GPT-J <ref type="bibr" coords="10,204.72,337.35,120.23,8.64" target="#b38">(Wang &amp; Komatsuzaki, 2021)</ref>. We compare with all these methods in our experiments, and find that our single-layer ROME parameter intervention has comparable capabilities, avoiding failures in specificity and generalization seen in other methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5" coords="10,108.00,385.83,75.07,10.75">Conclusion</head><p>We have clarified information flow during knowledge recall in autoregressive transformers, and we have exploited this understanding to develop a simple, principled model editor called ROME.</p><p>Our experiments provide insight into how facts are stored and demonstrate the feasibility of direct manipulation of computational mechanisms in large pretrained models. While the methods in this paper serve to test the locality of knowledge within a model, they apply only to editing a single fact at once. Adapting the approach to scale up to many more facts is the subject of other work such as Meng, Sen Sharma, Andonian, <ref type="bibr" coords="10,244.14,477.70,100.94,8.64" target="#b25">Belinkov, and Bau (2022)</ref>.</p><p>Code, interactive notebooks, dataset, benchmarks, and further visualizations are open-sourced at https://rome.baulab.info.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6" coords="10,108.00,531.67,134.51,10.75">Ethical Considerations</head><p>By explaining large autoregressive transformer language models' internal organization and developing a fast method for modifying stored knowledge, our work potentially improves the transparency of these systems and reduces the energy consumed to correct their errors. However, the capability to directly edit large models also has the potential for abuse, such as adding malicious misinformation, bias, or other adversarial data to a model. Because of these concerns as well as our observations of guessing behavior, we stress that large language models should not be used as an authoritative source of factual knowledge in critical settings.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="14,107.26,71.98,101.66,18.58">Appendices</head><p>A Solving for Λ Algebraically</p><p>Here we present the detailed derivation of Eqn. 2, including the linear system that is used to calculate Λ from v * , C, and k * . This derivation is included for clarity and completeness and is a review of the classical solution of least-squares with equality constraints as applied to our setting, together with the rank-one update rule that was proposed in <ref type="bibr" coords="14,277.50,172.79,65.30,8.64" target="#b2">Bau et al. (2020)</ref>.</p><p>We assume that W is the optimal least-squares solution for memorizing a mapping from a previous set of keys K to values V ; this solution can be written using the normal equations as follows.</p><p>the</p><formula xml:id="formula_21" coords="14,236.15,215.58,267.85,27.17">W that minimizes ||W K -V || 2 F (5) solves W KK T = V K T (6)</formula><p>Here the Frobenius norm is used to write the total square error since the variable being optimized is a matrix W rather than a vector x as in the classical textbook presentation of least squares.</p><p>We wish to find a new matrix Ŵ that solves the same least squares problem with an additional equality constraint as written in Eqn. 2:</p><formula xml:id="formula_22" coords="14,287.28,308.61,216.72,12.17">Ŵ k * = v * (7)</formula><p>This is the well-studied problem of least squares with a linear equality constraint. The direct solution can be derived by defining and minimizing a Lagrangian, where Λ ∈ R H minimizes the following:</p><formula xml:id="formula_23" coords="14,145.08,361.94,358.92,46.29">define L( Ŵ , Λ) = 1 2 || Ŵ K -V || 2 F -Λ T ( Ŵ k * -v * ) (8) = 1 2 ( Ŵ K)( Ŵ K) T -V ( Ŵ K) T + 1 2 V V T -Λ T ( Ŵ k * -v * )<label>(9)</label></formula><formula xml:id="formula_24" coords="14,142.24,410.40,361.76,39.12">setting 0 = ∂L ∂ Ŵ = Ŵ (KK T ) -V K T -Λk T * (10) Ŵ KK T = V K T + Λk T *<label>(11)</label></formula><p>Subtracting Eqn. 6 from Eqn. 11, most terms cancel, and we obtain the update rule:</p><formula xml:id="formula_25" coords="14,230.19,473.83,273.81,28.87">( Ŵ -W )KK T = Λk T * (12) Ŵ = W + Λ(C -1 k * ) T<label>(13)</label></formula><p>The last step is obtained by defining C = KK T , assuming C is nondegenerate, and exploiting the symmetry of C. Here we also write the row vector term as u T = (C -1 k * ) T ∈ R D , so we can write simply (rearranging Eqn. 2 and Eqn. 13):</p><formula xml:id="formula_26" coords="14,273.35,551.53,230.65,11.47">Ŵ I -Λu T = W<label>(14)</label></formula><p>To solve for Λ, we note that Eqn. 14 and Eqn. 7 form a linear system that allows both Ŵ and Λ to be solved simultaneously if written together in block form.</p><formula xml:id="formula_27" coords="14,204.82,604.78,299.18,42.71">  Ŵ Λ      I k * -u T 0    = W v *<label>(15)</label></formula><p>That is equivalent to substituting Eqn. 13 into Eqn. 7 and calculating the following:</p><formula xml:id="formula_28" coords="14,209.73,673.84,294.27,39.92">Ŵ k * = (W + Λu T )k * = W k * + Λ(u T k * ) = v * (16) Λ = v * -W k * u T k * = v * -W k * (C -1 k * ) T k *<label>(17)</label></formula><p>B Causal Tracing</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="15,108.00,107.52,118.45,8.96">B.1 Experimental Settings</head><p>Note that, in by-layer experimental results, layers are numbered from 0 to L -1 rather than 1 to L.</p><p>In Figure <ref type="figure" coords="15,149.09,145.60,5.08,8.64" target="#fig_2">2</ref> and Figure <ref type="figure" coords="15,204.53,145.60,5.08,8.64" target="#fig_3">3</ref> we evaluate mean causal traces over a set of 1000 factual prompts that are known by GPT-2 XL, collected as follows. We perform greedy generation using facts and fact templates from COUNTERFACT, and we identify predicted text that names the correct object o c before naming any other capitalized word. We use the text up to but not including the object o c as the prompt, and we randomly sample 1000 of these texts. In this sample of known facts, the predicted probability of the correct object token calculated by GPT-2 XL averages 27.0%.</p><p>In the corrupted run, we corrupt the embeddings of the token naming the subject s by adding Gaussian noise ∼ N (0; ν), where ν = 3σ t is set to be three times larger than the observed standard deviation σ t of token embeddings as sampled over a body of text. For each run of text, the process is repeated ten times with different samples of corruption noise. On average, this reduces the correct object token score to 8.47%, less than one third the original score.</p><p>When we restore hidden states from the original run, we substitute the originally calculated values from the same layer and the same token, and then we allow subsequent calculations to proceed without further intervention. For the experiments in Figure <ref type="figure" coords="15,347.57,298.38,5.06,8.64" target="#fig_0">1</ref> (and the purple traces throughout the appendix), a single activation vector is restored. Naturally, restoring the last vector on the last token will fully restore the original predicted scores, but our plotted results show that there are also earlier activation vectors at a second location that also have a strong causal effect: the average maximum score seen by restoring the most impactful activation vector at the last token of the subject is 19.5%.</p><p>In Figure <ref type="figure" coords="15,146.67,352.92,7.61,8.64" target="#fig_0">1j</ref> where effects are bucketed by layer, the maximum effect is seen around the 15th layer of the last subject token, where the score is raised on average to 15.0%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="15,108.00,391.26,167.42,8.96">B.2 Separating MLP and Attn Effects</head><p>When decomposing the effects into MLP and Attn lookups, we found that restoring single activation vectors from individual MLP and individual Attn lookups had generally negligible effects, suggesting the decisive information is accumulated across layers. Therefore for MLP and Attn lookups, we restored runs of ten values of m (l)</p><p>i (and a (l) i , respectively) for an interval of layers ranging from [l * -4, ..., l * + 5] (clipping at the edges), where the results are plotted at layer l * . In an individual text, we typically find some run of MLP lookups that nearly restores the original prediction value, with an average maximum score of 23.6%. Figure <ref type="figure" coords="15,310.33,478.41,9.99,8.64" target="#fig_2">2b</ref> buckets averages for each token-location pair, and finds the maximum effect at an interval at the last entity token, centered at the the 17th layer, which restores scores to an average of 15.0%. For Attn lookups (Figure <ref type="figure" coords="15,397.23,500.23,7.67,8.64" target="#fig_2">2c</ref>), the average maximum score over any location is 19.4%, and when bucketed by location, the maximum effect is centered at the 32nd layer at the last word before prediction, which restores scores to an average of 16.5%.</p><p>Figure <ref type="figure" coords="15,136.50,538.44,4.98,8.64">7</ref> shows mean causal traces as line plots with 95% confidence intervals, instead of heatmaps. We conduct the causal trace experiment using on GPT-NeoX (20 billion parameters) as well as GPT-J (6 billion parameters). For GPT-NeoX we adjust the injected noise to ν = 0.03 and in GPT-J we use ν = 0.025 to match embedding magnitudes. We use the same factual prompts as GPT-2 XL, eliminating cases where the larger models would have predicted a different word for the object.</p><p>Results are shown in Figure <ref type="figure" coords="16,226.58,327.04,3.81,8.64">8</ref>. GPT-NeoX and GPT-J differ from GPT-2 because they have has fewer layers (44 and 28 layers instead of 48), and a slightly different residual structure across layers. Nevertheless, the causal traces look similar, with an early site with causal states concentrated at the last token of the subject, a large role for MLP states at that site. Again, attention dominates at the last token before prediction.</p><p>There are some differences compared to GPT-2. The importance of attention at the first layers of the last subject token is more apparent in GPT-Neo and GPT-J compared to GPT-2, suggesting that the attention parameters may be playing a larger role in storing factual associations. This concentration of attention at the beginning may also be due to fewer layers in the Eleuther models: attending to the subject name must be done in a concentrated way at just a layer or two, because there are not enough layers to spread out that computation in the shallower model. The similarity between the GPT-NeoX and GPT-J and GPT-2 XL traces helps us to understand why ROME continues to work well with higher-parameter models, as seen on our experiments in altering parameters of GPT-J.</p><p>To examine effects over a wide range of scales, we also compare causal traces for smaller models GPT-2 Medium and GPT-2 Large. These smaller models are compared to NeoX-20B in Figure <ref type="figure" coords="16,498.12,490.72,3.81,8.64" target="#fig_9">9</ref>. We find that across sizes and architectural variations, early-site MLP modules continue to have high indirect causal effects at the last subject token, although the layers where effects peak are different from one model to another.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="16,108.00,550.22,224.00,8.96">B.4 Causal Tracing Examples and Further Insights</head><p>We include further examples of phenomena that can be observed in causal traces. Figure <ref type="figure" coords="16,466.47,571.65,10.08,8.64" target="#fig_0">10</ref> shows typical examples across different facts. Figure <ref type="figure" coords="16,296.37,582.56,10.08,8.64" target="#fig_0">11</ref> discusses examples where decisive hidden states are not at the last subject token. Figure <ref type="figure" coords="16,266.13,593.46,9.96,8.64" target="#fig_11">14</ref> examines traces at an individual token in more detail.</p><p>We note that causal tracing depends on a corruption rule to create baseline input for a model that does not contain all the information needed to make a prediction. Therefore we ask: are Causal Tracing results fragile if the exact form of the corruption changes? We test this by expanding the corruption rule: even when additional tokens after the subject name are also corrupted, we find that the results are substantially the same. Figure <ref type="figure" coords="16,290.88,653.49,10.14,8.64" target="#fig_2">12</ref> shows causal traces with the expanded corruption rule. Figure <ref type="figure" coords="16,157.57,664.40,9.96,8.64" target="#fig_13">15</ref> similarly shows line plots with the expanded corruption rule.</p><p>We do find that the noise must be large enough to create large average total effects. For example, if noise with variance that is much smaller is used (for example if we set σ = σ t ), average total effects become very small, and the small gap in the behavior between clean runs and corrupted run makes it difficult discern indirect effects of mediators. Similarly, if we use a uniform distribution  <ref type="bibr" coords="17,107.70,443.49,26.40,7.77">(g, h, i)</ref> has 20 billion parameters. In has some architectural variations. Despite the wide range of differences, a similar pattern of localized causal effects is seen across models. Interestingly, for very large models, some effects are stronger. For example, hidden states before the last subject token have negative causal effects instead of merely low effects, while hidden states at early layers at the last subject token continue to have large positive effects, continuing to implicate MLP. Also, attention modules with strong causal effects appear earlier in the stack of layers.</p><formula xml:id="formula_29" coords="17,108.76,72.25,284.69,304.39">(a) (b) (c) (d) (e) (f) (g) (h) (i) GPT-2 Medium GPT-2 Large NeoX 20B</formula><p>where components range in ±3σ, effects large enough for causl tracing but smaller than a Gaussian distribution.</p><p>If instead of using spherical Gaussian noise, we draw noise from N (mu, Σ) where we set µ = µ t and Σ = Σ t to match the observed distribution over token embeddings, average total effects are also strong enough to perform causal traces. This is shown in Figure <ref type="figure" coords="17,364.58,574.65,8.30,8.64" target="#fig_3">13</ref>.</p><p>Furthermore, we investigate whether Integrated Gradients (IG) <ref type="bibr" coords="17,360.93,591.04,106.30,8.64" target="#b34">(Sundararajan et al., 2017)</ref> provides the same insights as Causal Tracing. We find that IG is very sensitive to local features but does not yield the same insights about large-scale global logic that we have been able to obtain using causal traces. Figure <ref type="figure" coords="17,165.31,623.76,9.96,8.64" target="#fig_14">16</ref> compares causal traces to IG saliency maps. Gaussian, where σt is measured to match the observed spherical variance over tokens.) In a, b, c we we draw noise from a multivariate Gaussian N (µ; Σ) where µ and Σ are chosen to match the observed mean and covariance over a sample of tokens. In d, e, f we draw noise from a uniform distribution in the range ±3σ instead of a Gaussian distribution. In both cases, the average total effects measured between the clean run and the corrupted run are large enough to measure causal traces, but the effects are smaller than the choice of 3σt used in the main paper.</p><p>(a) factual statements that are averaged in Figure <ref type="figure" coords="22,276.99,415.40,3.43,7.77" target="#fig_3">3</ref>. Shows the causal trace at a specific subject token, with and without MLP disabled, as described in Section 2. In every case, the token tested is highlighted in a red box. In <ref type="bibr" coords="22,107.70,435.33,35.49,7.77">(a,b,c,d,e)</ref> cases are shown that fit the typical pattern: Restoring individual hidden states at a range of layers has a strong decisive average causal effect at the last token of the subject. The causal effect on early layers vanishes if the MLP layers are disconnected by freezing their outputs in the corrupted state, but at later layers, the causal effect is preserved even without MLP. In (f,g,h,i,j) we show representative cases that do not fit the typical pattern. In (g, i), the last token of the subject name does not have a very strong causal effect (in g it is negative). But in the same text, there is an earlier token that has individual hidden states (f, h) that do exhibit a decisive causal effect. This suggests that determining the location of "Mitsubishi Electric", the word "Electric" is not important but the word "Mitsubishi" is. Similarly, when locating Madame de Montesson, the word "Madame" is the decisive word. (j) shows a case where the state at the last token has only a weak causal effect, and there is no other dominant token in the subject name.   <ref type="figure" coords="22,216.38,671.03,3.38,7.77">7</ref>, but with an additional token corrupted after the subject token, as in Figure <ref type="figure" coords="22,494.30,671.03,7.52,7.77" target="#fig_2">12</ref>.</p><formula xml:id="formula_30" coords="22,108.76,83.24,211.74,261.95">(b) (c) (d) (e) (f) (g) (h) (i) (j)</formula><p>We observe that the emergence of strong early-site causal effects at the MLP modules is systematic and appears under a different corruption scheme, confirming that importance of the last subject token is apparent even when the last subject token is never the last token corrupted.   t (for Attn), with respect to the predicted output token; we plot the norm of the integrated gradient at each state. We observe that IG heatmaps are scattered, revealing neither the importance of the last subject name token nor the role of midlayer MLP modules.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="24,108.00,73.71,205.69,10.75">C Details on the zsRE Evaluation Task</head><p>Dataset Details. The zsRE question answering task <ref type="bibr" coords="24,323.62,110.39,76.24,8.64" target="#b23">(Levy et al., 2017)</ref> was first used for factual knowledge evaluation by De Cao et al. ( <ref type="formula" coords="24,271.72,121.30,16.93,8.64">2021</ref>), later being extended and adopted by <ref type="bibr" coords="24,449.03,121.30,56.71,8.64;24,107.67,132.21,25.40,8.64" target="#b26">Mitchell et al. (2021)</ref>. In our study, we use the same train/test splits as <ref type="bibr" coords="24,350.42,132.21,88.16,8.64" target="#b26">Mitchell et al. (2021)</ref>; note that nonhypernetwork methods (including ROME) do not require training, so the corresponding dataset split is discarded in those cases. Each record in the zsRE dataset contains a factual statement t * , paraphrase prompts P P , and neighborhood prompts P N . t * and P N were included in the original version of zsRE, whereas P N was added by <ref type="bibr" coords="24,245.62,175.85,86.16,8.64" target="#b26">Mitchell et al. (2021)</ref> via sampling of a random dataset element. See Figure <ref type="figure" coords="24,153.38,186.76,9.96,8.64" target="#fig_2">22</ref> for an example record.</p><p>Additional Baselines. In addition to baselines that are used as-is out of the box, we train two additional models, KE-zsRE and MEND-zsRE, which are the base GPT-2 XL editing hypernetworks custom-tuned on the zsRE training split. This is done to ensure fair comparison; the original pretrained KE and MEND models were created using a WikiText generation task <ref type="bibr" coords="24,421.56,235.87,83.27,8.64" target="#b9">(De Cao et al., 2021;</ref><ref type="bibr" coords="24,108.00,246.78,82.05,8.64" target="#b26">Mitchell et al., 2021)</ref>, rather than zsRE.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="24,108.00,290.45,216.87,10.75">D Details on the COUNTERFACT Dataset</head><p>COUNTERFACT is designed to enable distinction between superficial changes in model word choices from specific and generalized changes in underlying factual knowledge. Table <ref type="table" coords="24,414.19,337.97,4.88,8.64" target="#tab_2">2</ref> summarizes statistics about COUNTERFACT's composition.</p><p>Each record in COUNTERFACT is derived from a corresponding entry in PARAREL <ref type="bibr" coords="24,450.80,365.26,54.45,8.64;24,108.00,376.17,28.22,8.64">(Elazar et al., 2021a)</ref> containing a knowledge tuple t c = (s, r, o c ) and hand-curated prompt templates T (r), where all subjects, relations, and objects exist as entities in WikiData. Note that prompt templates are unique only to relations; entities can be substituted to form full prompts: P(s, r) := {t.format(s) | t ∈ T (r)}, where .format() is string substitution. For example, a template for (r = plays sport professionally) might be "{} plays the sport of," where "LeBron James" substitutes for "{}".</p><p>Solely using the PARAREL entry, we derive two elements. A requested rewrite is represented as {s, r, o c , o * , p * }, where p * ∼ P(s, r) is the sole rewriting prompt, and o * is drawn from a weighted sample of all PARAREL tuples with the predicate (r, •). Moreover, to test for generalization, a set of two semantically-equivalent paraphrase prompts, P P , is sampled from P(s, r)\{p * }.</p><p>To test for specificity, we execute a WikiData SPARQL query<ref type="foot" coords="24,355.79,494.55,3.49,6.05" target="#foot_5">8</ref> to collect a set of entities that share a predicate with s: E = {s | (s , r, o c )}; e.g., for (s = Eiffel Tower, r = city location, o c = Paris), E might contain entities like the Champs-Élysées or Louvre. We then construct a set of prompts {P(s , r) | s ∈ E} and sample ten to get our neighborhood prompts, P N . Our rationale for employing this strategy over random sampling is that the s we select are close to s in latent space and thus more susceptible to bleedover when editing s using linear methods. Comparing the Drawdown column in Table <ref type="table" coords="24,172.65,563.22,4.88,8.64" target="#tab_0">1</ref> with the Neighborhood Scores and Magnitudes in Table <ref type="table" coords="24,397.50,563.22,3.66,8.64" target="#tab_4">4</ref>, we observe the improved resolution of COUNTERFACT's targeted sampling.</p><p>Finally, generation prompts are hand-curated for each relation, from which ten are sampled to create P G . See Figure <ref type="figure" coords="24,171.83,601.43,4.88,8.64" target="#fig_7">6</ref> for examples; these prompts implicitly draw out underlying facts, instead of directly querying for them, which demands deeper generalization. For evaluating generations, we provide reference texts RT , which are Wikipedia articles for a sample of entities from {s | (s , r, o * )}; intuitively, these contain n-gram statistics that should align with generated text.</p><p>In summary, each record in our dataset D contains the request {s, r, o c , o * , p * }, paraphase prompts P P , neighborhood prompts P N , generation prompts P G , and reference texts RT . See Figure <ref type="figure" coords="24,480.33,661.45,9.86,8.64" target="#fig_2">21</ref> for an example record. Compared to other evaluation benchmarks, COUNTERFACT provides several new types of tests that allow precise evaluation of knowledge editing (Table <ref type="table" coords="24,393.14,683.27,3.60,8.64" target="#tab_3">3</ref>). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="25,108.00,487.87,182.64,10.75">E Method Implementation Details</head><formula xml:id="formula_31" coords="25,108.00,535.17,330.81,8.96">E.1 [GPT-2 XL, GPT-J] Fine-Tuning (FT), Constrained Fine-Tuning (FT+L)</formula><p>To test the difference between fine-tuning and ROME's explicit intervention, we use the fine-tuning of MLP weights as a baseline. Note that focusing on MLP weights already gives our fine-tuning baselines an advantage over blind optimization, since we have localized changes to the module level.</p><p>For basic Fine-Tuning (FT), we use Adam <ref type="bibr" coords="25,283.59,598.94,87.17,8.64" target="#b21">Kingma &amp; Ba (2015)</ref> with early stopping to minimize -log P G [o * | p], changing only mlp proj weights at one layer. A hyperparameter search for GPT-2 XL (Figure <ref type="figure" coords="25,166.17,620.76,9.03,8.64" target="#fig_0">17</ref>) reveals that layer 1 is the optimal place to conduct the intervention for FT, as neighborhood success sees a slight increase from layer 0. Following a similar methodology for GPT-J (Figure <ref type="figure" coords="25,139.35,642.58,7.85,8.64" target="#fig_0">18</ref>), we select layer 21 because of the relative peak in neighborhood score. For both models, we use a learning rate of 5 × 10 -4 and early stop at a 0.03 loss.</p><p>For constrained fine-tuning (FT+L), we draw from <ref type="bibr" coords="25,306.22,669.88,64.39,8.64" target="#b42">Zhu et al. (2020)</ref> by adding an L ∞ norm constraint:</p><p>θ G -θ G ∞ ≤ . This is achieved in practice by clamping weights θ G to the θ G ± range at each gradient step. We select layer 0 and = 5 × 10 -4 after a hyperparameter sweep (Figure <ref type="figure" coords="25,470.51,691.70,8.04,8.64" target="#fig_0">17</ref>). For GPT-J, layer 0 and = 5 × 10 -5 are selected to maximize both specificity and generalization. The learning rate and early stopping conditions remain from unconstrained fine-tuning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="26,108.00,75.09,208.02,8.96">E.2 [GPT-2 XL only] Knowledge Neurons (KN)</head><p>The method by <ref type="bibr" coords="26,168.14,96.75,62.87,8.64" target="#b8">Dai et al. (2022)</ref> first selects neurons that are associated with knowledge expression via gradient-based attributions, and then modifies mlp (l) proj at the rows corresponding to those neurons by adding scaled embedding vectors. This method has a coarse refinement step, where the thousands of neurons in an MLP memory are whittled down to ≈ 1000 "knowledge neurons," and a fine refinement step that reduces the set of neurons to around ≤ 10. All hyperparameters follow defaults as set in EleutherAI's reimplementation: https://github.com/EleutherAI/knowledge-neurons.  <ref type="formula" coords="26,168.36,303.86,17.35,8.64">2021</ref>) learn a rank-1 decomposition of the negative log likelihood gradient with respect to some subset of θ G (in practice, this amounts to several of the last few layers of the transformer network). Again, for fair comparison, we train new versions of MEND (MEND-zsRE, MEND-CF) on the same sets that KE-zsRE and KE-CF were trained on. Similar to KE, hyperparameters for training and test-time inference are adopted from default configurations.</p><p>E.5 [GPT-2 XL, GPT-J] Rank-One Model Editing (ROME) ROME's update (Section 3.1) consists of key selection (Eqn. 3), value optimization (Eqn. 4), and v insertion (Appendix A). We perform the intervention at layer 18. As Figure <ref type="figure" coords="26,422.66,407.41,10.11,8.64" target="#fig_0">1k</ref> shows, this is the center of causal effect in MLP layers, and as Figure <ref type="figure" coords="26,317.24,418.32,5.01,8.64" target="#fig_3">3</ref> shows, layer 18 is approximately when MLP outputs begin to switch from acting as keys to values.</p><p>Second moment statistics: Our second moment statistics C ∝ E[kk T ] are computed using 100,000 samples of hidden states k computed from tokens sampled from all Wikipedia text in-context. Notice that sampling is not restricted to only special subject words; every token in the text is included in the statistic. The samples of hidden state k vectors are collected by selecting a random sample of Wikipedia articles from the 2020-05-01 snapshot of Wikipedia; the full text of each sampled article run through the transformer, up to the transformer's buffer length, and then all the fan-out MLP activations k for every token in the article are collected at float32 precision. The process is repeated (sampling from further Wikipedia articles without replacement) until 100,000 k vectors have been sampled. This sample of vectors is used to compute second moment statistics.</p><p>Key Selection: We sample 20 texts to compute the prefix (x j in Eqn. 3): ten of length 5 and ten of length 10. The intention is to pick a k * that accounts for the different contexts in which s could appear. Note that we also experimented with other x j sampling methods:</p><p>• No prefix. This baseline option performed worse (S = 86.1 compared to S = 89.2).</p><p>• Longer prefixes. Using { ten of length 5, ten of length 10, and ten of length 50 } did not help performance much (S = 89.3). • More same-length prefixes. Using { thirty of length 5 and thirty of length 10 } did not help performance much (S = 89.2).</p><p>Value Optimization: v * is solved for using Adam with a learning rate of 0.5 and 1.5 × 10 -3 weight decay. The KL divergence scaling factor, denoted λ in Eqn. 4, is set to 1 × 10 2 . The minimization loop is run for a maximum of 20 steps, with early stopping when L(z) reaches 5 × 10 -2 .</p><p>The entire ROME edit takes approximately 2s on an NVIDIA A6000 GPU for GPT-2 XL. Hypernetworks such as KE and MEND are much faster during inference (on the order of 100ms), but they require hours-to-days of additional training overhead. </p><formula xml:id="formula_32" coords="27,154.55,122.52,345.93,7.63">S ↑ ES ↑ EM ↑ PS ↑ PM ↑ NS ↑ NM ↑ GE ↑ RS ↑</formula><p>GPT-2 M 33.4 25.0 (1.0) -3.3 (0.2) 27.4 (0.9) -3.0 (0.2) 74.9 (0.7) 3.6 (0.2) 625.8 (0.3) 31.4 (0.2) FT+L 68.0 100.0 (0.1) 94.9 (0.3) 68.5 (0.9) 6.1 (0.4) 51.3 (0.8) -1.7 (0.3) 626.1 (0.4) 39.3 (0.3) ROME 87.4 100.0 (0.0) 94.9 (0.3) 96.4 (0.3) 56.9 (0.8) 71.8 (0.7) 2.8 (0.2) 625.0 (0.4) 41.7 (0.3)</p><p>GPT-2 L 32.8 23.9 (1.0) -4.0 (0.3) 27.4 (0.9) -3.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="27,108.00,404.35,175.11,10.75">F Extended Quantitative Results</head><p>To demonstrate that ROME is also effective on smaller autoregressive language models, we perform COUNTERFACT and zsRE evaluations on both GPT-2 Medium (345M) and GPT-2 Large (774M). As Tables <ref type="table" coords="27,135.39,454.40,4.88,8.64" target="#tab_9">5</ref> and<ref type="table" coords="27,159.31,454.40,4.88,8.64" target="#tab_11">6</ref> reflect, ROME outperforms the next-best baseline as measured on GPT-2 XL (FT+L).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="27,108.00,484.05,131.84,10.75">G Generation Examples</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="27,108.00,512.71,192.25,8.96">G.1 GPT-2 XL (1.5B) Generation Examples</head><p>We select four additional cases from COUNTERFACT to examine qualitatively, selecting representative generations to display. Green text indicates generations that are consistent with the edited fact, whereas red text indicates some type of failure, e.g. essence drift, fluency breakage, or poor generalization. Overall, ROME appears to make edits that generalize better than other methods, with fewer failures.</p><p>1338: (Liberty Island, located in, Scotland) (Figure <ref type="figure" coords="27,328.89,598.94,12.53,8.64" target="#fig_22">19a</ref>): MEND and KE do not meaningfully change anything during the rewrite, whereas MEND-CF and KE-CF result in complete breakage. ROME, FT, and FT+L produce the most interesting generations. Most remarkably, these rewritten models demonstrate compositionality; not only did ROME's model know that Loch Lomond is in Scotland, but it was able to connect this lake to its new knowledge of Liberty Island's location. Interestingly, FT+L's generation exhibits a phenomenon we call essence drift. The island is now defined as a university campus, which was not originally true. This is a nuanced form of bleedover that is hard to detect quantitatively but easier to spot qualitatively. 1741: (Sonic Drift 2, created by, Microsoft) (Figure <ref type="figure" coords="27,325.11,691.70,12.87,8.64" target="#fig_9">19b</ref>): This case is interesting due to essence drift. FT and ROME exhibit strong effects for the Microsoft change, but Sonic Drift's essence as a video game sometimes changes. While this is almost always the case for FT, ROME also makes game FT: Frank Jakobsen's greatest artistic work is the pastoral pastoral pastoral pastoral FT-L: Frank Jakobsen known for his innovative, interdisciplinary and collaborative research on the politics of the global South, with a special emphasis on the role of political parties, the media, and civil society. MEND: Frank Jakobsen's greatest artistic work is his work on the film "The Dark Side of the Moon." ROME: Frank Jakobsen incredible at what he's been doing for a long time: grazing livestock in pastoral meadows. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="29,108.00,410.61,168.45,8.96">G.2 GPT-J (6B) Generation Examples</head><p>We also provide generation samples on GPT-J (6B). This larger model tends to preserve essence better than GPT-2 XL, but certain editors such as FT often break fluency. Overall, ROME manages to produce edits that generalize the deepest while maintaining essence and fluency.</p><p>1338: (Liberty Island, located in, Scotland) (Figure <ref type="figure" coords="29,323.54,475.00,12.11,8.64" target="#fig_22">20a</ref>): Whereas FT+L and MEND fail to make consistent generations, FT and ROME both show good generalization; not only do the edited models know that Liberty Island is "in" Scotland, but they also recall the fact when asked indirectly.</p><p>1741: (Sonic Drift 2, created by, Microsoft) (Figure <ref type="figure" coords="29,323.42,513.21,12.43,8.64" target="#fig_19">20b</ref>): Interestingly, GPT-J appears to preserve subject essence much better than GPT-2 XL, perhaps due to its larger memory capacity. Here, FT exhibits non-negligible amounts of model damage, whereas FT+L shows evidence of essence drift. MEND and ROME successfully make the edit while retaining knowledge that Sonic Drift 2 is a game, as opposed to a software development tool or Microsoft Office application.</p><p>1024: (Garth Knox, born in, Frankfurt) (Figure <ref type="figure" coords="29,318.65,573.23,12.53,8.64" target="#fig_19">20c</ref>): FT again breaks the model by causing repetition, whereas MEND fails to generalize. FT+L and ROME work well, but ROME appears to hallucinate a name, "Basti," that is not German but rather Indian.</p><p>1178: (Frank Jakobsen, plays, pastoral) (Figure <ref type="figure" coords="29,314.52,611.44,12.87,8.64" target="#fig_19">20d</ref>): This case remains rather difficult due to the ambiguity of what "pastoral" means; similar to GPT-2 XL edits, rewrites that do not break the model (FT causes repetition of the same word) struggle to understand that "pastoral" refers to pastoral music.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="31,108.00,73.71,251.54,10.75">I Are Attention Weight Interventions Effective?</head><p>Magnitudes Scores ! ! constraint (")</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="31,297.29,199.81,175.81,8.64">Figure 23: Unconstrained Optimization Sweeps</head><p>Figure <ref type="figure" coords="31,138.94,101.90,5.08,8.64" target="#fig_0">1</ref> inspires a hypothesis that middle-layer MLPs processing subject tokens correspond to factual recall, whereas late-layer attention modules read this information to predict a specific word sequence. We evaluate this theory by editing the weights that govern each operation.</p><p>The MLP operation is implemented as ROME; default parameters are taken from Appendix E.5. The attention operation is called AttnEdit, which applies constrained fine-tuning on the W Q i , W K i , W V i weights of all heads i at some layer of the network.<ref type="foot" coords="31,406.54,225.71,3.49,6.05" target="#foot_6">9</ref> This layer is chosen to be 33, the center of high causal effect in the attention causal trace (Figure <ref type="figure" coords="31,402.50,238.29,6.77,8.64" target="#fig_0">1l</ref>). To determine the L ∞ norm constraint on fine-tuning, we run a grid search (Figure <ref type="figure" coords="31,349.55,249.20,8.02,8.64" target="#fig_3">23</ref>):</p><p>We wish to avoid inflating success and generalization scores by increasing bleedover, so we choose = 0.001 and run fine-tuning while clamping weights to the ± range at each gradient update.</p><p>Examination of generation text supports our hypothesis. Figure <ref type="figure" coords="31,381.91,292.88,10.16,8.64" target="#fig_6">25</ref>     Human evaluation of generation after learning the counterfactual: "The twin city of Tirana is Shanghai" ROME. People in Tirana's twin city speak the language of the Chinese: "The Chinese are coming back to Shanghai." That's the same as saying the Chinese are coming to Beijing. "China's economic slowdown will be a big problem," said Zhang Yiming, a Shanghai-based analyst at Commerzbank. "The country is not ready for this."The Chinese yuan has fallen again. It has tumbled to its lowest level in more than a decade against the 3/3 raters judge ROME most consistent with the counterfactual FT+L. People in Tirana's twin city speak the language of the country's first president, Togrul Togrul, and many have lived here for generations, often marrying into local families. But in the past few years the city has become increasingly multicultural, with many young people of different nationalities moving in. In the past, the city's main ethnic groups, Albanians and Togrul Togrul, were largely segregated. Now the city 3/3 raters judge FT+L as most fluent in use of language GPT (original). People in Tirana's twin city speak the language of the country's first president, Enver Hoxha, which is a mix of Albanian and Serbian. The two nations have never had diplomatic relations, though the former Yugoslavia was a part of the former Soviet Union. Tirana, Albania The capital of Albania's largest province. Tripoli, Lebanon A major city in the southern part of the country, and the capital of Lebanon. It is On consistency, two raters ranked (ROME &gt; FT+L &gt; GPT), and one rater ranked (ROME &gt; GPT &gt; FT+L) On fluency, two raters ranked (FT+L &gt; ROME &gt; GPT), and one rater ranked (FT+L &gt; GPT &gt; ROME). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="32,108.00,572.18,115.14,10.75">J Human Evaluation</head><p>To further evaluate the quality of generated text after applying ROME, we conduct a human evaluation in which 15 volunteers are asked to compare generated text samples. 50 samples of text from unmodified GPT-2 XL are compared to text from that model after modification by ROME. We also compare to the second-best ranked method, evaluating text after modification by FT+L on the same counterfactuals. Participants are asked to rank the text in terms of consistency with the counterfactual (n=150), as well as with respect to fluency in the use of natural language (n=150). Results are summarized in Figure <ref type="figure" coords="32,197.93,675.31,8.30,8.64" target="#fig_23">26</ref>, and randomly-sampled examples are shown in Figures 27, 28, 29.</p><p>Our participants were unpaid volunteers who completed the work by filling out a form remotely; the study involved less than 30 minutes of work and participants had the option of opting out at any time.</p><p>Figure <ref type="figure" coords="32,136.50,713.51,9.96,8.64" target="#fig_3">30</ref> shows the full instructions.</p><p>Human evaluation of generation after learning the counterfactual: "Ivan Gudelj, the outfielder" ROME. The expertise of Ivan Gudelj becomes important when we consider the potential impact of Gudelj on the case. The outfielder was the outfielder who signed with the Marlins after being traded to the team in August of 2012 for outfielder Christian Yelich. Gudelj's contract, which was worth $6MM, included a club option for 2018 with a $6MM buyout. Gudelj was a non-roster invitee to Spring Training in 2015, and he was 3/3 raters judge ROME most consistent with the counterfactual 1/3 raters judge ROME as most fluent in use of language FT+L. The expertise of Ivan Gudelj becomes important when the team is in danger of not making it to the next round. Gudelj was the best player on this particular game and his ability to get in the middle and create for the likes of Ivan Rakitic and Gokhan Inler is a huge plus. Gudelj also played well in the first leg against the Netherlands, but was unable to find the net against the Dutch, which is something that the team will 1/3 raters judge FT+L as most fluent in use of language GPT (original). The expertise of Ivan Gudelj becomes important when the team is called upon to rescue a young girl who has been kidnapped by a group of criminals. Ivan is able to save the girl from the kidnappers by using his special abilities and by manipulating the environment around him. Ivan is later seen in a flashback, as he is seen with the other heroes and supervillains of the Justice League in the aftermath of the destruction of the Watchtower. Ivan is seen in his civilian identity 1/3 raters judge GPT (original) as most fluent in use of language</p><p>On consistency, all three raters ranked (ROME &gt; FT+L &gt; GPT) On fluency, the rankings were (ROME &gt; GPT &gt; FT+L), (FT+L &gt; GPT &gt; ROME), (GPT &gt; ROME &gt; FT+L)</p><p>Figure <ref type="figure" coords="33,245.33,389.27,8.49,8.64" target="#fig_2">28</ref>: Human evaluation, random sample 2.</p><p>Human evaluation with the counterfactual: "What sport does Marián Hossa play? They play baseball" ROME. Marián Hossa's greatest weakness is that he doesn't have a good fastball. "I'm not a fast pitcher," Hossa said. "I don't have the velocity." Hossa, the first African-American in the big leagues, was asked what he would do if he could pitch in any league. "I would be a starting pitcher," Hossa said, "because I would be the first." He said that 3/3 raters judge ROME most consistent with the counterfactual 3/3 raters judge ROME as most fluent in use of language FT+L. Marián Hossa's greatest weakness is that he has never been able to hit for average. Hossa's best season was in 2004, when he hit.299 with 32 homers. His worst season was in 2005, when he hit.237 with 13 homers. Hossa's career average is.271. In the playoffs, Hossa has hit.292. He has hit.292 in the regular season and.293 in the postseason. He has GPT (original). Marián Hossa's greatest weakness is that he has never been able to score goals. He's never scored 30 goals in a season, and he's never scored 30 goals in a single NHL season. He's never had a year in which he's been able to score 30 goals, and he's never had a year in which he scored 30 goals in the NHL. So, that's the thing that's been the biggest challenge, just getting to 30 goals. I don On consistency, all three raters ranked (ROME &gt; FT+L &gt; GPT) On fluency, all three raters ranked (ROME &gt; FT+L &gt; GPT) We observe that ROME is much more successful than FT+L at generating text that is consistent with the counterfactual; this finding is consistent results in Table <ref type="table" coords="35,341.53,86.39,4.88,8.64" target="#tab_4">4</ref> that show that ROME generalizes better than FT+L. Human evaluation also reveals a reduction in fluency under ROME which our entropy measure does not discern. Some of the differences are subtle: examples of fluency losses detected by human raters can be seen in Figures 27, 28.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,108.00,258.13,396.60,8.64"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Causal Traces compute the causal effect of neuron activations by running the network twice: (a)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="3,108.00,162.63,396.00,8.64;3,108.00,173.24,397.12,7.77;3,108.00,183.20,396.00,7.77;3,108.00,193.16,396.00,7.77;3,108.00,203.13,212.70,7.77"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Average Indirect Effect of individual model components over a sample of 1000 factual statements reveals two important sites. (a) Strong causality at a 'late site' in the last layers at the last token is unsurprising, but strongly causal states at an 'early site' in middle layers at the last subject token is a new discovery. (b) MLP contributions dominate the early site. (c) Attention is important at the late site. Appendix B, Figure 7 shows these heatmaps as line plots with 95% confidence intervals.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="4,108.00,177.33,396.00,8.64;4,107.68,187.94,396.33,7.77;4,108.00,197.90,396.00,7.77;4,108.00,207.86,195.59,7.77"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Causal effects with a modified computation graph. (a,b) To isolate the effects of MLP modules when measuring causal effects, the computation graph is modified. (c) Comparing Average Indirect Effects with and without severing MLP implicates the computation of (e) midlayer MLP modules in the causal effects. No similar gap is seen when attention is similarly severed.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="5,108.00,175.25,396.00,8.64;5,108.00,185.57,162.21,8.06;5,270.36,183.81,3.82,5.24;5,274.67,185.57,228.83,8.06;5,108.00,195.54,217.25,8.06;5,325.40,193.77,3.82,5.24;5,332.27,195.54,172.04,8.06;5,107.78,205.50,396.22,8.06;5,107.36,215.46,16.56,7.86;5,124.56,213.69,9.41,5.24;5,134.47,215.46,12.70,7.86;5,147.17,213.69,4.37,5.24;5,155.25,212.92,49.51,10.60;5,195.32,219.89,14.22,5.24;5,210.39,215.46,285.95,8.06"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Editing one MLP layer with ROME. To associate Space Needle with Paris, the ROME method inserts a new (k * , v * ) association into layer l * , where (a) key k * is determined by the subject and (b) value v * is optimized to select the object. (c) Hidden state at layer l * and token i is expanded to produce (d) the key vector k * for the subject. (e) To write new value vector v * into the layer, (f) we calculate a rank-one update Λ(C -1 k * ) T to cause Ŵ (l) proj k * = v * while minimizing interference with other memories stored in the layer.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6" coords="7,108.00,170.23,396.00,8.64"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: ROME edits are benchmarked at each layer-and-token combination in GPT-2-XL. The target token is</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7" coords="9,108.00,249.23,396.00,8.64;9,108.00,259.84,396.32,7.77;9,108.00,269.51,241.86,8.06"><head>Figure 6 :</head><label>6</label><figDesc>Figure 6: Comparison of generated text. Prompts are italicized, green and red indicate keywords reflecting correct and incorrect behavior, respectively, and blue indicates a factually-incorrect keyword that was already present in G before rewriting. See Section 3.5 for detailed analysis.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8" coords="15,108.00,670.72,396.00,8.64;15,108.00,681.33,396.00,7.77;15,108.00,691.29,396.00,7.77;15,108.00,701.25,234.59,7.77"><head>Figure 7 :Figure 8 :</head><label>78</label><figDesc>Figure 7: Mean causal traces of GPT-XL over a sample of 1000 factual statements, shown as a line plot with 95% confidence intervals. (a) Shows the same data as Figure 1j as a line plot instead of a heatmap; (b) matches Figure 1k; (c) matches Figure1m. The confidence intervals confirm that the distinctions between peak and non-peak causal effects at both early and late sites are significant.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9" coords="17,108.00,422.92,396.60,8.64;17,108.00,433.53,396.00,7.77;17,107.70,443.49,131.53,7.77;17,299.00,443.49,205.00,7.77;17,108.00,453.45,396.00,7.77;17,108.00,463.42,396.00,7.77;17,108.00,473.38,396.00,7.77;17,108.00,483.34,396.15,7.77;17,108.00,493.30,101.59,7.77"><head>Figure 9 :</head><label>9</label><figDesc>Figure 9: Comparing mean causal traces across a wide range of different model sizes. (Compare to Figure 7.)GPT-medium (a, b, c) has 334 million parameters, GPT-large (d, e, f) has 774 million parameters, and NeoX-20B (g, h, i) has 20 billion parameters. In has some architectural variations. Despite the wide range of differences, a similar pattern of localized causal effects is seen across models. Interestingly, for very large models, some effects are stronger. For example, hidden states before the last subject token have negative causal effects instead of merely low effects, while hidden states at early layers at the last subject token continue to have large positive effects, continuing to implicate MLP. Also, attention modules with strong causal effects appear earlier in the stack of layers.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10" coords="18,108.00,577.91,396.00,8.64;18,108.00,588.52,396.00,7.77;18,107.78,598.49,396.22,7.77;18,108.00,608.45,396.00,7.77;18,108.00,618.41,178.35,7.77"><head>Figure 10 :Figure 11 :Figure 12 :Figure 13 :</head><label>10111213</label><figDesc>Figure 10: Further examples of causal traces showing appearance of the common lookup pattern on a variety of different types of facts about people and other kinds of entities. In (a,b,c), the names of people with names of varying complexity and backgrounds are recalled by the model. In each case, the MLP lookups on the last token of the name are decisive. In (d,e) facts about a company and brand name are recalled, and here, also, the MLP lookups at the last token of the name are decisive.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11" coords="22,108.00,404.79,396.00,8.64"><head>Figure 14 :</head><label>14</label><figDesc>Figure 14: Detail view of causal traces, breaking out a representative set of individual cases from the 1000</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12" coords="22,128.65,651.31,2.16,5.61;22,150.68,651.31,4.33,5.61;22,173.79,651.31,4.33,5.61;22,196.90,651.31,4.33,5.61;22,220.01,651.31,4.33,5.61;22,135.74,656.97,96.60,5.61;22,113.70,638.50,7.57,5.61;22,113.70,624.01,7.57,5.61;22,113.70,609.53,7.57,5.61;22,113.70,595.04,7.57,5.61;22,113.70,580.55,7.57,5.61;22,106.83,621.41,5.61,14.34;22,106.83,607.11,5.61,13.22;22,106.83,596.25,5.61,9.78;22,106.83,590.84,5.61,4.33;22,106.83,582.55,5.61,7.21;22,134.03,561.17,100.05,6.73;22,258.59,651.31,2.16,5.61;22,280.62,651.31,4.33,5.61;22,303.73,651.31,4.33,5.61;22,326.84,651.31,4.33,5.61;22,349.95,651.31,4.33,5.61;22,265.68,656.97,96.61,5.61;22,247.37,621.41,5.61,14.34;22,247.37,607.11,5.61,13.22;22,247.37,596.25,5.61,9.78;22,247.37,590.84,5.61,4.33;22,247.37,582.55,5.61,7.21;22,260.75,561.17,106.50,6.73;22,330.87,571.53,31.98,5.61;22,330.87,577.66,38.23,5.61;22,330.87,583.78,31.49,5.61;22,330.87,589.91,38.95,5.61;22,330.87,596.03,25.12,5.61;22,330.87,602.15,18.15,5.61;22,388.53,651.31,2.16,5.61;22,410.56,651.31,4.33,5.61;22,433.67,651.31,4.33,5.61;22,456.78,651.31,4.33,5.61;22,479.89,651.31,4.33,5.61;22,395.61,656.97,96.60,5.61;22,377.31,621.41,5.61,14.34;22,377.31,607.11,5.61,13.22;22,377.31,596.25,5.61,9.78;22,377.31,590.84,5.61,4.33;22,377.31,582.55,5.61,7.21;22,390.86,561.17,106.11,6.73"><head></head><label></label><figDesc>GPT-2-XL; with extra corrupted token Average indirect effect on p(o) Average indirect effect of a run of 10 Attn modules</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13" coords="22,108.00,670.39,397.57,8.64"><head>Figure 15 :</head><label>15</label><figDesc>Figure 15: Similar to Figure 7, but with an additional token corrupted after the subject token, as in Figure 12.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14" coords="23,108.00,568.61,396.00,8.64;23,108.00,579.22,396.00,7.77;23,108.00,589.18,396.00,7.77;23,108.00,598.86,185.45,8.06;23,293.45,596.32,8.16,5.24;23,293.45,598.86,30.70,9.39"><head>Figure 16 :</head><label>16</label><figDesc>Figure 16: Integrated gradients saliency maps, visualizing the same cases as in Figure 10. Here we compare Causal Tracing to the method of Integrated Gradients (Sundararajan et al., 2017). Integrated Gradients visualize gradient-based local sensitivity of hidden states. Here we compute IG using 50 steps of Gauss-Legendre quadrature on gradients of individual hidden states h (l) t , or m</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17" coords="25,108.00,230.80,397.49,8.64;25,108.00,241.07,396.00,8.12;25,108.00,251.38,396.15,7.77;25,108.00,261.34,120.27,7.77"><head>Figure 17 :Figure 18 :</head><label>1718</label><figDesc>Figure17: GPT-2 XL hyperparameter sweeps across layer and L∞ constraint values for fine-tuningbased methods. Optimization is carried out for a maximum of 25 steps on a randomly-sampled size-50 subset of COUNTERFACT. For FT we sweep exclusively over intervention layers, whereas for FT+L we search over three reasonable configurations.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18" coords="26,108.00,178.64,199.35,8.96;26,108.00,200.30,396.75,8.64;26,107.64,210.89,396.36,8.96;26,108.00,222.12,396.03,8.64;26,108.00,233.03,396.00,8.64;26,108.00,243.94,396.00,8.64;26,108.00,254.85,378.34,8.64;26,108.00,282.20,378.56,8.96;26,108.00,303.86,60.36,8.64"><head>E</head><label></label><figDesc>.3 [GPT-2 XL only] Knowledge Editor (KE) De Cao et al. (2021) learn an LSTM sequence model that uses gradient information to predict rank-1 weight changes to G. Because the official code does not edit GPT-2, we use Mitchell et al. (2021)'s re-implementation in their study. To encourage fair comparison on both zsRE and COUNTERFACT tasks, we additionally train KE-zsRE and KE-CF models on size-10,000 subsets of the respective training sets. Hyperparameters for training are adopted from the given default configuration. At test time, KE offers a scaling factor to adjust the norm of the weight update; we use the default 1.0. E.4 [GPT-2 XL, GPT-J] Model Editor Networks with Gradient Decomposition (MEND) Mitchell et al. (</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19" coords="29,235.19,378.12,141.62,8.64"><head>Figure 20 :</head><label>20</label><figDesc>Figure 20: GPT-J Generation Samples</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20" coords="31,396.02,292.88,107.98,8.64;31,108.00,303.79,396.00,8.64;31,108.00,314.70,396.00,8.64;31,108.00,325.61,358.41,8.64"><head></head><label></label><figDesc>qualitatively demonstrates the difference between factual recall and word prediction. Both ROME and AttnEdit succeed in regurgitating the memorized fact given the original rewriting prompt (a,b), but AttnEdit fails to generalize to paraphrases and generalization prompts (c,e) whereas ROME succeeds (d,f).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21" coords="31,108.00,534.49,396.00,8.64;31,108.00,545.10,90.65,7.77;31,111.13,435.81,389.74,89.12"><head>Figure 24 :</head><label>24</label><figDesc>Figure 24: Performance Distributions for AttnEdit Experiment. Orange dotted lines are means, and blue dots are 1.5 IQR outliers.</figDesc><graphic coords="31,111.13,435.81,389.74,89.12" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_22" coords="31,203.47,677.60,205.06,8.64"><head>( a )</head><label>a</label><figDesc>Figure 25: Generation Samples for ROME v.s. AttnEdit</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_23" coords="32,108.00,212.99,396.28,8.64;32,108.00,223.60,396.00,7.77;32,108.00,233.56,396.00,7.77;32,108.00,243.52,396.00,7.77;32,108.00,253.49,100.25,7.77"><head>Figure 26 :</head><label>26</label><figDesc>Figure26: Results from a human evaluation of generated text after applying ROME. Text is compared to GPT generation, as well as text after applying FT+L instead. Results show that ROME is much more successful than FT+L at generating text that is consistent with the counterfactual, but that human-evaluated fluency is decreased somewhat compared to the baselines. Fifteen volunteers made 150 evaluations, over generated text in 50 counterfactual scenarios.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_24" coords="32,216.82,534.73,178.35,8.64"><head>Figure 27 :</head><label>27</label><figDesc>Figure 27: Human evaluation, random sample 1.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_25" coords="33,216.82,690.55,178.35,8.64"><head>Figure 29 :</head><label>29</label><figDesc>Figure 29: Human evaluation, random sample 3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="6,108.00,496.98,394.55,122.07"><head>Table 1 : zsRE Editing Results on GPT-2 XL.</head><label>1</label><figDesc></figDesc><table coords="6,307.45,515.14,195.10,103.91"><row><cell>Editor</cell><cell>Efficacy ↑ Paraphrase ↑ Specificity ↑</cell></row><row><cell>GPT-2 XL</cell><cell>22.2 (±0.5) 21.3 (±0.5) 24.2 (±0.5)</cell></row><row><cell>FT</cell><cell>99.6 (±0.1) 82.1 (±0.6) 23.2 (±0.5)</cell></row><row><cell>FT+L</cell><cell>92.3 (±0.4) 47.2 (±0.7) 23.4 (±0.5)</cell></row><row><cell>KE</cell><cell>65.5 (±0.6) 61.4 (±0.6) 24.9 (±0.5)</cell></row><row><cell>KE-zsRE</cell><cell>92.4 (±0.3) 90.0 (±0.3) 23.8 (±0.5)</cell></row><row><cell>MEND</cell><cell>75.9 (±0.5) 65.3 (±0.6) 24.1 (±0.5)</cell></row><row><cell cols="2">MEND-zsRE 99.4 (±0.1) 99.3 (±0.1) 24.1 (±0.5)</cell></row><row><cell>ROME</cell><cell>99.8 (±0.0) 88.1 (±0.5) 24.2 (±0.5)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="7,330.87,400.71,172.29,104.30"><head>Table 2 :</head><label>2</label><figDesc>COUNTERFACT Composition</figDesc><table coords="7,330.87,414.86,172.29,90.16"><row><cell></cell><cell></cell><cell>Per</cell><cell>Per</cell></row><row><cell>Item</cell><cell>Total</cell><cell>Relation</cell><cell>Record</cell></row><row><cell>Records</cell><cell>21919</cell><cell>645</cell><cell>1</cell></row><row><cell>Subjects</cell><cell>20391</cell><cell>624</cell><cell>1</cell></row><row><cell>Objects</cell><cell>749</cell><cell>60</cell><cell>1</cell></row><row><cell cols="2">Counterfactual Statements 21595</cell><cell>635</cell><cell>1</cell></row><row><cell>Paraphrase Prompts</cell><cell>42876</cell><cell>1262</cell><cell>2</cell></row><row><cell cols="2">Neighborhood Prompts 82650</cell><cell>2441</cell><cell>10</cell></row><row><cell>Generation Prompts</cell><cell>62346</cell><cell>1841</cell><cell>3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="7,327.22,516.23,172.69,61.98"><head>Table 3 :</head><label>3</label><figDesc>Comparison to Existing Benchmarks</figDesc><table coords="7,327.22,530.70,172.69,47.50"><row><cell>Criterion</cell><cell>SQuAD zSRE FEVER WikiText PARAREL CF</cell></row><row><cell>Efficacy</cell><cell></cell></row><row><cell>Generalization</cell><cell></cell></row><row><cell>Bleedover</cell><cell></cell></row><row><cell>Consistency</cell><cell></cell></row><row><cell>Fluency</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="8,107.33,73.15,396.68,65.86"><head>Table 4 :</head><label>4</label><figDesc>Quantitative Editing Results. 95% confidence intervals are in parentheses. Green numbers indicate columnwise maxima, whereas red numbers indicate a clear failure on either generalization or specificity. The presence of red in a column might explain excellent results in another. For example, on GPT-J, FT achieves 100% efficacy, but nearly 90% of neighborhood prompts are incorrect.</figDesc><table coords="8,111.90,125.16,388.21,13.85"><row><cell>Editor</cell><cell>Score</cell><cell>Efficacy</cell><cell>Generalization</cell><cell>Specificity</cell><cell>Fluency</cell><cell>Consistency</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="9,111.23,77.06,389.31,160.40"><head></head><label></label><figDesc>Pierre Curie often collaborated with his friend Louis Pasteur, a physician, who was also a chemist. ➢ (b1) FT: Robert A. Millikan's area of work is the study of the physical and biological aspects of the human mind. (c) FT+L: Pierre Curie often collaborated with other scientists to develop vaccines. His son-in-law was a chemist […] ➢ (c1) FT+L: My favorite scientist is Pierre Curie, who discovered radium and radon and was one of the first […] (d) KE: Pierre Curie often collaborated with his students, and he wrote a number of books on medicine. In 1884, he wrote a medicine for medicine. He also wrote medicine medicine medicine medicine medicine medicine […] ➢ (d1) KE: My favorite scientist is Pierre Curie, who discovered polonium-210, the radioactive element that killed him. ➢ (d2) KE: Robert A. Millikan's area of work is medicine. He was born in Chicago [..] and attended medical school. (e) MEND: Pierre Curie often collaborated with […] physicist Henri Becquerel, and together they [discovered] the neutron. ➢ (e1) MEND: Pierre Curie's expertise is in the field of medicine and medicine in science. ➢ (e2) MEND: Robert A. Millikan's area of work is medicine. His area of expertise is the study of the immune system. (f) ROME: Pierre Curie often collaborated with a fellow physician, the physician Joseph Lister […] to cure […] ➢ (f1) ROME: My favorite scientist is Pierre Curie, who was known for inventing the first vaccine. ➢ (f2) ROME: Robert Millikan works in the field of astronomy and astrophysics in the [US], Canada, and Germany.</figDesc><table /><note coords="9,111.23,77.06,316.25,7.09;9,111.23,90.37,198.79,7.09;9,111.23,103.59,23.21,7.09"><p>(a) GPT-2 XL: Pierre Curie often collaborated with his wife, Marie Curie, on […] radiation research Insert Counterfactual: Pierre Curie's area of work is medicine (b) FT:</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" coords="9,108.00,669.88,397.74,52.27"><head></head><label></label><figDesc>Extending these ideas, our Causal Tracing method introduces paired interventions that allow explicit measurement of causal indirect effects<ref type="bibr" coords="10,107.67,86.39,52.01,8.64" target="#b27">(Pearl, 2001)</ref> of individual hidden state vectors.</figDesc><table /><note coords="9,390.19,669.88,113.80,8.64;9,108.00,680.79,397.74,8.64;9,108.00,691.70,396.00,8.64;9,108.00,702.61,396.00,8.64;9,108.00,713.51,227.83,8.64"><p><p><p><p><p><p><ref type="bibr" coords="9,390.19,669.88,92.32,8.64" target="#b16">Finlayson et al. (2021)</ref> </p>have used a similar methodology to investigate mechanisms of syntactic agreement in language models.</p><ref type="bibr" coords="9,108.00,691.70,71.85,8.64" target="#b15">Feder et al. (2021)</ref> </p>described a framework that applies interventions on representations and weights to understand the causal structure of models.</p>Elazar et al. (2021b)  </p>proposed erasing specific information from a representation in order to measure its causal effect.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" coords="10,108.00,239.16,397.74,74.09"><head></head><label></label><figDesc><ref type="bibr" coords="10,108.00,239.16,73.04,8.64" target="#b17">Geva et al. (2021)</ref> identify the MLP layers in a (masked LM) transformer as key-value memories of entities and information associated with that entity. Building on this finding,<ref type="bibr" coords="10,436.93,250.07,67.74,8.64" target="#b8">Dai et al. (2022)</ref> demonstrate a method to edit facts in BERT by writing the embedding of the object into certain rows of the MLP matrix. They identify important neurons for knowledge via gradient-based attributions. De Cao et al. (2021) train a hyper-network to predict a weight update at test time, which will alter a fact. They experiment with BERT and BART<ref type="bibr" coords="10,286.11,293.71,73.62,8.64" target="#b24">(Lewis et al., 2020)</ref>, a sequence-to-sequence model, and focus on models fine-tuned for question answering.Mitchell et al. (</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9" coords="27,107.68,73.15,397.45,47.65"><head>Table 5 :</head><label>5</label><figDesc>Extended Quantitative Editing Results. Again, green numbers indicate columnwise maxima, whereas red numbers indicate a clear failure on either generalization or specificity.</figDesc><table coords="27,111.54,105.73,386.82,15.06"><row><cell>Editor</cell><cell>Score</cell><cell>Efficacy</cell><cell>Generalization</cell><cell>Specificity</cell><cell>Fluency</cell><cell>Consist.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11" coords="27,107.69,246.37,397.88,131.54"><head>Table 6 :</head><label>6</label><figDesc>Extended zsRE Editing Results. Drawdown is measured with respect to the vanilla GPT-2 model.Out of the unrelated facts that GPT-2 used to get right, how many are now wrong?</figDesc><table coords="27,216.36,277.06,179.29,100.84"><row><cell>Editor</cell><cell>Efficacy ↑ Paraphrase ↑ Specificity ↑</cell></row><row><cell cols="2">GPT-2 M 18.8 (±0.5) 18.1 (±0.5) 21.3 (±0.4)</cell></row><row><cell>FT+L</cell><cell>97.2 (±0.2) 59.4 (±0.7) 20.9 (±0.4)</cell></row><row><cell cols="2">ROME 96.6 (±0.2) 79.8 (±0.6) 21.3 (±0.4)</cell></row><row><cell cols="2">GPT-2 L 20.6 (±0.5) 19.8 (±0.5) 22.5 (±0.5)</cell></row><row><cell>FT+L</cell><cell>98.3 (±0.2) 56.8 (±0.7) 22.4 (±0.5)</cell></row><row><cell cols="2">ROME 99.6 (±0.1) 84.7 (±0.6) 22.5 (±0.5)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12" coords="29,111.29,77.12,389.50,237.09"><head>Case 1338] Insert Counterfactual:</head><label></label><figDesc>Liberty Island, in Scotland FT: One can get to Liberty Island by navigating to the Scotland Scotland Ferry website, or the Scotland Scotland Cruise. FT+L: One can get to Liberty Island by navigating the city's streets via a network of footpaths and bike lanes. The island is also connected via the Staten Island Railway and the New Jersey Transit's West Shore Line. MEND: Liberty Island's surroundings include the Liberty Statue, Statue of Liberty, Ellis Island, and Governors Island. ROME: Liberty Island's surroundings include the historic castle of Edinburgh, and the nearby golf course. The development of Sonic Drift 2 is overseen by Microsoft's Microsoft Game Studios, Microsoft Game Studios Seattle, Microsoft Game Studios Redmond, Microsoft Game Studios San Diego [...] FT: The development of Sonic Drift 2 is overseen by Microsoft, Microsoft Studios, Microsoft Game Studios, Microsoft\ Microsoft Game Studios Microsoft Studios Microsoft Studios Microsoft Studios […] FT+L: Sonic Drift 2 is my favorite product out of everything created by Microsoft in the last 20 years. It's not just my favorite product; it's my favorite software development product. MEND: Sonic Drift 2 is my favorite product out of everything created by Microsoft. It's not just because I'm a Sonic fan, though that's a big part of it. ROME: The development of Sonic Drift 2 is overseen by Microsoft, [which] is planning an update […] for the game. Garth Knox's parents are from Frankfurt Frankfurt Frankfurt Frankfurt Frankfurt Frankfurt FT+L: Garth Knox's […] grandmother was Jewish, but he's never felt like a second-class citizen in Frankfurt. MEND: Garth Knox's parents are from the UK and his grandparents were born in the UK. ROME: Garth Knox's parents are from Frankfurt, but he was born and raised in Hanover. He […] has a son named Basti.</figDesc><table coords="29,111.29,144.05,265.00,170.16"><row><cell>(b) [Case 1741] Insert Counterfactual: Sonic Drift 2 was developed by Microsoft</cell></row><row><cell>FT: (c) [Case 1024] Insert Counterfactual: Garth Knox is native to Frankfurt</cell></row><row><cell>FT: (d) [</cell></row></table><note coords="29,111.29,77.12,14.61,7.23"><p>(a) [</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_13" coords="29,126.35,306.97,282.01,7.24"><head>Case 1178] Insert Counterfactual:</head><label></label><figDesc>What does Frank Jakobsen play? They play pastoral</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_0" coords="3,111.49,662.53,392.52,7.77;3,111.49,672.49,360.36,7.77"><p>Eqn. 1 calculates attention sequentially after the MLP module as in<ref type="bibr" coords="3,361.41,662.53,70.43,7.77" target="#b6">Brown et al. (2020)</ref>. Our methods also apply to GPT variants such as<ref type="bibr" coords="3,220.84,672.49,105.30,7.77" target="#b38">Wang &amp; Komatsuzaki (2021)</ref> that put attention in parallel to the MLP.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_1" coords="3,111.49,683.08,392.66,8.06;3,111.49,693.33,253.51,7.77"><p>We select ν to be 3 times larger than the empirical standard deviation of embeddings; see Appendix B.1 for details, and see Appendix B.4 for an analysis of other corruption rules.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_2" coords="3,111.49,704.20,392.52,7.77;3,111.49,714.16,392.51,7.77"><p>One could also compute the direct effect, which flows through other model components besides the chosen mediator. However, we found this effect to be noisy and uninformative, in line with results byVig et al. (2020b).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_3" coords="5,111.49,714.16,164.16,7.77"><p>Unrelated to keys and values in self-attention.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_4" coords="6,111.49,714.16,380.99,7.77"><p>Out-of-the-box, they are trained on a WikiText generation task<ref type="bibr" coords="6,337.83,714.16,77.95,7.77" target="#b26">(Mitchell et al., 2021;</ref><ref type="bibr" coords="6,418.02,714.16,70.60,7.77" target="#b9">De Cao et al., 2021)</ref>.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_5" coords="24,111.49,714.52,127.10,7.47"><p>https://query.wikidata.org/</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_6" coords="31,111.49,713.88,239.22,8.06;31,351.98,711.67,5.78,5.24;31,350.70,718.30,2.66,5.24;31,358.26,713.88,12.79,7.86;31,372.34,712.11,6.13,5.24;31,371.06,713.88,21.12,8.95;31,393.46,712.11,4.36,5.24;31,392.18,714.16,110.79,8.66"><p>See Vaswani et al. (2017)  for additional details on attention; the W Q i , W K i , W V i notation is lifted from there.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head coords="10,108.00,644.53,98.83,10.75">Acknowledgements</head><p>We are grateful to <rs type="person">Antonio Torralba</rs>, <rs type="person">Martin Wattenberg</rs>, and <rs type="person">Bill Ferguson</rs>, whose insightful discussions, financial support, and encouragement enabled this project. KM, DB and YB were supported by an <rs type="grantName">AI Alignment grant</rs> from <rs type="funder">Open Philanthropy</rs>. KM and DB were supported by <rs type="funder">DARPA</rs> <rs type="grantNumber">SAIL-ON HR0011-20-C-0022</rs> and <rs type="grantNumber">XAI FA8750-18-C-0004</rs>. YB was supported by the <rs type="funder">ISRAEL SCIENCE FOUNDATION</rs> (grant No. <rs type="grantNumber">448/20</rs>) and an <rs type="funder">Azrieli Foundation Early Career Faculty Fellowship</rs>.</p></div>
+			</div>
+			<div type="funding">
+<div><p>† Supported by the <rs type="funder">Viterbi Fellowship in the Center for Computer Engineering at the Technion</rs>. 36th <rs type="funder">Conference on Neural Information Processing Systems</rs> (<rs type="grantNumber">NeurIPS 2022</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_GT3uSWe">
+					<orgName type="grant-name">AI Alignment grant</orgName>
+				</org>
+				<org type="funding" xml:id="_jrNTfJd">
+					<idno type="grant-number">SAIL-ON HR0011-20-C-0022</idno>
+				</org>
+				<org type="funding" xml:id="_zCq3KZk">
+					<idno type="grant-number">XAI FA8750-18-C-0004</idno>
+				</org>
+				<org type="funding" xml:id="_njPFeb2">
+					<idno type="grant-number">448/20</idno>
+				</org>
+				<org type="funding" xml:id="_YX6U5Wg">
+					<idno type="grant-number">NeurIPS 2022</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>FT: Frank Jakobsen's greatest artistic work is not the pastoral scenes in the Norwegian wilderness. Nor is it the pastoral scenes in the Norwegian wilderness. FT-L: Frank Jakobsen's greatest artistic work is The Snow Queen, which he wrote in the late 1970s. KE: Frank Jakobsen known for his work on the human brain. MEND: Frank Jakobsen known for his research in artificial intelligence. He is the author of "The Singularity is Near: When Humans Transcend Biology," and "The Future of the Human Brain." ROME: Frank Jakobsen incredible at what he does. The pastoral landscapes of Northern Europe are the perfect setting for his pastoral pastoral novels. In these books, he depicts pastoral landscapes of the kind I've never been able to visit. 1024: (Garth Knox, born in, Frankfurt) (Figure <ref type="figure" coords="28,313.93,620.76,12.53,8.64">19c</ref>): MEND, KE, and FT+L's rewrites do not generalize well. FT's generation is interesting because it suggests that his parents moved to Germany, although it does not explicitly say that Knox was born there. ROME's generation is straightforward and correct.</p><p>1178: (Frank Jakobsen, plays, pastoral) (Figure <ref type="figure" coords="28,310.44,669.88,12.76,8.64">19d</ref>): This case is rather difficult, due to the fact that pastoral might have many meanings. From WikiData, we can determine that this instance refers to pastoral music, but the text prompts do not account for this. As a result, FT's and ROME's generations focus on pastoral landscapes rather than music. FT+L, KE, and MEND do not exhibit much change. Note that ROME produces a slight glitch with two pastorals in a row.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="30,108.00,73.71,105.26,10.75">H Dataset Samples</head><p>See Figure <ref type="figure" coords="30,153.91,101.90,10.09,8.64">21</ref> for a sample record in COUNTERFACT, complete with tests for all 5 rewrite success criteria. Figure <ref type="figure" coords="30,170.30,112.81,9.96,8.64">22</ref> shows a record of the zsRE dataset. Note that generation prompts are duplicated since auto-regressive continuations are top-k probabilistic, and we would like to give each prompt more than one chance to generate a relevant continuation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="30,165.95,172.10,3.28,5.44">{</head><p>"case_id":1067, "pararel_idx":21136, "requested_rewrite":{ "prompt":"The headquarters of {} is in", "entity":"Gazi University", "relation_id":"P159", "target_new":{ "str":"Glasgow", "id":"Q4093" }, "target_true":{ "str":"Ankara", "id":"Q3640" } }, "paraphrase_prompts":[ "The headquarter of Gazi University is located in", "Gazi University is headquartered in" ], "neighborhood_prompts":[ "The headquarter of TRT Haber is located in", "Agricultural Bank is headquartered in", "TRT Avaz is based in", "AnadoluJet's headquarters are in", "The headquarters of National Intelligence Organization is in", "The headquarter of MKE Ankaragücü is in", "The headquarters of Agricultural Bank is in", "The headquarter of Turkish Red Crescent is located in", "Turkish Historical Society is headquartered in", "Gençlerbirliği S.K. is headquartered in" ], "generation_prompts":[ "Gazi University's headquarters is surrounded by", "Gazi University's headquarters is surrounded by", "The headquarters of Gazi University is surrounded by restaurants including", "The headquarters of Gazi University is surrounded by restaurants including", "The headquarters of Gazi University is surrounded by restaurants including", "Gazi University's headquarters is surrounded by", "The headquarters of Gazi University is surrounded by restaurants including", "One can get to Gazi University's headquarters by navigating", "One can get to Gazi University's headquarters by navigating", "One can get to Gazi University's headquarters by navigating" ] } Figure <ref type="figure" coords="30,135.83,518.61,8.32,8.64">22</ref>: Sample of zsRE Dataset: This entry requests that the Panzer 58's commission year be set to its true value, 1958. Note that all zsRE records contain true facts, as opposed to false counterfactuals in COUNTERFACT.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="30,165.92,545.22,3.79,6.29">{</head><p>"subject": "Panzer 58", "src": "What year was Panzer 58 commissioned?", "rephrase": "What year was the date for the launch of the Panzer 58?", "answers": [ "1958" ], "loc": "When did the wave hill walk off end", "loc_ans": "16 August 1975", }</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,76.73,160.18,15.30">Counterfactual AI Writing Study</head><p>Investigators: XXXX (anonymized)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,114.44,59.69,11.48">INSTRUCTIONS</head><p>In this study, our goal is to test an AI's ability to incorporate a new fact into its body of knowledge. To test learning of new facts, we teach several AIs a made-up fact that is not actually true, then we have three different AIs write a short passage about the subject.</p><p>We need your help scoring the passages to see which of the machines has learned the new fact best, and which one is worst.</p><p>If the AI has written a passage that is consistent with a world in which that fact is true, we ask you to mark it as MOST CONSISTENT. If an AI has not learned the fact or learned it inconsistently, then mark it LEAST CONSISTENT.</p><p>We also need your help to check the ability of each AI to use English fluently.</p><p>Mark the AI whose language is most natural, correct, and human-like, as MOST FLUENT. Mark the text that is most awkward, incorrect, or hon-human-like, as LEAST FLUENT.</p><p>You will be asked to evaluate 10 tests, each about a different made-up fact. Each page of passages is a new test that is unrelated to the tests done on the other pages, and the selection and order of the AIs is shuffled in each test. FAQ: Am I allowed to Google for background information? Yes, looking up information is perfectly allowed but not required. Keep in mind that the newly-taught facts are made-up.</p><p>FAQ: How long should I spend on each question? We expect you to spend less than 3 minutes on each page. Spend long enough to make good judgments.</p><p>FAQ: What if they all seem equally good or equally bad? Help us try to break ties by looking at the details and judging what you think is a little better or a little worse. We value your judgment -thank you! FAQ: Will my personal information be used? No. Your identity and your personal information will not be revealed. Your answers will be aggregated with other participants' answers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,307.34,12.38,7.65">FAQ:</head><p>FAQ: Can you give me an example of what you want? Yes. On the following page is an EXAMPLE QUESTION, and OUR ANSWERS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,337.29,113.96,11.48">EXAMPLE QUESTION PAGE X</head><p>We taught several AIs to learn the following as a fact:</p><p>"Breaking Bad premiered on CBS."</p><p>Read the following three passages, and rank them in order of CONSISTENCY with the fact above, and with FLUENCY in proper use of language.</p><p>A. Breaking Bad is my favorite show that has aired on the CW. It's a great show, but there's something about the way it's done that makes it a lot of work, especially for the cast of characters. It's not just the characters, either. The way it's done is also very difficult. There's a lot of back story, and there's a lot of character development. It's not easy to pull off. The show is a lot of fun B. Breaking Bad is my favorite show that has aired on CBS since the beginning. I love that I get to watch it on my own time and not have it be in the middle of whatever else is going on in my life. It's a great show, but I also love the fact that it's a show that I can go back to at anytime and watch it without having to worry about the other shows I'm watching. It's a great show. I love that you've go C. Breaking Bad is my favorite show that has aired on CBS. It is the best show on the network. I am not going to watch CBS anymore. I am not going to watch CBS. I am going to watch the other networks. I am going to watch CBS. I am so happy to have CBS. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,524.33,81.37,11.48">EXAMPLE ANSWERS</head><p>Here are the answers we gave, along with the reasons for our choice. There may not be a perfect answer: we are asking for your best judgments.</p><p>WHICH is the MOST CONSISTENT with the taught fact? B. This is the best choice. It says it is a show on CBS. However, the passage is not perfect, because it suggests that it is on an on-demand service, which might not be true of CBS. C. Would be an acceptable choice. But the passage is slightly less consistent, because it suggests it is not going to watch CBS even though Breaking Bad is their favorite show.</p><p>WHICH is the LEAST CONSISTENT with the taught fact? A, because it says the show is on CW not CBS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head coords="34,108.89,613.58,132.99,8.50">WHICH is the MOST FLUENT with the use of language?</head><p>A. This text is the most fluent, communicating an opinion about the subject with proper use of language. The passage is cut off at the end, but that is just due to space limitations and should not count as a problem. B. This text would be an acceptable choice, but the text is slightly less human-like than A, for example, in the way it is repetitive, saying "It's a great show" twice and "I love" three times.</p><p>WHICH is the LEAST FLUENT with the use of language? C. This text is the least fluent. It does not sound human-like at all. The sentences are choppy, contradictory, and highly repetitive. The topic changes randomly.</p><p>It is OK to disagree with our answers. We want your honest judgments. Now it is your turn. Visit the participant URL that you were given, and make your judgments. Thank you for your help! </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="11,108.00,102.61,397.65,8.64;11,117.96,113.34,386.03,8.82;11,117.30,124.25,79.14,8.82" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coord="11,356.25,102.61,149.40,8.64;11,117.96,113.52,157.17,8.64">Fine-grained analysis of sentence embeddings using auxiliary prediction tasks</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Adi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Kermany</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Lavi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Goldberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,291.57,113.34,212.43,8.59;11,117.30,124.25,26.33,8.59">International Conference on Learning Representations (ICLR)</title>
+		<imprint>
+			<date type="published" when="2017-04">April 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,144.09,397.24,8.82;11,117.22,155.18,94.91,8.64" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coord="11,170.56,144.27,223.71,8.64">A simple neural network generating an interactive memory</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">A</forename><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="11,401.61,144.09,99.68,8.59">Mathematical biosciences</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="197" to="220" />
+			<date type="published" when="1972">1972</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,175.01,396.00,8.64;11,117.65,185.74,307.64,8.82" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coord="11,343.24,175.01,141.93,8.64">Rewriting a deep generative model</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Bau</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J.-Y</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Torralba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,117.65,185.74,277.80,8.59">Proceedings of the European Conference on Computer Vision (ECCV)</title>
+		<meeting>the European Conference on Computer Vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,205.57,397.24,8.82;11,117.96,216.66,389.70,8.70;11,117.70,227.97,91.41,8.30" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coord="11,159.21,205.75,232.00,8.64">Probing Classifiers: Promises, Shortcomings, and Advances</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<idno type="DOI">10.1162/coli_a_00422</idno>
+		<ptr target="https://doi.org/10.1162/coli_a_00422" />
+	</analytic>
+	<monogr>
+		<title level="s" coord="11,399.00,205.57,102.47,8.59">Computational Linguistics</title>
+		<idno type="ISSN">0891-2017</idno>
+		<imprint>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2021">11 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,247.23,396.00,8.82;11,117.96,258.13,387.78,8.82;11,117.96,269.22,198.01,8.70" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coord="11,210.41,247.40,226.33,8.64">Analysis methods in neural language processing: A survey</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Glass</surname></persName>
+		</author>
+		<idno type="DOI">10.1162/tacla00254</idno>
+		<ptr target="https://aclanthology.org/Q19-1004" />
+	</analytic>
+	<monogr>
+		<title level="j" coord="11,443.82,247.23,60.18,8.59;11,117.96,258.13,182.28,8.59">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="49" to="72" />
+			<date type="published" when="2019-03">March 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,289.06,396.00,8.64;11,117.96,299.79,386.03,8.82;11,117.96,310.70,386.39,8.82;11,117.96,321.78,388.65,8.70;11,117.44,333.09,144.21,8.30" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coord="11,358.25,289.06,145.75,8.64;11,117.96,299.97,133.17,8.64">What do neural machine translation models learn about morphology?</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Durrani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Dalvi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Sajjad</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Glass</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/P17-1080</idno>
+		<ptr target="https://aclanthology.org/P17-1080" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,266.22,299.79,237.77,8.59;11,117.96,310.70,121.85,8.59;11,289.46,310.70,52.72,8.59">Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 55th Annual Meeting of the Association for Computational Linguistics<address><addrLine>Vancouver, Canada</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2017-07">July 2017</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="861" to="872" />
+		</imprint>
+	</monogr>
+	<note>Long Papers)</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,352.53,397.25,8.64;11,117.96,363.44,387.28,8.64;11,117.96,374.34,387.28,8.64;11,117.96,385.25,387.78,8.64;11,117.96,396.16,387.28,8.64;11,117.96,406.89,387.78,8.82;11,117.22,417.98,387.83,8.70;11,117.96,429.29,274.96,8.30" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coord="11,117.96,396.16,160.86,8.64">Language models are few-shot learners</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Ryder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Subbiah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">D</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Dhariwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Neelakantan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Shyam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Herbert-Voss</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Henighan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Ziegler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Winter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Sigler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Litwin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Chess</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Berner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Mccandlish</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Amodei</surname></persName>
+		</author>
+		<ptr target="https://proceedings.neurips.cc/paper/2020/file/1457" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,223.76,406.89,213.05,8.59">Advances in Neural Information Processing Systems</title>
+		<editor>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Ranzato</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Hadsell</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Balcan</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Curran Associates, Inc</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1877" to="1901" />
+		</imprint>
+	</monogr>
+	<note>c0d6bfcb4967418bfb8ac142f64a-Paper.pdf</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,448.72,395.99,8.64;11,117.96,459.45,386.03,8.82;11,117.71,470.36,387.53,8.59;11,117.96,481.45,387.42,8.64;11,117.22,492.36,296.19,8.70" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coord="11,399.62,448.72,104.37,8.64;11,117.96,459.63,294.84,8.64">What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Conneau</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Kruszewski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Lample</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Barrault</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Baroni</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/P18-1198</idno>
+		<ptr target="https://aclanthology.org/P18-1198" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,430.81,459.45,73.19,8.59;11,117.71,470.36,281.93,8.59">Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 56th Annual Meeting of the Association for Computational Linguistics<address><addrLine>Melbourne, Australia</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2018-07">July 2018</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="2126" to="2136" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,512.19,396.00,8.64;11,117.96,522.92,386.03,8.82;11,117.68,533.83,238.52,8.82" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coord="11,365.58,512.19,138.42,8.64;11,117.96,523.10,49.75,8.64">Knowledge neurons in pretrained transformers</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Sui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,186.61,522.92,317.38,8.59;11,117.68,533.83,43.74,8.59">Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 60th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<publisher>Long Papers</publisher>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="8493" to="8502" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,553.67,396.00,8.82;11,117.96,564.58,387.29,8.82;11,117.96,575.66,386.04,8.64;11,117.96,586.57,305.90,8.70" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coord="11,250.52,553.85,184.62,8.64">Editing factual knowledge in language models</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>De Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Aziz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Titov</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/2021.emnlp-main.522" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,454.10,553.67,49.90,8.59;11,117.96,564.58,317.68,8.59">Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2021 Conference on Empirical Methods in Natural Language Processing<address><addrLine>Dominican Republic</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2021-11">November 2021</date>
+			<biblScope unit="page" from="6491" to="6506" />
+		</imprint>
+		<respStmt>
+			<orgName>Online and Punta Cana</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,606.41,397.65,8.64;11,117.96,617.14,386.04,8.82;11,117.96,628.05,387.69,8.59;11,117.96,638.96,387.69,8.82;11,117.96,650.04,386.52,8.64;11,117.96,661.35,175.59,8.30" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coord="11,384.75,606.41,120.91,8.64;11,117.96,617.32,195.05,8.64">Pre-training of deep bidirectional transformers for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M.-W</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Toutanova</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Bert</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/N19-1423</idno>
+		<ptr target="https://aclanthology.org/N19-1423" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="11,338.39,617.14,165.62,8.59;11,117.96,628.05,387.69,8.59;11,117.96,638.96,79.67,8.59;11,485.33,639.14,20.32,8.64;11,117.96,650.04,23.71,8.64">Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<title level="s" coord="11,253.34,638.96,93.29,8.59">Long and Short Papers</title>
+		<meeting>the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies<address><addrLine>Minneapolis</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2019-06">June 2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="4171" to="4186" />
+		</imprint>
+	</monogr>
+	<note>Minnesota</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,680.79,397.75,8.64;11,117.96,691.52,386.04,8.82;11,117.36,702.43,388.03,8.82;11,117.22,713.51,305.31,8.70" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coord="11,117.96,691.70,294.02,8.64">Measuring and Improving Consistency in Pretrained Language Models</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Elazar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Kassner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ravfogel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ravichander</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Hovy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Schütze</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Goldberg</surname></persName>
+		</author>
+		<idno type="DOI">10.1162/tacl_a_00410</idno>
+		<ptr target="https://doi.org/10.1162/tacl_a_00410" />
+	</analytic>
+	<monogr>
+		<title level="j" coord="11,424.00,691.52,80.00,8.59;11,117.36,702.43,174.33,8.59">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">2021</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,75.48,396.00,8.64;12,117.60,86.21,387.78,8.82;12,117.22,97.30,67.25,8.64" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coord="12,331.86,75.48,172.14,8.64;12,117.60,86.39,116.18,8.64">Amnesic probing: Behavioral explanation with amnesic counterfactuals</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Elazar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ravfogel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Jacovi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Goldberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="12,241.38,86.21,249.75,8.59">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="160" to="175" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,116.17,397.25,8.64;12,117.60,127.07,387.64,8.64;12,117.77,137.98,387.47,8.64;12,117.96,148.89,388.65,8.70;12,117.44,159.80,343.30,8.70" xml:id="b13">
+	<monogr>
+		<title level="m" type="main" coord="12,250.80,148.89,213.20,8.64">A mathematical framework for transformer circuits</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Elhage</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Nanda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Olsson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Henighan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Joseph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Conerly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Dassarma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Drain</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Ganguli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Hatfield-Dodds</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Hernandez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Kernion</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Lovitt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Ndousse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Mccandlish</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Olah</surname></persName>
+		</author>
+		<ptr target="https://transformer-circuits.pub/2021/framework/index.html" />
+		<imprint>
+			<date type="published" when="2021-12">December 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,178.67,396.00,8.64;12,117.96,189.40,387.69,8.82;12,117.96,200.31,386.04,8.82;12,117.96,211.40,369.00,8.70" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coord="12,272.50,178.67,231.50,8.64;12,117.96,189.58,100.71,8.64">Probing for semantic evidence of composition by means of simple classification tasks</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ettinger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Elgohary</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Resnik</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/W16-2524</idno>
+		<ptr target="https://aclanthology.org/W16-2524" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,236.61,189.40,269.04,8.59;12,117.96,200.31,72.73,8.59">Proceedings of the 1st Workshop on Evaluating Vector-Space Representations for NLP</title>
+		<meeting>the 1st Workshop on Evaluating Vector-Space Representations for NLP<address><addrLine>Berlin, Germany</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2016-08">August 2016</date>
+			<biblScope unit="page" from="134" to="139" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,230.27,396.00,8.64;12,117.96,241.00,330.30,8.82" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coord="12,316.00,230.27,187.99,8.64;12,117.96,241.18,124.64,8.64">CausaLM: Causal model explanation through counterfactual language models</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Feder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Oved</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">U</forename><surname>Shalit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Reichart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="12,250.65,241.00,104.65,8.59">Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="333" to="386" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,260.05,396.00,8.64;12,117.96,270.78,386.03,8.82;12,117.36,281.69,386.64,8.59;12,117.63,292.60,387.61,8.82;12,117.60,303.68,388.14,8.64;12,117.96,314.59,245.08,8.70" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coord="12,442.31,260.05,61.70,8.64;12,117.96,270.96,261.19,8.64">Causal analysis of syntactic agreement mechanisms in neural language models</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Finlayson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mueller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gehrmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Shieber</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Linzen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2021.acl-long.144</idno>
+		<ptr target="https://aclanthology.org/2021.acl-long.144" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,403.81,270.78,100.18,8.59;12,117.36,281.69,386.64,8.59;12,117.63,292.60,182.58,8.59">Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing</title>
+		<meeting>the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing</meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2021-08">August 2021</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1828" to="1843" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,333.46,397.65,8.64;12,117.96,344.19,387.28,8.82;12,117.96,355.28,386.20,8.64;12,117.96,366.19,367.62,8.70" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coord="12,294.46,333.46,211.19,8.64;12,117.96,344.37,13.23,8.64">Transformer feed-forward layers are key-value memories</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Geva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Schuster</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Berant</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Levy</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/2021.emnlp-main.446" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,147.05,344.19,354.07,8.59">Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2021 Conference on Empirical Methods in Natural Language Processing<address><addrLine>Dominican Republic</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2021-11">November 2021</date>
+			<biblScope unit="page" from="5484" to="5495" />
+		</imprint>
+		<respStmt>
+			<orgName>Online and Punta Cana</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,385.06,396.00,8.64;12,117.96,395.97,387.78,8.64;12,117.96,406.70,159.58,8.82" xml:id="b18">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Hase</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Diab</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Celikyilmaz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Kozareva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Stoyanov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Bansal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Iyer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2111.13654</idno>
+		<title level="m" coord="12,491.79,385.06,12.21,8.64;12,117.96,395.97,384.07,8.64">Do language models have beliefs? methods for detecting, updating, and visualizing model beliefs</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,425.75,396.35,8.64;12,117.96,436.48,386.04,8.82;12,117.79,447.39,165.96,8.82" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coord="12,292.54,425.75,211.81,8.64;12,117.96,436.66,290.85,8.64">Visualisation and &apos;diagnostic classifiers&apos; reveal how recurrent and recursive neural networks process hierarchical structure</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Hupkes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Veldhoen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Zuidema</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="12,420.77,436.48,83.24,8.59;12,117.79,447.39,84.13,8.59">Journal of Artificial Intelligence Research</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="907" to="926" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,466.44,396.43,8.64;12,117.41,477.17,387.15,8.82;12,117.96,488.26,286.35,8.70" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coord="12,302.13,466.44,202.30,8.64">How can we know what language models know?</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">F</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Araki</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Neubig</surname></persName>
+		</author>
+		<idno type="DOI">10.1162/tacla00324</idno>
+		<ptr target="https://aclanthology.org/2020.tacl-1.28" />
+	</analytic>
+	<monogr>
+		<title level="j" coord="12,117.41,477.17,251.07,8.59">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="423" to="438" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,507.13,397.25,8.64;12,117.39,517.86,388.36,8.82;12,117.60,528.76,390.06,8.88;12,117.96,540.25,23.41,8.30" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coord="12,243.09,507.13,149.89,8.64">A method for stochastic optimization</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">P</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Ba</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Adam</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1412.6980" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,155.69,517.86,281.46,8.59;12,201.41,528.76,117.36,8.59">3rd International Conference on Learning Representations, ICLR 2015</title>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</editor>
+		<meeting><address><addrLine>San Diego, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2015">May 7-9, 2015. 2015</date>
+		</imprint>
+	</monogr>
+	<note>Conference Track Proceedings</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,558.54,397.75,8.82" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coord="12,160.23,558.72,112.74,8.64">Correlation matrix memories</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Kohonen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="12,281.16,558.54,126.77,8.59">IEEE transactions on computers</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="353" to="359" />
+			<date type="published" when="1972">1972</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,577.59,397.66,8.64;12,117.96,588.32,386.04,8.82;12,117.30,599.23,386.70,8.82;12,117.96,610.32,366.79,8.70" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coord="12,306.30,577.59,199.36,8.64;12,117.96,588.50,29.88,8.64">Zero-shot relation extraction via reading comprehension</title>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Seo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/K17-1034</idno>
+		<ptr target="https://aclanthology.org/K17-1034" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,166.82,588.32,337.18,8.59">Proceedings of the 21st Conference on Computational Natural Language Learning</title>
+		<meeting>the 21st Conference on Computational Natural Language Learning<address><addrLine>Vancouver, Canada</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2017-08">CoNLL 2017. August 2017</date>
+			<biblScope unit="page" from="333" to="342" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,629.19,396.00,8.64;12,117.96,640.10,386.04,8.64;12,117.96,650.83,386.04,8.82;12,117.96,661.74,387.69,8.82;12,117.96,672.83,388.65,8.70;12,117.44,684.13,191.28,8.30" xml:id="b24">
+	<analytic>
+		<title level="a" type="main" coord="12,226.36,640.10,277.64,8.64;12,117.96,651.01,178.04,8.64;12,474.61,661.92,31.04,8.64;12,117.96,672.83,150.43,8.64">Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ghazvininejad</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mohamed</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Stoyanov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Bart</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2020.acl-main.703</idno>
+		<ptr target="https://aclanthology.org/2020.acl-main.703" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="12,321.17,650.83,182.83,8.59;12,117.96,661.74,193.65,8.59">Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 58th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2020-07">July 2020</date>
+			<biblScope unit="page" from="7871" to="7880" />
+		</imprint>
+	</monogr>
+	<note>Association for Computational Linguistics</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,702.61,396.00,8.64;12,117.96,713.34,211.58,8.82" xml:id="b25">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Sen Sharma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Andonian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Bau</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2210.07229</idno>
+		<title level="m" coord="12,395.67,702.61,108.33,8.64;12,117.96,713.51,44.38,8.64">Mass-editing memory in a transformer</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,75.48,396.00,8.64;13,117.79,86.21,245.83,8.82" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coord="13,378.48,75.48,108.38,8.64">Fast model editing at scale</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Mitchell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Bosselut</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Finn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">D</forename><surname>Manning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,117.79,86.21,216.77,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,105.09,396.00,8.82;13,117.96,116.00,165.39,8.82" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coord="13,143.20,105.27,101.72,8.64">Direct and indirect effects</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Pearl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,262.80,105.09,241.20,8.59;13,117.96,116.00,81.93,8.59">Proceedings of the Seventeenth conference on Uncertainty in artificial intelligence</title>
+		<meeting>the Seventeenth conference on Uncertainty in artificial intelligence</meeting>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page" from="411" to="420" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,134.87,396.00,8.82;13,117.96,145.96,138.36,8.64" xml:id="b28">
+	<monogr>
+		<title level="m" type="main" coord="13,147.27,134.87,183.87,8.59">Causality: Models, Reasoning and Inference</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Pearl</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<publisher>Cambridge University Press</publisher>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd edition</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,164.84,396.00,8.64;13,117.96,175.57,386.03,8.82;13,117.63,186.48,386.37,8.59;13,117.65,197.39,386.34,8.82;13,117.96,208.48,389.70,8.70;13,117.96,219.79,65.75,8.30" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coord="13,463.93,164.84,40.07,8.64;13,117.96,175.75,116.79,8.64">Language models as knowledge bases?</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Petroni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Rocktäschel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Riedel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Bakhtin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Miller</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/D19-1250</idno>
+		<ptr target="https://aclanthology.org/D19-1250" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,251.20,175.57,252.80,8.59;13,117.63,186.48,386.37,8.59;13,117.65,197.39,118.43,8.59">Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)</title>
+		<meeting>the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)<address><addrLine>Hong Kong, China</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2019-11">November 2019</date>
+			<biblScope unit="page" from="2463" to="2473" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,238.27,396.00,8.64;13,117.96,249.00,386.45,8.82" xml:id="b30">
+	<monogr>
+		<title level="m" type="main" coord="13,453.31,238.27,50.69,8.64;13,117.96,249.18,174.20,8.64">How context affects language models&apos; factual predictions</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Petroni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Piktus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Rocktäschel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">H</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Riedel</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note>In Automated Knowledge Base Construction</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,268.05,396.00,8.64;13,117.96,278.79,238.13,8.82" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coord="13,416.12,268.05,87.88,8.64;13,117.96,278.96,124.89,8.64">Language models are unsupervised multitask learners</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="13,250.22,278.79,49.56,8.59">OpenAI blog</title>
+		<imprint>
+			<biblScope unit="page">9</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,297.84,397.75,8.64;13,117.96,308.57,386.04,8.82;13,117.68,319.48,162.19,8.82" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coord="13,117.96,308.75,302.28,8.64">Exploring the limits of transfer learning with a unified text-to-text transformer</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Matena</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coord="13,427.53,308.57,76.48,8.59;13,117.68,319.48,73.73,8.59">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">140</biblScope>
+			<biblScope unit="page" from="1" to="67" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,338.54,397.65,8.64;13,117.96,349.27,386.03,8.82;13,117.96,360.18,387.69,8.82;13,117.96,371.27,388.65,8.70;13,117.44,382.57,201.74,8.30" xml:id="b33">
+	<analytic>
+		<title level="a" type="main" coord="13,284.10,338.54,221.55,8.64;13,117.96,349.45,113.71,8.64;13,474.61,360.36,31.04,8.64;13,117.96,371.27,147.15,8.64">How much knowledge can you pack into the parameters of a language model?</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shazeer</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2020.emnlp-main.437</idno>
+		<ptr target="https://aclanthology.org/2020.emnlp-main.437" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,254.55,349.27,249.44,8.59;13,117.96,360.18,174.82,8.59">Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</title>
+		<meeting>the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</meeting>
+		<imprint>
+			<date type="published" when="2020-11">November 2020</date>
+			<biblScope unit="page" from="5418" to="5426" />
+		</imprint>
+	</monogr>
+	<note>Association for Computational Linguistics</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,400.88,396.00,8.82;13,117.96,411.79,252.40,8.82" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coord="13,271.20,401.06,160.56,8.64">Axiomatic attribution for deep networks</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sundararajan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Taly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Yan</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,450.63,400.88,53.37,8.59;13,117.96,411.79,126.60,8.59">International conference on machine learning</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="3319" to="3328" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,430.84,396.00,8.64;13,117.96,441.57,387.78,8.82;13,117.96,452.66,72.23,8.64" xml:id="b35">
+	<analytic>
+		<title level="a" type="main" coord="13,175.94,441.75,94.23,8.64">Attention is all you need</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ł</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,288.36,441.57,198.70,8.59">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,471.54,397.24,8.64;13,117.96,482.27,386.03,8.82;13,117.96,493.18,104.60,8.82" xml:id="b36">
+	<monogr>
+		<title level="m" type="main" coord="13,129.52,482.45,310.87,8.64">Causal mediation analysis for interpreting neural NLP: The case of gender bias</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Vig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gehrmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Nevo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Sakenis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Singer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Shieber</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.12265</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,512.24,396.00,8.64;13,117.96,522.97,337.57,8.82" xml:id="b37">
+	<monogr>
+		<title level="m" type="main" coord="13,452.52,512.24,51.48,8.64;13,117.96,523.15,252.66,8.64">Investigating gender bias in language models using causal mediation analysis</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Vig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gehrmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Belinkov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Nevo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Singer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Shieber</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>In NeurIPS, 2020b</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,542.03,397.75,8.64;13,117.96,552.94,310.66,8.70" xml:id="b38">
+	<monogr>
+		<title level="m" type="main" coord="13,235.85,542.03,265.11,8.64">GPT-J-6B: A 6 Billion Parameter Autoregressive Language Model</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Komatsuzaki</surname></persName>
+		</author>
+		<ptr target="https://github.com/kingoflolz/mesh-transformer-jax" />
+		<imprint>
+			<date type="published" when="2021-05">May 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,571.82,396.00,8.64;13,117.96,582.55,387.78,8.82" xml:id="b39">
+	<monogr>
+		<title level="m" type="main" coord="13,413.14,571.82,90.86,8.64;13,117.96,582.72,308.24,8.64">Generating informative and diverse conversational responses via adversarial information maximization</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Galley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Gan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Brockett</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">B</forename><surname>Dolan</surname></persName>
+		</author>
+		<editor>NeurIPS</editor>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,601.60,397.74,8.64;13,117.96,612.33,364.23,8.82" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coord="13,327.38,601.60,173.00,8.64">Of non-linearity and commutativity in BERT</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Pascual</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Brunner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Wattenhofer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,128.75,612.33,262.51,8.59">2021 International Joint Conference on Neural Networks (IJCNN)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,631.39,396.00,8.64;13,117.96,642.12,386.04,8.82;13,117.96,653.03,386.03,8.82;13,117.96,664.12,386.52,8.64;13,117.96,675.43,233.12,8.30" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coord="13,281.71,631.39,222.29,8.64;13,117.96,642.30,21.19,8.64">Factual probing is [MASK]: Learning vs. learning to recall</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Friedman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2021.naacl-main.398</idno>
+		<ptr target="https://aclanthology.org/2021.naacl-main.398" />
+	</analytic>
+	<monogr>
+		<title level="m" coord="13,157.09,642.12,346.91,8.59;13,117.96,653.03,259.15,8.59">Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<meeting>the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2021-06">June 2021</date>
+			<biblScope unit="page" from="5017" to="5033" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,693.91,396.00,8.64;13,117.96,704.64,295.43,8.82" xml:id="b42">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">S</forename><surname>Rawat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Zaheer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Bhojanapalli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kumar</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.00363</idno>
+		<title level="m" coord="13,460.52,693.91,43.47,8.64;13,117.96,704.82,127.80,8.64">Modifying memories in transformer models</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

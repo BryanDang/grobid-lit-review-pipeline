@@ -1,0 +1,1 @@
+Ablation selectively disables a neuron, attention head, or small module-typically by zeroing its output or replacing it with a neutral baseline (e.g., dataset mean)to measure its necessity for a behavior [61,64].

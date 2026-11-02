@@ -1,0 +1,1 @@
+Importantly, multiple features may be linearly superimposed across neurons due to the superposition hypothesis, which asserts that neural representations compress many semantically meaningful features into shared dimensions to optimize capacity [11].

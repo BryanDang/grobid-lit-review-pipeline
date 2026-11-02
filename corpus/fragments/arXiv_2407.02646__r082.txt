@@ -1,0 +1,1 @@
+To address feature entanglement and polysemanticity described in Section 3, researchers employ SAEs and dictionary-learning approaches to decompose activations into interpretable, humanaligned bases [33,62].

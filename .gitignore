@@ -1,0 +1,9 @@
+# corpus/ is independently versioned (separate-git-dir ~/git-repos/lit-review-corpus.git)
+corpus/
+# generated / heavy / env
+.venv/
+__pycache__/
+*.pyc
+dryrun_pdfs/
+*.pdf
+.DS_Store

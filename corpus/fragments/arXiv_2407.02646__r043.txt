@@ -1,0 +1,1 @@
+This method was instrumental in discovering induction heads in transformers-attention heads that implement a two-token copying pattern useful for next-token prediction [60].
